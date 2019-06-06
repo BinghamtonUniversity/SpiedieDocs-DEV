@@ -22,6 +22,7 @@ a.card:hover {
 </form> -->
 <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
 <h2>About</h2>
+<hr>
 <div class="alert alert-primary">
     The Binghamton University High-Performance Computing Cluster aptly name “Spiedie” is a 3464 compute core 
     & 512 Knights Landing core cluster housed in the Thomas J. Watson School of Engineering 
@@ -29,10 +30,29 @@ a.card:hover {
     This research facility offers computer capabilities for researchers across 
     Binghamton University.
 </div>
-<h2>Documentation & Tutorials</h2>
+<h2><a href="/tutorials/">Guided Tutorials</a></h2>
+
+<hr>
 <div class="row">
     {% for mypage in site.pages %}
     {% if mypage.dir == "/tutorials/" %}
+    <div class="col-lg-4 col-sm-6">
+        <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ mypage.title }}</h5>
+                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<h2> <a href="/docs/">Documentation</a> </h2>
+
+<hr>
+<div class="row">
+    {% for mypage in site.pages %}
+    {% if mypage.dir == "/docs/" %}
     <div class="col-lg-4 col-sm-6">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
