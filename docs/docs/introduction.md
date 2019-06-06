@@ -14,8 +14,8 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 4. Anything else we can think of? 
 
 
-##<a name="cluster-info"></a> What is a cluster?
-####<a name="node-info"></a> What is a node?
-##<a name="cluster-programs"></a> Running jobs on a cluster?
+## <a name="cluster-info"></a> What is a cluster?
+#### <a name="node-info"></a> What is a node?
+## <a name="cluster-programs"></a> Running jobs on a cluster?
 #### <a name="slurm-info">What is SLURM?</a>
-##<a name="best-practices">Best practices</a>	
+## <a name="best-practices">Best practices</a>	
