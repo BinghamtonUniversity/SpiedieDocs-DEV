@@ -15,7 +15,8 @@ def main():
         sorted_list = unsorted_list.sort()
 
     end_time = time.clock()
-
+    print("Welcome to Spiedie!")
+    print("You are running the quick start python tutorial.")
     print ("Soritng done")
     print(" I ran for " + str(end_time-start_time) + " s")
 
