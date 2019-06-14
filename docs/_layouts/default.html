@@ -85,14 +85,28 @@
               </form>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" style="background:rgb(0,90,67);">
+              <!-- <li class="list-group-item" style="background:rgb(0,90,67);">
                 {% for tag in all_tags %}
                   <a class="badge badge-primary" href="{{ site.url }}/tags#{{ tag | slugify }}"><i class="fa fa-tag"></i>&nbsp; {{ tag }}</a>
                 {% endfor %}
+              </li> -->
+
+              <li class="list-group-item" style="background:rgb(0,90,67);">
+                <!-- Pages -->
+                  
+                    <i class="fa fa-file"></i>&nbsp; Frequently Searched Tags
+
+                    
               </li>
               <li class="list-group-item" style="background:rgb(0,90,67);">
                 <!-- Pages -->
-                {% for mypage in site.pages limit:5 %}
+                  <a class="badge badge-primary" href="/docs/" style="width:100%;">
+                    <i class="fa fa-file"></i>&nbsp; Documentation
+                  </a>
+              </li>
+              <li class="list-group-item" style="background:rgb(0,90,67);">
+                <!-- Pages -->
+                {% for mypage in site.pages %}
                 {% if mypage.dir == "/tutorials/" %}
                   <a class="badge badge-primary" href="{{ site.url }}{{ mypage.url }}" style="width:100%;">
                     <i class="fa fa-file"></i>&nbsp; {{ mypage.title }}
@@ -100,6 +114,14 @@
                 {% endif %}
                 {% endfor %}            
               </li>
+
+              <li class="list-group-item" style="background:rgb(0,90,67);">
+                <!-- Pages -->
+                  <a class="badge badge-primary" href="/singularity/" style="width:100%;">
+                    <i class="fa fa-file"></i>&nbsp; Singularity on Spiedie
+                  </a>
+              </li>
+
               <li class="list-group-item" style="background:rgb(0,90,67);">
                 <a class="badge badge-primary" href="https://github.com/BinghamtonUniversity/SpiedieDocs/edit/master/docs/{{ page.path }}" style="width:100%;">
                   <i class="fa fa-pencil-alt"></i>&nbsp; Edit This Page

@@ -63,4 +63,23 @@ a.card:hover {
     </div>
     {% endif %}
     {% endfor %}
+
+</div>
+<h2> <a href="/docs/">Singularity on Spiedie</a> </h2>
+
+<hr>
+<div class="row">
+    {% for mypage in site.pages limit:4 %}
+    {% if mypage.dir == "/singularity/" %}
+    <div class="col-lg-4 col-sm-6">
+        <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ mypage.title }}</h5>
+                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+
 </div>

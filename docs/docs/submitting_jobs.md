@@ -1,8 +1,8 @@
 --- 
-title: Submitting Jobs using SRUN and SBATCH 
+title: Submitting Jobs on Spiedie
 layout: default 
 images: [] 
-tags: [SRUN, SBATCH, Job Submission, interactive session]
+tags: [SRUN, SBATCH, Job Submission, interactive session, memory allocation, paritions]
 description: Documentation for srun and sbatch commands 
 ---
 
@@ -21,7 +21,9 @@ description: Documentation for srun and sbatch commands
         1. [Directives](#directives)
         2. [Run commands](#sbatch-program)
     2. [Job Submission](#sbatch-submit)
-
+3. [Customizing resource allocation](#resource-alloc) 
+		1. [Using Spiedie-specific Directvies or Features](#features)
+		2. [Increase memory allocation](#mem-alloc)
 ## <a name="srun"></a> Using srun 
 
 Both the srun and sbatch command have similar capabilities and set of parameters. srun is used to submit a job for execution in real time and blocks the terminal. You will not be able to issue other commands while the program executes and must have an open connection while the program runs. It is generally recommended to use srun for quick test runs and for simple workflows. 
@@ -115,6 +117,42 @@ To use a run script to submit a job use:
 ``` bash 
 sbatch --partition=partition_name run_script.sh 
 ```
+
+## <a name="resource_alloc"></a> Customizing resource allocation
+
+One of the important advantages of using Spiedie is the flexibility of hardware resources available to the user. You can tailor your resource request to suit the needs of your program. 
+
+Proper resource allocation also ensures your program runs as fast and efficiently as possibile and does not halt unexepectedly due to hardware resource shortages such as memory. It is also best practice to allocate the right amount of resources for SLURM to work as efficient as possible for the entire cluster. 
+
+
+#### <a name="features"></a> Using Spiedie-specific Directvies or Features
+
+One way to make sure your programs run properly is to run it on the correct partition, as stated above. 
+
+You can also use the feature flag to help properly allocate resources. [For more information on partitions, click here.](spiedie_partitions.html#features)
+
+To make use of a feature, such as the KNL nodes use:
+
+``` bash
+srun -c=40 -C="knl" ./program_to_run
+```
+
+The above command requests 40 cores for the program to run, which is only available on the Knights Landing Nodes. The -C (constraint) flag ensures that the program is only run on KNL nodes. 
+
+### <a name="memory_alloc"></a> Increase memory allocation
+
+In order to increase the default memory allocation (2GB), you can use the --mem flag for srun and sbatch to specify the memory needed per node. 
+
+For example: 
+
+``` bash
+srun --mem=4G ./program_to_run
+```
+
+The above job requests for 4 GB of memory for the default one node. 
+
+ 
+You can also request memory per core using the --mem-per-cpu flag.  
 
 
 
