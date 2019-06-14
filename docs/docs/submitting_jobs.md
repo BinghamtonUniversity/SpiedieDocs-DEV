@@ -22,8 +22,8 @@ description: Documentation for srun and sbatch commands
         2. [Run commands](#sbatch-program)
     2. [Job Submission](#sbatch-submit)
 3. [Customizing resource allocation](#resource-alloc) 
-		1. [Using Spiedie-specific Directvies or Features](#features)
-		2. [Increase memory allocation](#mem-alloc)
+    1. [Using Spiedie-specific Directvies or Features](#features)
+    2. [Increase memory allocation](#mem-alloc)
 ## <a name="srun"></a> Using srun 
 
 Both the srun and sbatch command have similar capabilities and set of parameters. srun is used to submit a job for execution in real time and blocks the terminal. You will not be able to issue other commands while the program executes and must have an open connection while the program runs. It is generally recommended to use srun for quick test runs and for simple workflows. 
@@ -134,7 +134,7 @@ You can also use the feature flag to help properly allocate resources. [For more
 To make use of a feature, such as the KNL nodes use:
 
 ``` bash
-srun -c=40 -C="knl" ./program_to_run
+srun -n=1 -c=40 -C="knl" ./program_to_run
 ```
 
 The above command requests 40 cores for the program to run, which is only available on the Knights Landing Nodes. The -C (constraint) flag ensures that the program is only run on KNL nodes. 
@@ -146,7 +146,7 @@ In order to increase the default memory allocation (2GB), you can use the --mem 
 For example: 
 
 ``` bash
-srun --mem=4G ./program_to_run
+srun -n=1 --mem=4G ./program_to_run
 ```
 
 The above job requests for 4 GB of memory for the default one node. 
