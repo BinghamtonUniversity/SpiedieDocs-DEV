@@ -1,5 +1,5 @@
 ---
-title: Running GPU-enabled Computation on Spiedie (advanced)
+title: GPU on Spiedie (advanced)
 layout: default
 images: []
 tags: []

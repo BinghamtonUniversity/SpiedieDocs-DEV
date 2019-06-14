@@ -1,5 +1,5 @@
 ---
-title: MPI Tutorial (advanced)
+title: MPI on Spiedie (advanced)
 layout: default 
 images: [] 
 tags: [tutorial, mpi, multinode]

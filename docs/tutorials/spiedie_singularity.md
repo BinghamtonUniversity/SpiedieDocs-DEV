@@ -1,5 +1,5 @@
 ---
-title: Using Singularity Containers on Spiedie (advanced)
+title: Singularity Containers on Spiedie (advanced)
 layout: default 
 images: [] 
 tags : [tutorial]
