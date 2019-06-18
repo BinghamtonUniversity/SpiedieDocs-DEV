@@ -58,6 +58,18 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-tags"></i>&nbsp; Tutorials
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="height: auto; max-height: 400px; overflow-x: hidden;">
+                {% for page in site.pages %}
+                {% if page.dir == "/tutorials/" %}
+                  <a class="dropdown-item" href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-tags"></i>&nbsp; Tags
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="height: auto; max-height: 400px; overflow-x: hidden;">

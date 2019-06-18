@@ -19,7 +19,6 @@ description: A guide to transferring data to and from Spiedie and setting up net
     * [Windows](#windows_map_home)
     * [Mac](#mac_map_home)
     * [Linux](#linux_map_home)
-4. [Filezilla](#filezilla)
 
 
 

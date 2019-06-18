@@ -27,6 +27,7 @@ description: How to log on to Spiedie from your personal cmoputer using various 
      * [Connected to off-campus Network](#linux_off_campus)  
          * [Installing Pulse Client ](#linux_vpn)
          * [Connect Using SSL VPN and Terminal](#linux_vpn_connect)
+ 4. [Accessing Bright Web Portal](#bright_web)
 
 ## <a name="using_windows"></a> Using Windows
 ***
@@ -108,3 +109,8 @@ Caption: Logged in session
 
 
 ***
+
+## <a name="bright_web"></a> Accessing Bright Web Portal
+Spiedie uses the Bright Computing cluster manager. You can also check the status of clusters on a web portal by loggin in with Spiedie username and password. (Note: This is not the same as your PODS account)
+
+*** [Click here to log into the web portal](https://spiedie.binghamton.edu/userportal/) ***

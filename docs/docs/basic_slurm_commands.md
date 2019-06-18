@@ -7,10 +7,18 @@ description: A walkthrough of the essential slurm commands to run programs, chec
 ---
 
 ***
+### Table of Contents 
 
-## Checking Cluster Info
+1. [Checking cluster info](#info)
+2. [Running a program](#run)
+3. [Checking the Queue](#queue)
+4. [Kill, stop or restart](#ksr)
+5. [Check account utilization](#util)
+***
 
-#### sinfo
+## <a name="info"></a> Checking Cluster Info
+
+#### <a name="info"></a>sinfo
 
 To see the status, such as availability, time limit, number of nodes of the cluster and partition run 
 
@@ -19,7 +27,7 @@ sinfo
 ```
 
 [Click here for more information on the cluster partitions and architecture](cluster_info.html)
-## Running a Program
+## <a name="run"></a> Running a Program
 
 #### Using srun 
 To quickly run a program for prototyping or testing small programs run: 
@@ -40,7 +48,7 @@ For larger and more complex jobs, it is best practice to write a run script to a
 sbatch run_script.sh 
 ```
 
-## Checking the Queue 
+## <a name="queue"></a>Checking the Queue 
 
 #### squeue 
 
@@ -55,7 +63,7 @@ To check a particular users job queue use:
 squeue -u username
 ```
 
-## Kill, stop or restart a job 
+## <a name="ksr"></a>Kill, stop or restart a job 
 
 To kill a specific program by Job ID:
 
@@ -86,7 +94,7 @@ To restart a stopped job:
 ``` bash
 scancel -s SIGCONT jobId
 ```
-## Check utilization history
+## <a name="util"></a>Check utilization history
 
 #### sacct 
 

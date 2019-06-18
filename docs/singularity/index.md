@@ -24,6 +24,7 @@ Users can generate their own container images, use a docker image, or download a
 
 1. <a href="install-singularity.html">Install Singularity </a>
 2. <a href="create-image.html">Create a container image</a>
+    * <a href="syhub-create.html">Create a container on syhub</a>
 3. <a href="singularity-commands.html">Usage</a>
 
 ## Guided Tutorials
