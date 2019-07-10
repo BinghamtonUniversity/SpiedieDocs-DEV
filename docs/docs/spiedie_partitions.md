@@ -11,7 +11,9 @@ description: Learn about the different specialized partitions set up on Spiedie 
 ### Table of Contents 
 1. [Partitions](#partitions)
 2. [Features](#features)
+
 ***
+
 ## <a name="partitions"></a> Partitions
 
 The nodes on Spiedie are parititioned into 4 distinct sets depending on the resources available.   
