@@ -26,7 +26,7 @@ You can take advantage of all the community built containers available on variou
 
 #### <a name="library-link"></a> Build from Sylab Library Image
 
-To use a [Singularity Cloud](https://cloud.sylabs.io/home) pre-built image, run the following: 
+To use a <a href="https://cloud.sylabs.io/home" target="_blank">Singularity Cloud</a>pre-built image, run the following: 
 
 ``` bash 
 
@@ -73,7 +73,7 @@ sudo singularity build image_name.simg /path/to/target/image
 
 You can also create a singularity image by writing a definition file or singularity recipe. 
 
-[Click here for the official documentation on creating recipes](https://singularity.lbl.gov/docs-recipes)
+<a href="https://singularity.lbl.gov/docs-recipes" target="_blank">Click here for the official documentation on creating recipes</a>
 
 To build an image from a recipe file just use: 
 
@@ -84,6 +84,6 @@ sudo singularity build image_name.simg definition_file.def
 [Click here for a collectoin of Spiedie-tested container recipes](recipe-hub.html)
 
 
-This method of creating containers is highly suggested, as it ensures maximum reproducibility. You are also able to create singularity images without ever installing it on your own machine. You can create singularity images on the hub. [Click here for more information](https://github.com/singularityhub/singularityhub.github.io/wiki/Build-A-Container) 
+This method of creating containers is highly suggested, as it ensures maximum reproducibility. You are also able to create singularity images without ever installing it on your own machine. You can create singularity images on the hub. <a href="https://github.com/singularityhub/singularityhub.github.io/wiki/Build-A-Container">Click here for more information</a> 
 
 

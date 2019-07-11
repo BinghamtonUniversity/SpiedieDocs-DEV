@@ -52,7 +52,7 @@ srun -n=1 --partition=<partition_name> --pty bash
 This will allow direct access to a single node in a specific partition defined by ***parition_name*** once it is available. 
 
 For more information on partitions, [click here.](spiedie_partitions.html)
-For a list of all srun parameters, [click here.](https://slurm.schedmd.com/srun.html)
+For a list of all srun parameters, <a href="https://slurm.schedmd.com/srun.html" target="_blank">click here.</a>
 
 ## <a name="sbatch"></a> Using sbatch
 
@@ -70,7 +70,7 @@ The very first line of the script must be the shebang. Such as,
 
 ##### Directives 
 
-We can include sbatch parameter directives after the shebang to specify the parameters we wish to pass to SLURM. sbatch has the same parameters as srun. For a list of all sbatch parameters [click here](https://slurm.schedmd.com/sbatch.html)
+We can include sbatch parameter directives after the shebang to specify the parameters we wish to pass to SLURM. sbatch has the same parameters as srun. For a list of all sbatch parameters <a href="https://slurm.schedmd.com/sbatch.html" target="_blank">click here</a>
 
 Some example run script directives would be, 
 

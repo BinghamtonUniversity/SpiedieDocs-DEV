@@ -58,4 +58,5 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 	
 	7. [X11 Forwarding](x_11_forwarding.html)
 3. <h4>External links </h4>
-	1. [SLURM Documentation](https://slurm.schedmd.com/documentation.html)
+	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">
+	SLURM Documentation</a>

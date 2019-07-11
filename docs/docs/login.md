@@ -34,9 +34,9 @@ description: How to log on to Spiedie from your personal cmoputer using various 
 
 #### <a name="windows_ssh"> </a>Install a SSH client
 
-First we need to install an ssh client. We will be using [PuTTY](https://www.putty.org) for this tutorial. 
+First we need to install an ssh client. We will be using <a href="https://www.putty.org" target="_blank">PuTTY</a> for this tutorial. 
 
-*[Follow these instructions to get PuTTY running on your windows machine](https://www.ssh.com/ssh/putty/windows/install)*
+<a href="https://www.ssh.com/ssh/putty/windows/install" target="_blank">Follow these instructions to get PuTTY running on your windows machine</a>]
    
 
 #### <a name="windows_connect"> </a>Connect from on-campus network 

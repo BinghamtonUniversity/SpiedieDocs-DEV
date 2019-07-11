@@ -46,4 +46,6 @@ singularity run image_name.simg run_script.sh
 
 #### <a name="extern"></a> External resources
 
-[For more advanced features of Singularity framework, consult the Singularity reference guide](https://singularity.lbl.gov/docs-usage) 
+<a href="https://singularity.lbl.gov/docs-usage" target="_blank">
+For more advanced features of Singularity framework, consult the Singularity reference guide	
+</a>
