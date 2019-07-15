@@ -13,6 +13,8 @@ description: A quick guide on enabling and using the Conda environment manager o
 4. [Using Conda](#conda_use)
     1. [Creating a Conda environment](#conda_venv)
     2. [Viewing available environments](#conda_list)
+    3. [Activating environment](#conda_env_activate)
+    4. [Deactivating environment](#conda_env_deactivate)
     3. [Installing packages](#conda_install)
     4. [Viewing installed packages](#conda_env_list)
 5. [Conda Documentation](#conda_doc)
@@ -39,7 +41,7 @@ You should see the terminal include the base environment tag like:
 (base)[username@spiedie81 ~]:
 ```
 
-If you disable Conda at log in and would like to use Conda, run: 
+If you would like to disable Conda at log in and would like to use Conda, run: 
 
 ```bash 
 conda activate 

@@ -12,20 +12,20 @@ This tutorial is designed to get you up and running on Spiedie as quickly as pos
 
 Things covered in this guide:
 
-1. [Logging on to Spiedie](login.html)
-2. [Transferring files to the cluster](data_transfer.html)
-3. [Running basic SLURM commands](basic_slurm_commands.html)  
+1. [Logging on to Spiedie](../docs/login.html)
+2. [Transferring files to the cluster](../docs/data_transfer.html)
+3. [Running basic SLURM commands](../docs/basic_slurm_commands.html)  
 
 Requirements to complete the guide:
 1. A Spiedie user account and password
 2. Computer connected to the internet 
 3. SSL VPN (Pulse) (if not connected to the school internet)
-4. Familairty with programming and [basic command line experience](https://www.codecademy.com/articles/command-line-commands)
+4. Familairty with programming and <a href="https://www.codecademy.com/articles/command-line-commands">basic command line experience</a>
 
 ## Log in
 ***
 
-After acquiring your username and passwword, you should be able to log in to the Spiedie cluster following the steps listed [here](login.html). 
+After acquiring your username and passwword, you should be able to log in to the Spiedie cluster following the steps listed [here](../docs/login.html). 
 
 
 You will be logged in at your home directory. You can add modules and quickly prototype the code you with to run here. You should ***note*** run any lengthy programs in the log in node as it may cause disruptions for other users. You should only run programs using srun and sbatch, which will be explained these tutorials. 
@@ -56,7 +56,7 @@ On your terminal or command prompt go to the directory of the downloaded python 
 ``` bash 
 scp quick_start.py username@spiedie.binghamton.edu:quick_start/
 ```
-replace username with your username and fill inyou password when prompted. This should place the quick_start.py file on the quick_start directory on Spiedie.
+replace username with your username and fill in your password when prompted. This should place the quick_start.py file on the quick_start directory on Spiedie.
 
 To verify the transfer, go back to your logged in session and run 
 
@@ -90,7 +90,8 @@ Before we ask for allocation on the cluster, we can check how busy the system is
 squeue
 ```
 
-This will list all jobs currently running and waiting to be allocated. [You can learn more about how SLURM priorities work here](http://www.ceci-hpc.be/slurm_prio.html)
+This will list all jobs currently running and waiting to be allocated. 
+<a href="http://www.ceci-hpc.be/slurm_prio.html" target="_blank">You can learn more about how SLURM priorities work here</a>
 
 
 Let's run the quick_start.py program. Run 
@@ -103,7 +104,8 @@ This will send your job to the SLURM daemon to be allocated and then run on a qu
 
 We have directed the outputs of the program to the quick_start.log and quick_start_error.log and retained the control of the terminal. 
 
-[You can see a full explanation of the shell command here](https://explainshell.com/explain?cmd=srun+--partition%3Dquick+python3+quick_start.py+1%3Equick_start.log+2%3Equick_start_error.log+%26)
+<a href="https://explainshell.com/explain?cmd=srun+--partition%3Dquick+python3+quick_start.py+1%3Equick_start.log+2%3Equick_start_error.log+%26" target="_blank">You can see a full explanation of the shell command here</a>
+
 
 
 ## Checking job status
