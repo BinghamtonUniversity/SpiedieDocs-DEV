@@ -51,12 +51,19 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 	6. [Compiling Code on Spieide](compilers.html)
 
-	6. [Running Jobs](submitting_jobs.html)
+	7. [Running Jobs](submitting_jobs.html)
 	    * [Using srun](submitting_jobs.html#srun)
 	    * [Using sbatch](submitting_jobs.html#sbatch)
 	    * [Customizing resource allocation](submitting_jobs.html#resource-alloc)
 	
-	7. [X11 Forwarding](x_11_forwarding.html)
+	8. [Using Conda on Spiedie](spiedie_conda.html)
+		* [What is Conda](spiedie_conda.html#conda_intro)
+		* [Activating Conda on Spiedie](spiedie_conda.html#conda_activate)
+		* [Deactivating Conda](spiedie_conda.html#conda_deactivate)
+		* [Using Conda](spiedie_conda.html#conda_use)
+		* <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/overview.html" target="_blank">Conda Documentation</a>
+	8. [X11 Forwarding](x_11_forwarding.html)
+
 3. <h4>External links </h4>
 	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">
 	SLURM Documentation</a>

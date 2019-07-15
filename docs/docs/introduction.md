@@ -15,7 +15,8 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 
 ## <a name="cluster-info"></a> What is a cluster?
-A cluster (as it pertains to computers) refers to a group of servers and other resources that are connected through hardware, networks and software to behave as if they were a single system. There are many reasons this is an attractive thing to do, even for smaller enterprises. These reasons include: high availability, load balancing, parallel processing, systems management and scalability. We'll talk more about each of these applications later in this course. But the main thing to understand right now about clustering is that its goal is to make a group of computers appear (to the outside world and to internal user departments) as if they were one, totally integrated system that is always available and always working fast!
+A cluster is a group of computers or "node"  interconnected through hardware, networks and software to behave as if they were a single system. Some of the advantages of having a high performance clusters are high availability, load balancing, parallel processing, systems management and scalability. 
+
 #### <a name="node-info"></a> What is a node?
 
 
