@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -job-name=CUBLASTEST
+#SBATCH --job-name=CUBLASTEST
 #SBATCH --output=cuda_output.log
 #
 #SBATCH --partition=gpucompute
@@ -7,5 +7,6 @@
 
 module load cuda10.0/blas/10.0.130
 module load cuda10.0/toolkit/10.0.130
-make 2>/dev/null
+nvcc simpleCUBLAS.cpp -c simpleCUBLAS.o
+nvcc simpleCUBLAS.o -o simpleCUBLAS -lcublas
 ./simpleCUBLAS

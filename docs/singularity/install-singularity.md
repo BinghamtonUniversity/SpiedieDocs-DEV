@@ -16,6 +16,6 @@ Installing singularity on a machine is a lengthy process and users must follow t
 ## Installation Links
 ***
 
-#### <a href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#install-on-windows-or-mac">Instructions for Windows and Max</a>
+#### <a href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#install-on-windows-or-mac" target="_blank"> Instructions for Windows and Max</a>
 
-#### <a href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#install-on-linux"> Instructions for Linux </a>
+#### <a href="https://www.sylabs.io/guides/3.0/user-guide/installation.html#install-on-linux" target="_blank"> Instructions for Linux </a>

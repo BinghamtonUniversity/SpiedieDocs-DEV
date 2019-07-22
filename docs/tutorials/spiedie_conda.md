@@ -10,13 +10,17 @@ description: How to activate Conda on Spiedi and install new packages
 
 This tutorial illustrates the use of the Conda environment manager along with the GPU compute node on Spiedie. 
 
+If you'de like to run the same job, but using [Singularity](../singularity/) instead of Conda, [click here!](spiedie_singularity.html)
+
+[Click here for more information on when to use Conda vs. Sinularity vs. Modules](../docs/conda_singularity_modules.html)
+
 Things covered in this guide: 
 
-1. [Enabling and Using Conda](../docs/spiedie_conda.html)
+1. [Enabling and using Conda](../docs/spiedie_conda.html)
 2. [Accessing a GPUCompute partition](../docs/submitting_jobs.md)
 3. Running a GPU-enabled workload
 
-Requirements to cmoplete the guide: 
+Requirements to complete the guide: 
 
 1. Familiarity with Spiedie [(try the quick start if you haven't)](quick_start.md)
 2. Familiarity with shell commands and python 
@@ -124,3 +128,4 @@ b: (Const): /job:localhost/replica:0/task:0/device:GPU:0
 2019-07-15 13:42:49.768300: I tensorflow/core/common_runtime/placer.cc:1059] b: (Const)/job:localhost/replica:0/task:0/device:GPU:0
 ```
 
+The above workflow can modified to work with [sbatch](../docs/submitting_jobs.html) and for general purpose TensorFlow GPU usage. 
