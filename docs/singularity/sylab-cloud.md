@@ -21,7 +21,7 @@ You can create your own Singularity containers, customized for your personal pro
  4. [Sign and verify your container(optional)](#sign_container)
  5. [Host your container online (optional)](#singularity_push)
 
- ## <a name="#make_account"></a>
+ ## <a name="#make_account"></a> Make and account
 
  In order to use the Singularity Cloud Services (SCS), you must create an account. 
 
@@ -29,7 +29,7 @@ You can create your own Singularity containers, customized for your personal pro
  2. Click "Sign in to Sylabs" 
  3. Select method to sign in, with Google, GitHub, GitLab, or Microsoft
  4. Follow the steps to create passwords 
- ## <a name="#access_token"></a>
+ ## <a name="#access_token"></a> Create a Access Token
 
  To use the remote builder, you must associate an access token with your CLI on Spiedie.
 
