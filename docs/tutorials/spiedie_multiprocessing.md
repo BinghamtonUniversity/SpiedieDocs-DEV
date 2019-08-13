@@ -2,7 +2,7 @@
 title: Python Multi-Core Tutorial
 layout: default
 images: []
-tags: []
+tags: [Python, Multiprocessing, Python Program]
 description: 
 ---
 

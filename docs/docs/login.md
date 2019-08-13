@@ -2,7 +2,7 @@
 title: How to Connect to Cluster
 layout: default
 images: []
-tags: [Login, Setup, Configuration, Windows, Mac, Linux]
+tags: [Login, Setup, Configuration, Windows, Mac, Linux, New_User]
 description: How to log on to Spiedie from your personal cmoputer using various operating systems.
 ---
 
@@ -52,10 +52,7 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 3. Click Open or press enter
 4. Type in password (your typed characters will remain hidden on the screen)
 
-
-[//]: # Include image of logged in session
-(image#2)
-Caption: Logged in session 
+ 
 
 #### <a name="windows_off_campus"></a>Connect from off-site internet / remote connection 
 
@@ -65,7 +62,7 @@ Caption: Logged in session
 
 1. Go to [ssl.binghamton.edu](https://ssl.binghamton.edu) and log in using your PODS DOMAIN ID and follow the steps to install Pulse Secure for Windows 
 
-	(Add image of ssl landing page and circle pulse secure for windows link	)
+	<!-- (Add image of ssl landing page and circle pulse secure for windows link	) -->
 
 #### <a name="windows_vpn_connect"> </a>Connect using VPN and PuTTY
 

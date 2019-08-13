@@ -2,7 +2,7 @@
 title: A Quick Introduction to Spiedie
 layout: default 
 images: []
-tags: []
+tags: [New_User]
 description: Welcome to Spiedie and Binghamton University. Glance through here to learn about computer clusters and Spiedie's computing capabilities. 
 ---
 

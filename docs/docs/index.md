@@ -41,7 +41,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 	    * [Switch Modules](spiedie_modules.html#switch)
 	    * [View loaded Modules](spiedie_modules.html#view)
 	    * [Reload all Modules](spiedie_modules.html#reload)
-	    * [Module COllections](spiedie_modules.html#collections)
+	    * [Module Collections](spiedie_modules.html#collections)
 	    * [Modules at Log in](spiedie_modules.html#login)
 	    * [Further uses and help](spiedie_modules.html#help)
 
@@ -62,8 +62,11 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 		* [Deactivating Conda](spiedie_conda.html#conda_deactivate)
 		* [Using Conda](spiedie_conda.html#conda_use)
 		* <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/overview.html" target="_blank">Conda Documentation</a>
-	8. [X11 Forwarding](x_11_forwarding.html)
-
-3. <h4>External links </h4>
+	9. [X11 Forwarding](x_11_forwarding.html)
+	10. [MATLAB on Spiedie](spiedie_matlab.html)
+	11. [ANSYS on Spiedie](spiedie_ansys.html)
+3. <h4> Best Practices </h4>
+	1. [Conda vs. Singularity vs. Modules](conda_singularity_modules.html) 
+4. <h4>External links </h4>
 	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">
 	SLURM Documentation</a>

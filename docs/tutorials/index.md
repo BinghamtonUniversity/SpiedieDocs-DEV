@@ -17,5 +17,6 @@ The guides are designed to get users quickly running programs on the Spiedie Clu
 4. [GPU Compute - CUDA example (advanced)](spiedie_gpu_compute.html)
 5. [Multi-node multi-core program  - MPI example (advanced)](spiedie_MPI.html)
 6. [Containers on Spiedie - Singularity (advanced)](spiedie_singularity.html)
+7. [Conda on Spiedie](spiedie_conda.html)
 
 ***Note: We can further extend these to application specific examples for programs used by many userse (such as TensorFlow, PyTorch, MatLab, etc. ) to serve as a knowledge base***

@@ -26,10 +26,9 @@ You can take advantage of all the community built containers available on variou
 
 #### <a name="library-link"></a> Build from Sylab Library Image
 
-To use a <a href="https://cloud.sylabs.io/home" target="_blank">Singularity Cloud</a>pre-built image, run the following: 
+To use a <a href="https://cloud.sylabs.io/home" target="_blank">Singularity Cloud</a> pre-built image, run the following: 
 
 ``` bash 
-
 sudo singularity build image_name.simg library://library/default/ubuntu
 ```
 

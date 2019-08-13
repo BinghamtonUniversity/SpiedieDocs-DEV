@@ -34,8 +34,11 @@ a.card:hover {
 
 <hr>
 <div class="row">
+    {% assign i = 0 %}
     {% for mypage in site.pages %}
     {% if mypage.dir == "/tutorials/" %}
+    {% if  i < 3 %}
+    {% assign i = i | plus:1 %}
     <div class="col-lg-4 col-sm-6">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
@@ -44,15 +47,21 @@ a.card:hover {
             </div>
         </a>
     </div>
+
+    {% endif %}
     {% endif %}
     {% endfor %}
 </div>
+<a href="{{ site.url }}/tutorials" class="badge badge-primary float-right">Click For More Tutorials</a>
 <h2> <a href="docs/">Documentation</a> </h2>
 
 <hr>
 <div class="row">
+    {% assign i = 0 %}
     {% for mypage in site.pages %}
     {% if mypage.dir == "/docs/" %}
+    {% if  i < 6 %}
+    {% assign i = i | plus:1 %}
     <div class="col-lg-4 col-sm-6">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
@@ -62,15 +71,21 @@ a.card:hover {
         </a>
     </div>
     {% endif %}
+    {% endif %}
     {% endfor %}
 
 </div>
+<a href="{{ site.url }}/docs" class="badge badge-primary float-right">Click For More Docs</a>
 <h2> <a href="singularity/">Singularity on Spiedie</a> </h2>
 
 <hr>
 <div class="row">
-    {% for mypage in site.pages   %}
+    {% assign i = 0 %}
+
+    {% for mypage in site.pages %}
     {% if mypage.dir == "/singularity/"  %}
+    {% if  i < 3 %}
+    {% assign i = i | plus:1 %}
     <div class="col-lg-4 col-sm-6">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
@@ -80,6 +95,8 @@ a.card:hover {
         </a>
     </div>
     {% endif %}
+    {% endif %}
     {% endfor %}
 
 </div>
+<a href="{{ site.url }}/singularity" class="badge badge-primary float-right">Click For More Info</a>

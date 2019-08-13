@@ -24,7 +24,7 @@ Users can generate their own container images, use a docker image, or download a
 
 1. <a href="install-singularity.html">Install Singularity </a>
 2. <a href="create-image.html">Create a container image</a>
-    * <a href="sylab-cloud.html">Create a container on syhub</a>
+    * <a href="sylab-cloud.html">Create a container on sylab cloud</a>
 3. <a href="singularity-commands.html">Usage</a>
 
 ## Guided Tutorials
@@ -34,3 +34,8 @@ Users can generate their own container images, use a docker image, or download a
 ## Singularity Recipe Hub
 
 <a href="recipe-hub.html">Download the pre-tested singularity recipes to build containers quickly and efficiently</a>
+
+## External Links
+
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
