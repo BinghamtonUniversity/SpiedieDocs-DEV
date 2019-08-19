@@ -4,7 +4,6 @@
 #SBATCH --output=mpi_out.log
 #
 #SBATCH -N 2
-#SBATCH -c 2
 #SBATCH --partition=quick
 #
 

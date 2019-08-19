@@ -3,7 +3,7 @@
 #SBATCH --output=omp_output.log
 #
 # Number of cores
-#SBATCH -c 4
+#SBATCH --cpus-per-task=4
 #SBATCH -N 1
 #SBATCH --partition=standard
 

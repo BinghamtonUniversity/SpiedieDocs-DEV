@@ -8,7 +8,7 @@ description: How to run specialzied GPU-accelerated on the GPU partition on Spie
 
 ***
 
-In this tutorial, we will be running the BLAS sample test on a GPU compute node on Spiede. 
+In this tutorial, we will be running the BLAS sample test on a GPU compute node on Spiedie. 
 
 Covered in this guide: 
 
