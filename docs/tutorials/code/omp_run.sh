@@ -5,7 +5,7 @@
 # Number of cores
 #SBATCH -c 4
 #SBATCH -N 1
-#SBATCH --partition-standard
+#SBATCH --partition=standard
 
 # Clear the environment from any previously loaded modules
 module purge > /dev/null 2>&1

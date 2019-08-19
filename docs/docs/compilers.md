@@ -40,11 +40,11 @@ module load intel-cluster-runtime/intel64/3.8
 ```
 
 This loads the following libraries:
-	- Intel Math Kernel LIbrary (Intel MKL&copy;)
-	- Intel Data Analytics Acceleration Library (Intel DAAL&copy;)
-	- Intel Integrated Performance Primitives
-	- Intel MPI library
-	- Intel Thread Building Block Library (Intel TBB&copy;)
+- Intel Math Kernel LIbrary (Intel MKL&copy;)
+- Intel Data Analytics Acceleration Library (Intel DAAL&copy;)
+- Intel Integrated Performance Primitives
+- Intel MPI library
+- Intel Thread Building Block Library (Intel TBB&copy;)
 
 <a href="https://software.intel.com/en-us/node/685016" target="_blank">Click here for the summary of the toolset</a>
 

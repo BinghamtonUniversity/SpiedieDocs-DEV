@@ -90,3 +90,6 @@ desired packages versus building from source or building a new container is much
 ***
 
 
+##### Wnat to use Intel Math Kernel Library (MKL) accelerated Python and packages? Use Conda
+
+- If you would like to use the MKL accelerated version of Python, Numpy, Scipy and other available packages, it is recommended to use Conda, rather than building each package and python from source. 
