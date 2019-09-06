@@ -8,7 +8,7 @@ description: How to set up MATLAB remote desktop server on Spiedie
 
 ***
 
-***Note: The user must have access to the MATLAB Clutester Remote Server and by connected via ethernet on campus. 
+***Note: The user must have access to the MATLAB Cluster Remote Server and by connected via ethernet on campus. 
 The following steps will NOT work through a WiFi connected device.
 ***
 
@@ -22,7 +22,7 @@ The following steps will NOT work through a WiFi connected device.
 
 ***Note: You must have access to the MATLAB Cluster Remote Desktop Server in order to do these steps***
 
-1. Open "Remote Desktop Connecction"
+1. Open "Remote Desktop Connection"
 2. In the "Computer" field type: matlab-pct=cluster.pods.bu.int
 3. Log in using your PODS ID
 
@@ -30,20 +30,20 @@ The following steps will NOT work through a WiFi connected device.
 
 ## <a name="directory_map"></a> Map Spiedie Home Directory
 
-We must mapp the Spiedie Home directory to the "Y" drive.
+We must map the Spiedie Home directory to the "Y" drive.
 
 <a href="data_transfer.html/#Home_dir">You can also map your Spiedie home directory on your personal machine.</a>
 
 1. Open "Computer"
-2. Click "Map netowrk drive"
+2. Click "Map network drive"
 3. Select the drive letter you prefer (Y is recommended)
-4. In the folder box type \\128.226.74.206/username (replace username with your user name)
+4. In the folder box type \\128.226.74.206\username (replace username with your user name)
 	- Select "Connect using different credentials"
 	- To automatically connect every tiem you log on, check the box "Reconnect at log on"
 5. Click "Finish"
 6. When prompted, select "Use another account"
-7. input "./username" where "username" is your Spiedie username and your Spiedie password
-	- The network drive should now be succesfully mounted in your windows explorer window
+7. input ".\username" where "username" is your Spiedie username and your Spiedie password
+	- The network drive should now be successfully mounted in your windows explorer window
 
 
 ## <a name="matlab_configure"></a> MATLAB configuration 
