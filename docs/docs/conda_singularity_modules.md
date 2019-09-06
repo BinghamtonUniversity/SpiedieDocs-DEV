@@ -27,7 +27,7 @@ We have a choice between using
 - [Singularity containers](../singularity/)
 - [Conda](spiedie_conda.html)
 
-Depending on your workload dependecies, one of the above solutions should get you up and running on Spiedie. 
+Depending on your workload dependencies, one of the above solutions should get you up and running on Spiedie. 
 
 Here are a few suggestions to help you choose the best solutions. 
 
@@ -53,10 +53,10 @@ is the quickest and most efficient solution.
 
 ##### Need reproducibility? Multiple users working on same project? Use Singularity. 
 
-- Singularity is a container framework that is specifically created for HPC workloads and natively supports GPUs, Inifniband, and MPI etc. 
+- Singularity is a container framework that is specifically created for HPC workloads and natively supports GPUs, Infiniband, and MPI etc. 
 
-- The Singularity Image Format (SIF) is a single exectuable file that can be cryptographically verified, giving you  100% reproducibility for your projects 
-and experiments, Since Singularity has drop-in compatibilty with nearly environment, the SIF can be shared freely across users and platforms for ease 
+- The Singularity Image Format (SIF) is a single executable file that can be cryptographically verified, giving you  100% reproducibility for your projects 
+and experiments, Since Singularity has drop-in compatibility with nearly environment, the SIF can be shared freely across users and platforms for ease 
 of use and collaboration. 
 
 ***

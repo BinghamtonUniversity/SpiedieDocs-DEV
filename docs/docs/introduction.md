@@ -25,9 +25,9 @@ A node is the name usually used for one unit (usually one computer) in a compute
 ## <a name="cluster-programs"></a> Running jobs on a cluster?
 
 
-In general, jobs are run with a batch- or queueing system. There are several variants of these, with the most common working by the user logging into a "login node" and then putting together and submitting their jobs from there.
+In general, jobs are run with a batch- or queuing system. There are several variants of these, with the most common working by the user logging into a "login node" and then putting together and submitting their jobs from there.
 
-In order to start the job, a "job script" will usually be utilised. In short, it is a list of commands to the batch system, telling it things like: how many nodes to use, how many processors, how much memory, how long to run, program name, any input data, etc. When the job has finished running, it will have produced a number of files, like output data, perhaps error messages, etc.
+In order to start the job, a "job script" will usually be utilized. In short, it is a list of commands to the batch system, telling it things like: how many nodes to use, how many processors, how much memory, how long to run, program name, any input data, etc. When the job has finished running, it will have produced a number of files, like output data, perhaps error messages, etc.
 
 #### <a name="slurm-info">What is SLURM?</a>
 

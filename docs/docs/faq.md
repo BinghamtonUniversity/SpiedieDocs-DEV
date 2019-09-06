@@ -23,7 +23,7 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 ##### <a name="get_spiedie"></a> How do I get a Spiedie account?
 
 - A faculty member can request access through the system admin. 
-<a href="" target="_blank">You can learn more about the subsription policies and request forms here </a> 
+<a href="" target="_blank">You can learn more about the subscription policies and request forms here </a> 
 
 ##### <a name="spiedie_resources"></a> What are the available resources?
 
@@ -37,7 +37,7 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 
 ##### <a name="no_sudo"></a> Why can't I use the sudo command?
 
-- All users have super user privilages revoked by default and will not be given root access.  
+- All users have super user privileges revoked by default and will not be given root access.  
 
 ##### <a name="run_program"></a> How do I run a program?
 
@@ -45,7 +45,7 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 
 ##### <a name="install_question"></a> How do I install new programs?
 
-- Since you will not have root privilages, you must either build from source (custom code should be always compiled on Spiedie prior to running) or use Conda or Singularity. 
+- Since you will not have root privileges, you must either build from source (custom code should be always compiled on Spiedie prior to running), use Conda or Singularity. 
 
 ##### <a name="wait_times"></a> When will my program run?
 
@@ -55,6 +55,6 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 
 ##### <a name="job_failures"></a> Why did my job abruptly finish?
 
-- Job failures are often associated with misconfigured run parameters. Exceeding memory allocation, or time allocation will result a failed job. Only certain partitions can handle high memory, or high CPU jobs and exceeding node allocations will result in a job failure. 
+- Job failures are often associated with mis-configured run parameters. Exceeding memory allocation, or time allocation will result a failed job. Only certain partitions can handle high memory, or high CPU jobs and exceeding node allocations will result in a job failure. 
 
-- For GPU-accelerated programs, it is recommended to use double the video memory allocation for memory allocation, in order to make sure the program is not cancelled. 
+- For GPU-accelerated programs, it is recommended to use double the video memory allocation for memory allocation, in order to make sure the program is not canceled. 

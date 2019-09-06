@@ -16,7 +16,7 @@ description: Learn about the different specialized partitions set up on Spiedie 
 
 ## <a name="partitions"></a> Partitions
 
-The nodes on Spiedie are parititioned into 4 distinct sets depending on the resources available.   
+The nodes on Spiedie are partitioned into 4 distinct sets depending on the resources available.   
 
 #### Quick 
 
@@ -29,7 +29,7 @@ Standard and Default queue are the standard compute nodes used by default. The m
 
 #### Knights Landing 
 
-The Knights Landing partition contains the nodes with 64 cores per socket and 4 threads per core xeon phi cpus. The partition should be used for extremely multihtreaded tasks that really on parallel computation (like openMP) and not message parsing (MPI. 
+The Knights Landing partition contains the nodes with 64 cores per socket and 4 threads per core Xeon phi cpus. The partition should be used for extremely multithreaded tasks that really on parallel computation (like openMP) and not message parsing (MPI. 
 
 #### GPU 
 

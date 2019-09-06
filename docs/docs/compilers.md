@@ -25,9 +25,9 @@ module load gcc
 
 ##### <a name="Intel"></a> ICC
 
-Spiedie also provides users with the Intel Parallel Studio Compilers suite to take advantage of the imprpved performance on the Xeon-Phi architecture available. 
+Spiedie also provides users with the Intel Parallel Studio Compilers suite to take advantage of the improved performance on the Xeon-Phi architecture available. 
 
-You can load the intel compiler from the modules using: 
+You can load the Intel compiler from the modules using: 
 
 ```bash
 module load intel-compiler/

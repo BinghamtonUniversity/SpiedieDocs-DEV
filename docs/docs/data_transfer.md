@@ -9,7 +9,7 @@ description: A guide to transferring data to and from Spiedie and setting up net
 
 ***
 
-***Note: The following steps are only applicable wihle conenctef to the university network. If working off-campus, you must connect first to a SSL VPN. [Click here for more details](ssl_vpn.html)*** 
+***Note: The following steps are only applicable while connected to the university network. If working off-campus, you must connect first to a SSL VPN. [Click here for more details](ssl_vpn.html)*** 
 
 ### Table of Contents 
 
@@ -57,7 +57,7 @@ rsync file.ext <username>@spiedie.binghamton.edu:your/desired/directory
 
 ## <a name= "Home_dir"> </a>Mapping Home Directory
 
-You can map your Spiedie home direcotyry to your file explorer if you wish to use a graphical interface for file transfer 
+You can map your Spiedie home directory to your file explorer if you wish to use a graphical interface for file transfer 
 
 #### <a name="windows_map_home"> </a> Windows Explorer
 1. Open a new windows explorer to PC

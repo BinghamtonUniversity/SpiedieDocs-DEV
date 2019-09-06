@@ -32,7 +32,7 @@ The following steps will NOT work through a WiFi connected device.
 
 We must map the Spiedie Home directory to the "Y" drive.
 
-<a href="data_transfer.html/#Home_dir">You can also map your Spiedie home directory on your personal machine.</a>
+<a href="data_transfer.html#Home_dir">You can also map your Spiedie home directory on your personal machine.</a>
 
 1. Open "Computer"
 2. Click "Map network drive"
@@ -54,7 +54,7 @@ Once you have your home directory mapped, you can open up MATBAL to configure it
 2. In the top bar in "Environment" select "Set Path"
 3. If you do not see \\\\lightning.pods.bu.int\matlab\remotesubmission\16a in your path follow the next few steps, if you do move on to step g.
 4. Click "Add Folder"
-5. Next to "Folder:", in the text box type this: \\\\lightning.pods.bu.int\matlab\remotesubmission\16a
+5. Next to "Folder:", in the text box type this: \\lightning.pods.bu.int\matlab\remotesubmission\16a
 6. Click "Save", then click "Close"
 	1. If prompted for admin credentials click on "Cancel".
 	2. You should then be prompted by MATLAB to save the pathdef.m file to another location. Click "Yes".

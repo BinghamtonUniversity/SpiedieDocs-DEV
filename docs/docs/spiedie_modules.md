@@ -41,7 +41,7 @@ or
 module add module_name
 ```
 
-***Note: Loaded modules are available on your path for your current session. So jobs queued with srun will have access to them. Jobs queued with sbatch will need to load the modules again inorder to have access to them***
+***Note: Loaded modules are available on your path for your current session. So jobs queued with srun will have access to them. Jobs queued with sbatch will need to load the modules again in order to have access to them***
 
 #### <a name="unload"></a> Unloading a Module 
 
