@@ -25,7 +25,7 @@ Requirements to complete the guide:
 ## Log in
 ***
 
-After acquiring your username and passwword, you should be able to log in to the Spiedie cluster following the steps listed [here](../docs/login.html). 
+After acquiring your username and password, you should be able to log in to the Spiedie cluster following the steps listed [here](../docs/login.html). 
 
 
 You will be logged in at your home directory. You can add modules and quickly prototype the code you with to run here. You should ***note*** run any lengthy programs in the log in node as it may cause disruptions for other users. You should only run programs using srun and sbatch, which will be explained these tutorials. 
