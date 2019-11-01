@@ -8,7 +8,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 ### Documentation Index 
 
-1. <h4> Introduction: Spiedie
+1. <h4> Introduction: Spiedie </h4>
     1. <a href="introduction.html">What is a cluster?</a>
     2. <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">What is Spiedie?</a>
     3. <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">how do I get an account?</a> 
@@ -21,6 +21,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 	    * [Using Mac](login.html#using_mac)
 	    * [Using Linux](login.html#using_linux)
 	    * [Accessing Bright Web Portal](login.html#bright_web)
+	    * [X2Go on Spiedie](x2go_spiedie.html)
 	
 	2. [Transferring Data](data_transfer.html)
 	    * [Using SCP](data_transfer.html#SCP)
