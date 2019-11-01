@@ -115,4 +115,4 @@ Spiedie uses the Bright Computing cluster manager. You can also check the status
 
 ## <a name="x2go"></a> Accessing Spiedie via X2Go
 
-*** [Click here for a tutorial on how to connect to Spiedie via X2Go] (x2go_spiedie.html)***
+*** [Click here for a tutorial on how to connect to Spiedie via X2Go](x2go_spiedie.html)***
