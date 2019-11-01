@@ -3,7 +3,7 @@ title: How to Connect to Cluster
 layout: default
 images: []
 tags: [Login, Setup, Configuration, Windows, Mac, Linux, New_User]
-description: How to log on to Spiedie from your personal cmoputer using various operating systems.
+description: How to log on to Spiedie from your personal computer using various operating systems.
 ---
 
 ***
@@ -28,6 +28,7 @@ description: How to log on to Spiedie from your personal cmoputer using various 
          * [Installing Pulse Client ](#linux_vpn)
          * [Connect Using SSL VPN and Terminal](#linux_vpn_connect)
  4. [Accessing Bright Web Portal](#bright_web)
+ 5. [X2Go on Spiedie](x2go_spiedie.html)
 
 ## <a name="using_windows"></a> Using Windows
 ***
@@ -100,7 +101,7 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 	``` shell
 	ssh username@spiedie.binghamton.edu
 	```
-	replace username with spiedie username
+	replace username with your Spiedie username
 3. type in yes and press enter to recognize ssh fingerprint
 4. Enter password
 
@@ -108,6 +109,10 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 ***
 
 ## <a name="bright_web"></a> Accessing Bright Web Portal
-Spiedie uses the Bright Computing cluster manager. You can also check the status of clusters on a web portal by loggin in with Spiedie username and password. (Note: This is not the same as your PODS account)
+Spiedie uses the Bright Computing cluster manager. You can also check the status of clusters on a web portal by login in with Spiedie username and password. (Note: This is not the same as your PODS account)
 
 *** [Click here to log into the web portal](https://spiedie.binghamton.edu/userportal/) ***
+
+## <a name="x2go_spiedie"></a> Accessing Spiedie via X2Go
+
+*** [Click here for a tutorial on how to connect to Spiedie via X2Go] (x2go_spiedie.html)***
