@@ -9,9 +9,9 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 ### Documentation Index 
 
 1. <h4> Introduction: Spiedie </h4>
-    * <a href="introduction.html">What is a cluster?</a>
-    * <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">What is Spiedie?</a>
-    * <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">How do I get an account?</a> 
+    1. <a href="introduction.html">What is a cluster?</a>
+    2. <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">What is Spiedie?</a>
+    3. <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">How do I get an account?</a> 
         * [Subsidized access (No cost)](https://docs.google.com/a/binghamton.edu/forms/d/e/1FAIpQLSe3VQGT37cE1wC1IHz9sQDasEgna2JYqpjLTCFUSOAu5SlCUQ/viewform?usp=sf_link)
         * [Yearly subscription access](https://goo.gl/forms/EKbW3DUSoasTuphu1)
         * [Condo Access](mailto:pvalenta@binghamton.edu)
@@ -70,5 +70,4 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 3. <h4> Best Practices </h4>
 	1. [Conda vs. Singularity vs. Modules](conda_singularity_modules.html) 
 4. <h4>External links </h4>
-	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">
-	SLURM Documentation</a>
+	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">SLURM Documentation</a>
