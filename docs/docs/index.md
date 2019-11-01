@@ -21,7 +21,6 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 	    * [Using Mac](login.html#using_mac)
 	    * [Using Linux](login.html#using_linux)
 	    * [Accessing Bright Web Portal](login.html#bright_web)
-	    * [X2Go on Spiedie](x2go_spiedie.html)
 	
 	2. [Transferring Data](data_transfer.html)
 	    * [Using SCP](data_transfer.html#SCP)
