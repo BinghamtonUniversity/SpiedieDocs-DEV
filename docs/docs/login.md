@@ -28,7 +28,7 @@ description: How to log on to Spiedie from your personal computer using various 
          * [Installing Pulse Client ](#linux_vpn)
          * [Connect Using SSL VPN and Terminal](#linux_vpn_connect)
  4. [Accessing Bright Web Portal](#bright_web)
- 5. [X2Go on Spiedie](x2go_spiedie.html)
+ 5. [X2Go on Spiedie](#x2go)
 
 ## <a name="using_windows"></a> Using Windows
 ***
@@ -113,6 +113,6 @@ Spiedie uses the Bright Computing cluster manager. You can also check the status
 
 *** [Click here to log into the web portal](https://spiedie.binghamton.edu/userportal/) ***
 
-## <a name="x2go_spiedie"></a> Accessing Spiedie via X2Go
+## <a name="x2go"></a> Accessing Spiedie via X2Go
 
 *** [Click here for a tutorial on how to connect to Spiedie via X2Go] (x2go_spiedie.html)***
