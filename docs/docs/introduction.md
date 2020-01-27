@@ -11,7 +11,6 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     1. [What is a node? ](#node-info)
 2. [Running jobs on a Cluster](#cluster-programs)
 3. [Best practices](#best-practices)  
-4. Anything else we can think of? 
 
 
 ## <a name="cluster-info"></a> What is a cluster?
@@ -39,4 +38,3 @@ Slurm has three key functions. First, it allocates exclusive and/or non-exclusiv
 
 1. Don't run programs on the head node
 2. Request appropriate resources for your job 
-3. 
