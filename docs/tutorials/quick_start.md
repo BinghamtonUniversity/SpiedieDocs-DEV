@@ -69,7 +69,7 @@ You should see the python file listed on your screen.
 
 ## Run the program 
 
-Since this is a small prototype program we believe will finish quickly, we will run it interactively using srun. For larger programs we usually need to write a batch script and use sbatch. Running more complex jobs and srun and sbatch are covered here and [here](submitting_jobs.html)
+Since this is a small prototype program we believe will finish quickly, we will run it interactively using srun. For larger programs we usually need to write a batch script and use sbatch. Running more complex jobs and srun and sbatch are covered here and [here](../docs/submitting_jobs.md)
 
 Go back to your logged in Spiedie session and make sure you are on the directory of the qiuck_start.py. 
 
