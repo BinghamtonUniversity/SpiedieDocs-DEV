@@ -60,7 +60,7 @@ The typical way to run a job on a cluster is to write a submission script and ru
 
 #### <a name="run-script"></a> Writing a run script 
 
-*** Note: Take a look at [example_run_script.sh](code/example_run_script.sh) for a complete run script ** 
+*** Note: Take a look at <a href="https://spiediedocs.binghamton.edu/tutorials/code/example_run_script.sh">example_run_script.sh </a> for a complete run script ** 
 
 The very first line of the script must be the shebang. Such as, 
 
