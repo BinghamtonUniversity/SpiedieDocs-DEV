@@ -37,12 +37,12 @@ srun -N 1 --partition=quick ./exectubale
 ```  
 This will allocate one node for a default amount of time on the quick partition. We suggest to use the quick partition as they are limited to 10 minutes per job and are generally easier to find allocation on.
 
-[Click here for more information on the srun command and parameters.](submit_job.html)
+[Click here for more information on the srun command and parameters.](submitting_jobs.html)
 
 #### Using sbatch 
 For larger and more complex jobs, it is best practice to write a run script to automate module loading, passing environment variables, generating input and output files, and then running the executable. 
 
-[Click here for more information on writing batch scripts for sbatch.](submit_job.html) 
+[Click here for more information on writing batch scripts for sbatch.](submitting_jobs.html) 
 
 ``` bash 
 sbatch run_script.sh 
