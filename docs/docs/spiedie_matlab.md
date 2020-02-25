@@ -52,7 +52,7 @@ Once you have your home directory mapped, you can open up MATBAL to configure it
 
 1. Open MATLAB R2019b
 2. In the top bar in "Environment" select "Set Path"
-3. If you do not see \\\\lightning.pods.bu.int\matlab\remotesubmission\19b in your path follow the next few steps, if you do move on to step g.
+3. If you do not see \\\\lightning.pods.bu.int\matlab\remotesubmission\19b in your path follow the next few steps, if you do move on to step 7.
 4. Click "Add Folder"
 5. Next to "Folder:", in the text box type this: \\lightning.pods.bu.int\matlab\remotesubmission\19b
 6. Click "Save", then click "Close"
