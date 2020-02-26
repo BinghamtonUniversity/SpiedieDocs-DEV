@@ -62,13 +62,13 @@ You can map your Spiedie home directory to your file explorer if you wish to use
 #### <a name="windows_map_home"> </a> Windows Explorer
 1. Open a new windows explorer to PC
 2. Click on the computer option on the taskbar and select Map network drive
-3. Select folder letter and paste ```\\128.226.74.206\username``` to the folder text field 
+3. Select folder letter and paste ```\\spiediefiles.binghamton.edu\username``` to the folder text field 
 4. Make sure to select 'Use different credentials' and click finish
 5. Use Spiedie user name and password for your credentials 
 
 #### <a name="linux_map_home"> </a> Linux File System Viewer (Ubuntu)
 1. Open a new system files window
 2. Click on other locations 
-3. Enter ``` smb://128.226.74.206/username``` for the server address, replacing your user name for username and click connect
+3. Enter ``` smb://spiediefiles.binghamton.edu/username``` for the server address, replacing your user name for username and click connect
 4. Click on registered users and use your user name and password to mount the network drive 
 
