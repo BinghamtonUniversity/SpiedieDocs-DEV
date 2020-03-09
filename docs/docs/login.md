@@ -69,7 +69,6 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 
 1. Follow the installation instructions on Pulse Secure for Windows to start a new connection to ssl.binghamton.edu
 
-	(possibly attach the pdf to this site permanently so we can add a hyperlink to the pdf available)
 2. Once connected to the VPN, follow the same steps the university network access to log in to Spiedie. 
 
 
