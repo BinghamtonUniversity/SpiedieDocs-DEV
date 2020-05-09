@@ -70,7 +70,7 @@ This will direct the output of the program to the cuda_out.log file.
 Next, we must request the correct partition for our program to properly run and have access to the P100 gpus available on Spiedie. We therefore request the gpucompute partition with:
 
 ```bash
-#SBATCH --partition-gpucompute
+#SBATCH --partition=gpucompute
 ```
 We can use the default number of nodes (1) and default memory for this program.
 
