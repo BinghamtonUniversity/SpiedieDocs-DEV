@@ -68,7 +68,7 @@ conda create --name spiedie_tf_gpu tensorflow-gpu
 For this tutorial, we will be accessing the interactive shell on a GPUCompute node. In order to request a shell session on SLURM, run: 
 
 ``` bash 
-srun --partition=gpucompute --pty bash
+srun --partition=gpucompute --gres=gpu:1 --pty bash
 ```
 
 Since, we will only be running a simple gpu test program, we will not request additional memory or resources. 
