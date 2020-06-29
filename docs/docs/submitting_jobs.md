@@ -34,10 +34,10 @@ Both the srun and sbatch command have similar capabilities and set of parameters
 To queue a quick test program use:
 
 ``` bash
-srun -n=1 -c=4 <program run command>
+srun -n4 -N1 <program run command>
 ``` 
 
-here we have speciefied to allocate one node (-n=1) and four cores (-c=4), and use defaults for other parameters. 
+here we have speciefied to allocate one node (-N1) and four tasks(cores) (-N4), and use defaults for other parameters. 
 
 #### <a name="interactive-session"></a> Interactive Session
 
@@ -46,7 +46,7 @@ A common use case for srun is to open an interactive shell session on a cluster.
 To start a interaactive session run: 
 
 ```bash 
-srun -n=1 --partition=<partition_name> --pty bash 
+srun -n1 --partition=<partition_name> --pty bash 
 ```
 
 This will allow direct access to a single node in a specific partition defined by ***parition_name*** once it is available. 
@@ -134,7 +134,7 @@ You can also use the feature flag to help properly allocate resources. [For more
 To make use of a feature, such as the KNL nodes use:
 
 ``` bash
-srun -n=1 -c=40 -C="knl" ./program_to_run
+srun -N1 -n40 -C="knl" ./program_to_run
 ```
 
 The above command requests 40 cores for the program to run, which is only available on the Knights Landing Nodes. The -C (constraint) flag ensures that the program is only run on KNL nodes. 
@@ -146,7 +146,7 @@ In order to increase the default memory allocation (2GB), you can use the --mem 
 For example: 
 
 ``` bash
-srun -n=1 --mem=4G ./program_to_run
+srun -n1 --mem=4G ./program_to_run
 ```
 
 The above job requests for 4 GB of memory for the default one node. 
