@@ -74,12 +74,16 @@ Next, we must request the correct partition for our program to properly run and 
 ```
 We can use the default number of nodes (1) and default memory for this program.
 
-Finally, we should also let SLURM know how many tasks we will require for our program. Since we will not be using any parallel CPU computation, we will only request one. 
+We need to let SLURM know how many tasks we will require for our program. Since we will not be using any parallel CPU computation, we will only request one. 
 
 ``` bash
 #SBATCH --ntasks=1
 ```
+Finally, we should also let SLURM know how many GPUs we will require for our program. In this instance we are requesting 1 GPU.
 
+``` bash
+#SBATCH --gres=gpu:1
+```
 We've finished defining our resource allocation parameters for our job.
 
 ## Loading modules
