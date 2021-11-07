@@ -35,7 +35,7 @@ Go to the directory of the file you wish to transfer using your terminal or comm
 scp file.ext <username>@spiedie.binghamton.edu:your/desired/directory 
 ``` 
 
-Where file.ext is the file you wish to transfer, \<username> is your username, and the path following : is your desired destination directory. 
+Where `file.ext` is the file you wish to transfer, `<username>` is your username, and the path following `:` is your desired destination directory. 
 
 
 #### Single File Transfer from Spiedie Cluster
