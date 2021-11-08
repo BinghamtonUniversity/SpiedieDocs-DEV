@@ -68,7 +68,7 @@ Use Rsync when:
   * You are transferring large files.
     * In case of network connection failure mid transfer.
     * The entire file does not need to be transferred, only the parts that changed.
-  * When need to keep remote and local directories synced.
+  * When keeping remote and local directories synced.
     * Using the rsync command to sync the directories will only transfer the changed files.
 
 ``` bash 
