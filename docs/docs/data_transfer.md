@@ -28,20 +28,26 @@ description: A guide to transferring data to and from Spiedie and setting up net
 ***
 #### Single File Transfer to/from Spiedie Cluster
 
-Go to the directory of the file you wish to transfer using your terminal or command prompt and run 
+SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two locations.  
 
 ``` bash
-scp file.ext <username>@spiedie.binghamton.edu:your/desired/directory 
+scp source.ext <username>@spiedie.binghamton.edu:path/to/destination
 ``` 
+Lets look at the components of the scp command
 
-Where `file.ext` is the source file you wish to transfer, `<username>` is your username on the remote server `spiedie.binghamton.edu`,  and the path following `:` is the path to the directory to which you transfer the file. 
+`source.ext` is the file you wish to transfer to the remote server.
+
+`<username>` is the username of your spiedie cluster account.
+
+`path/to/destination` is the path to the directory you want to transfer to.
+
 
 To transfer a file **from** spiedie onto your local computer, simply swap the source and destination.
 
 ``` bash
 scp <username>@spiedie.binghamton.edu:your/desired/directory/file.txt .
 ```
-The `.` at the end represents you current local directory.
+The `.` at the end is a shortcut for you current working directory.
 
 #### Directory Transfer to Spiedie Cluster
 
@@ -56,11 +62,14 @@ More informion on the `scp` command can be found <a href='https://linuxize.com/p
 
 ## <a name="RSYNC"> </a> Rsync
 ***
-Similar to SCP, Rsync can also be used to transfer files and folders using the terminal. Where rsync differes is that in only moves portions of the files that have been changed, minimizing the amount of data transferred.
+Similar to SCP, Rsync can also be used to transfer files and folders using the terminal. Rsync differs in that only the portions of the files that have been changed are transferred, minimizing the total amount of data transferred.
 
-For large files, rsync is more suitable in case of network connection failure mid transfer. This is especially useful when you make changes to a number of files in your local directory and want to sync it with you remote directory.
-
-
+Use Rsync when:
+  * You are transferring large files.
+    * In case of network connection failure mid transfer.
+    * The entire file does not need to be transferred, only the parts that changed.
+  * When need to keep remote and local directories synced.
+    * Using the rsync command to sync the directories will only transfer the changed files.
 
 ``` bash 
 rsync file.ext <username>@spiedie.binghamton.edu:your/desired/directory 
