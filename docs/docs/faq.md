@@ -23,7 +23,7 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 ##### <a name="get_spiedie"></a> How do I get a Spiedie account?
 
 - A faculty member can request access through the system admin. 
-<a href="" target="_blank">You can learn more about the subscription policies and request forms here </a> 
+<a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" target="_blank">You can learn more about the subscription policies and request forms here </a> 
 
 ##### <a name="spiedie_resources"></a> What are the available resources?
 
@@ -41,11 +41,11 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 
 ##### <a name="run_program"></a> How do I run a program?
 
-- Spiedie uses SLURM workload manager to run the job queue and schedule users jobs. To learn about SLURM and how submitting jobs work. click [here](basic_slurm_commands.html) and [here](submitting_jobs.html)
+- Spiedie uses SLURM workload manager to run the job queue and schedule users jobs. You can learn about SLURM and how submitting jobs work [here](basic_slurm_commands.html) and [here](submitting_jobs.html)
 
 ##### <a name="install_question"></a> How do I install new programs?
 
-- Since you will not have root privileges, you must either build from source (custom code should be always compiled on Spiedie prior to running), use Conda or Singularity. 
+- Since you will not have root privileges, you must either build from source (custom code should be always compiled on Spiedie prior to running),or use Conda or Singularity. 
 
 ##### <a name="wait_times"></a> When will my program run?
 
