@@ -15,11 +15,11 @@ description: How to log on to Spiedie from your personal computer using various 
      * [Installing Pulse Client](#vpn)
  3. [Using Windows](#using_windows)  
      * [Install SSH Client \(PuTTY\)](#windows_ssh) 
-     * [Connected to University Network](#windows_connect)  
+     * [Connected to University Network](#using_windows)  
  4. [Using Mac](#using_mac)
-     * [Connected to University Network](#mac_connect) 
+     * [Connected to University Network](#using_mac) 
  5. [Using Linux](#using_linux)  
-     * [Connected to University Network](#linux_connect)  
+     * [Connected to University Network](#using_linux)  
  6. [Accessing Bright Web Portal](#bright_web)
  7. [X2Go on Spiedie](#x2go)
 
@@ -27,7 +27,7 @@ description: How to log on to Spiedie from your personal computer using various 
 
 ## <a name="off_campus"></a>Connect from off-site internet / remote connection 
 
-***Note: Take the following steps if logging in from off-campus***
+***Note: Take the following steps if logging in from an off-campus network***
 
 #### <a name="vpn"></a> Install Pulse Secure VPN
 
@@ -35,10 +35,13 @@ description: How to log on to Spiedie from your personal computer using various 
 
 	<!-- (Add image of ssl landing page and circle pulse secure for windows link	) -->
 
-
+***
 
 
 ***Note: The following instructions are for when you are on campus. If you are off campus you must be connected through Pulse Secure.***
+
+
+
 
 ## <a name="using_windows"></a> Using Windows
 ***
@@ -49,11 +52,6 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 
 <a href="https://www.ssh.com/ssh/putty/windows/install" target="_blank">Follow these instructions to get PuTTY running on your windows machine</a>
    
-
-#### <a name="windows_connect"> </a>Connect from on-campus network 
-
-***Note: The following steps are only applicable if connected to the university network. If connecting through off-campus internet, follow the instructions in the next subsection***
-
 1. Open a new PuTTY session
 2. Type in your *username*@spiedie.binghamton.edu in the Host Name (or IP address) text field 
 	
@@ -67,9 +65,8 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 
 
 
-## <a name="using_mac using_linux"> </a> Using Mac or Linux
-
-#### <a name="mac_connect"> </a> Connect from on-campus network
+## <a name="using_mac"> </a> Using Mac or Linux <a name="using_linux"> </a>
+***
 
 1. Open a new terminal window.
 2. Type in the following command and press enter:
