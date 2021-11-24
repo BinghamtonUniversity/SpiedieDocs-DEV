@@ -23,7 +23,7 @@ description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 ##### <a name="get_spiedie"></a> How do I get a Spiedie account?
 
 - A faculty member can request access through the system admin. 
-<a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" target="_blank">You can learn more about the subscription policies and request forms here </a> 
+<a href="gain_access.html" target="_blank">You can learn more about the subscription policies and request forms here </a> 
 
 ##### <a name="spiedie_resources"></a> What are the available resources?
 
