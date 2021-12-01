@@ -60,6 +60,7 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 	Caption: putty log in --->
 3. Click Open or press enter
 4. Type in password (your typed characters will remain hidden on the screen)
+5. ***Note: Use the password that has been provided to you. Once you have logged in, you can then change your password by using the `passwd` command***
 
  
 
@@ -76,6 +77,7 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 	replace `username` with your Spiedie username
 3. If this is your frist time connecting, type yes and press enter to recognize the ssh fingerprint.
 4. Enter password when prompted.
+5. ***Note: Use the password that has been provided to you. Once you have logged in, you can then change your password by using the `passwd` command***
 
 
 ***
