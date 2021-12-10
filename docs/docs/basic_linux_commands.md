@@ -23,7 +23,7 @@ description: Some useful Linux commands.
  
 ***
 
-<h2 id="getting_help" style="background-color:green;color:white">1 - Getting Help</h2>
+<h2 id="getting_help" style="background-color:rgb(0,90,67);color:white">1 - Getting Help</h2>
 
 ***
 
@@ -70,7 +70,7 @@ Again, type **q** to exit.
 
 ***
 
-<h2 id="exploring_directories" style="background-color:green;color:white">2 - Exploring Files and Directories</h2>
+<h2 id="exploring_directories" style="background-color:rgb(0,90,67);color:white">2 - Exploring Files and Directories</h2>
 
 ***
 
@@ -195,7 +195,7 @@ cd ~/learn_unix
 
 ***
 
-<h2 id="manipulating_files_directories" style="background-color:green;color:white">3 - Manipulating Files and Directories</h2>
+<h2 id="manipulating_files_directories" style="background-color:rgb(0,90,67);color:white">3 - Manipulating Files and Directories</h2>
 
 ***
 
@@ -415,7 +415,7 @@ wc file1
 ```
 ***
 
-<h2 id="redirection" style="background-color:green;color:white">4 - Redirection</h2>
+<h2 id="redirection" style="background-color:rgb(0,90,67);color:white">4 - Redirection</h2>
 
 ***
 
@@ -558,7 +558,7 @@ Pipes are a very useful tool for chaining various commands.
 
 ***
 
-<h2 id="processes_jobs" style="background-color:green;color:white">5 - Processes and Jobs</h2>
+<h2 id="processes_jobs" style="background-color:rgb(0,90,67);color:white">5 - Processes and Jobs</h2>
 
 ***
 
@@ -583,7 +583,7 @@ Some processes take a long time to run and hold up the terminal. Backgrounding a
 
 ***
 
-<h2 id="other" style="background-color:green;color:white">6 - Other Helpful Commands</h2>
+<h2 id="other" style="background-color:rgb(0,90,67);color:white">6 - Other Helpful Commands</h2>
 
 ***
 
@@ -657,7 +657,7 @@ Terminate a process by its process identification number ##
 
 ***
 
-<h2 id="editors" style="background-color:green;color:white">7 - Editors</h2>
+<h2 id="editors" style="background-color:rgb(0,90,67);color:white">7 - Editors</h2>
 
 ***
 
