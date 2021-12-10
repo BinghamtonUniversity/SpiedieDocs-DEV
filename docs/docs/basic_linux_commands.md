@@ -2,7 +2,7 @@
 title: Useful Linux Commands
 layout: default
 images: []
-tags: [Login, Setup, Configuration]
+tags: [Login, Setup, Configuration, new_user]
 description: Some useful Linux commands.
 ---
 
@@ -11,41 +11,70 @@ description: Some useful Linux commands.
 
 ### Table of Contents  
 
- 1. [Exploring Files and Directories](#exploring_directories)
- 2. [pwd](#pwd)
- 3. [cd](#cd)
- 4. [chmod](#chmod)
- 5. [cp](#cp)
- 6. [mv](#mv)
- 7. [rm](#rm)
- 8. [more](#more)
- 9. [diff](#diff)
- 10. [paste](#paste)
- 11. [du](#du)
- 12. [echo](#echo)
- 13. [grep](#grep)
- 14. [head](#head)
- 15. [tail](#tail)
- 16. [wc](#wc)
- 17. [history](#history)
- 18. [jobs](#jobs)
- 19. [kill](#kill)
- 20. [mkdir](#mkdir)
- 21. [ls](#ls)
- 22. [Connectors](#connectors)
- 23. [nano](#nano)
- 24. [emacs](#emacs)
- 25. [vi](#vi)
+ 1. [Getting Help](#getting_help)
+ 2. [Exploring Files and Directories](#exploring_directories)
+ 3. [Manipulating Files and Directories](#manipulating_files_directories)
+ 4. [Redirection](#redirection)
+ 5. [Processes and Jobs](#processes_jobs)
+ 6. [Other Helpful Commands](#other)
+ 7. [Editors](#editors)
+   
 
  
+***
+
+<h2 id="getting_help" style="background-color:green;color:white">1 - Getting Help</h2>
 
 ***
 
-<h2 id="exploring_directories" style="background-color:green;color:white">1 - Exploring Files and Directories</h2>
+As we go through this documantation, we well briefly go over various different command and try to give the just enough information so that the user can be comfortable using it. As a result much about each command will be ommited, such as various options and full descriptions of possible uses. Luckily it is easy to quickly find out more about a command you wish to use.
 
 ***
 
-### <a name="listing_files_and_directories"></a> 1.1 - Listing Files and Directories
+### <a name="manuals"></a> 1.1 - Manuals
+
+***
+
+#### <a name="man"></a> man
+
+The manual pages tell you which options a particular command can take, and how each option modifies the behaviour of the command. For instance, to learn about the **ls** command, type
+
+```bash
+man ls
+```
+this will give you full documentation of the **ls** command. You can leave the manual page by simply typing **q**
+
+#### <a name="whatis"></a> whatis
+
+If, however you only want a brief description of the command you can type
+
+```bash
+whatis ls
+```
+
+#### <a name="apropos"></a> apropos
+
+If you arent sure of the exact name of a command, but have an idea of what your looking for, you can type
+
+```bash
+apropos keyword
+```
+This will list all the commands that have the keyword in their manual page header.
+
+For example, type
+
+```bash
+apropos list
+```
+Again, type **q** to exit.
+
+***
+
+<h2 id="exploring_directories" style="background-color:green;color:white">2 - Exploring Files and Directories</h2>
+
+***
+
+### <a name="listing_files_and_directories"></a> 2.1 - Listing Files and Directories
 
 ***
 
@@ -76,7 +105,7 @@ By default the ls command only lists the names of folders and directories. It wi
 
 ***
 
-### <a id="making_directories"></a> 1.2 - Making Directories
+### <a id="making_directories"></a> 2.2 - Making Directories
 
 ***
 
@@ -91,7 +120,7 @@ You can check to see the directory has been created by using the **ls** command.
 
 ***
 
-### <a id="changing_directories"></a> 1.3 - Changing Directories
+### <a id="changing_directories"></a> 2.3 - Changing Directories
 
 ***
 
@@ -106,7 +135,7 @@ If you now type **ls** you will see that this directory is empty.
 
 ***
 
-### <a id="._and_.."></a> 1.4 - The Directories (.) and (..)
+### <a id="._and_.."></a> 2.4 - The Directories (.) and (..)
 
 ***
 
@@ -138,13 +167,13 @@ will move you to one direcctory up in the file system's heirarchy. If you typed 
 
 ***
 
-### <a id="pathnames"></a> 1.5 - Path Names
+### <a id="pathnames"></a> 2.5 - Path Names
 
 ***
 
 #### <a name="pwd"></a> pwd
 
-The **pwd** command (stands for print working directory) gives you the full path of your current working directory. This is useful for knowing exactly where you are in your file system. This command will be particularly useful when transferring files to and from the cluster, as those operations will require the full path of the file or directory to be transferred. To get the full path of your home directory, type **cd** if you are not yet in your home directory, then type
+The **pwd** command (short for print working directory) gives you the full path of your current working directory. This is useful for knowing exactly where you are in your file system. This command will be particularly useful when transferring files to and from the cluster, as those operations will require the full path of the file or directory to be transferred. To get the full path of your home directory, type **cd** if you are not yet in your home directory, then type
 
 ``` bash
 pwd
@@ -166,11 +195,11 @@ cd ~/learn_unix
 
 ***
 
-<h2 id="manipulating_files_directories" style="background-color:green;color:white">2 - Manipulating Files and Directories</h2>
+<h2 id="manipulating_files_directories" style="background-color:green;color:white">3 - Manipulating Files and Directories</h2>
 
 ***
 
-### <a name="creating_files"></a> 2.1 - Creating Empty Files
+### <a name="creating_files"></a> 3.1 - Creating Empty Files
 
 ***
 
@@ -186,13 +215,13 @@ touch file1
 
 ***
 
-### <a name="copying_files"></a> 2.2 - Copying  Files
+### <a name="copying_files"></a> 3.2 - Copying  Files
 
 ***
 
 #### <a name="cp"></a>  cp
 
-The **cp** command (stands for copy) makes a copy of a file. Say we had some file called **file1** in the current directory, and we wanted to create a copy of this file in the same directory called **file1**, we could achiev this by typing
+The **cp** command (short for copy) makes a copy of a file. Say we had some file called **file1** in the current directory, and we wanted to create a copy of this file in the same directory called **file1**, we could achiev this by typing
 
 ```bash
 cp file1 file2
@@ -217,13 +246,13 @@ Also note that in both instances we use the (**.**) shorthand to specify that we
 
 ***
 
-### <a name="moving_files"></a> 2.3 - Moving  Files
+### <a name="moving_files"></a> 3.3 - Moving  Files
 
 ***
 
 #### <a name="mv"></a>  mv
 
-The **mv** command (stands for move) moves a file from one place to another. This differes from the **cp** command in that in the end there is still only one file. If we wanted to move **file1** to **file2** we could type
+The **mv** command (short for move) moves a file from one place to another. This differes from the **cp** command in that in the end there is still only one file. If we wanted to move **file1** to **file2** we could type
 
 ```bash
 mv file1 file2
@@ -238,13 +267,13 @@ mv file1 learn_unix/
 ```
 provided we were working from the home directory.
 
-### <a name="removing_files_directories"></a> 2.4 - Removing  Files and Directories
+### <a name="removing_files_directories"></a> 3.4 - Removing  Files and Directories
 
 ***
 
 #### <a name="rm"></a>  rm
 
-The **rm** command (stands for remove) is used to delete a file or directory. If we has a file called **file1** and we wanted to delete it, we would type
+The **rm** command (short for remove) is used to delete a file or directory. If we has a file called **file1** and we wanted to delete it, we would type
 
 ```bash
 rm file1
@@ -264,7 +293,301 @@ rm -r dir1
 
 ***
 
-### <a name="alias"></a> 1. alias
+### <a name="viewing_files"></a> 3.5 - Viewing Files in the Teminal
+
+***
+
+There are a handful of commands that let you view a file, or portions of a file without having to open an editor. Before we get into those, its useful to start with a cleared terminal window. To do that, we can use the command **clear**
+
+#### <a name="clear"></a>  clear
+
+The **clear** command will clear all the text in the teminal window, leaving you with a fresh view. To clear you window, type
+
+```bash
+clear
+```
+Once the window is clear, we can start viewing files.
+
+#### <a name="cat"></a>  cat
+
+The **cat** command (short for concatonate) allows you to view contents of a file called **file1** on the screen. Type
+
+```bash
+cat file1
+```
+You can also view multiple files by listing them after **cat**.
+
+If you run the cat command without specifing a file to read, it reads the standard input (the keyboard), and on receiving the 'end of file' (^D), copies it to the standard output (the screen). We will use this later when talking about redirection.
+
+#### <a name="less"></a> less
+
+The **less** command writes a file to the screen one page at a time. Type
+
+```bash
+less file1
+```
+
+Once the file is displayed, you can use the keyboard to navigate.
+
+| Key | Navigation |
+| ----| ---|
+| **space-bar** | view next page |
+| **b** | go back one page |
+| **enter** | scroll down one line |
+| **=** | displays information such as line numbers and percentage read |
+| **/*word*** | searches for the word ***word*** following the backslash |
+| **n** | after searching for a worn, n will search for the next occurance |
+| **q**  | quit reading |
+
+#### <a name="head"></a> head
+
+The command **head** will display the first few lines of a file. Type
+
+```bash
+head file1
+```
+By default, the fist 10 lines of **file1** are shown, but you can specify the number of lines to show by using the **-n** flag followed by the number.
+
+
+## <a name="tail"></a> tail
+
+The command **tail** works in the same way as the **head** command except that it displays the last few lines of a file. Type
+
+```bash
+tail file1
+```
+
+The next two command are useful when trying to compare two files.
+
+#### <a name="diff"></a> diff
+
+The diff command (short for difference) compares the contents of two files and displays the differences. To find the difference between **file1** and **file2** you would type
+
+```bash
+diff file1 file2
+```
+In the output, lines from **file1** will be denoted by **<** and lines from **file2** will be denoted by **>**.
+
+#### <a name="paste"></a> paste
+
+The paste command displays the contents of two or more files next to eachother line by line. To view **file1** and **file2**, type
+
+```bash
+paste file1 file2 
+```
+
+***
+
+### <a name="searching_files"></a> 3.6 - Searching Files
+
+***
+
+We've already seen how we can search for specific words in a file by first viewing the file with the **less** command, then typing **/** followed by the word we wish to find, but what if we don't want to use **less**, or what if what we're searching is not a file, but the output of another command (more on this in later sections). There is a more general way to search in the terminal, and that is using the **grep** command.
+
+#### <a name="grep"></a> grep
+
+The **grep** command (short for global regular expression print) is one of many standard UNIX utilities. It searches for specified words or patterns and displays the lines containing them to the screen. To search for the word **string** in the file **file1**, you would type
+
+```bash
+grep string file1
+```
+One thing to keep in mind is that **grep** is case sensitive, meaning that it won't search for lines containing the word **String**. You can also search for phrases and patterns by enclosing them in single quotes. To search for **this is a string**, you would type
+
+```bash
+grep 'this is a string' file1
+```
+You can gain more control over the **grep** command by using flags.
+
+##### Common Flags
+| Syntax | Description |
+| ------ | ----------- |
+| -i    | ignore case |
+| -c     | displays # of times the string is found |
+| -v     | displays all lines except those containing the string |
+| -n     | include line numbers where string is found |
+
+#### <a name="wc"></a> wc
+
+The **wc** command (short for word count) counts the lines, words, and characters in a file. For a file **file1**, type
+
+```bash
+wc file1
+```
+***
+
+<h2 id="redirection" style="background-color:green;color:white">4 - Redirection</h2>
+
+***
+
+### <a name="redirecting_output"></a> 4.1 - Redirecting Output
+
+***
+
+We mentioned earlier that using the **cat** command without specifying a file, it reads the standard input and then displays it to the screen. However, we can actually redirect the **cat** command so that instead of displaying to the screen, it will write to a file. We can do this by using the **>** symbol.
+
+#### <a name=">"></a> Redirecting to a new file
+
+To see this in action, we will redirect the output of the **cat** command to a file called **list1**, type
+
+```bash
+cat > list1
+```
+Then type some words. Press **enter** after each one
+
+```bash
+Binghamton
+Spiedie
+Cluster
+[^d]
+```
+Note that **[^d]** meand press both **[Ctrl]** and **d** at the same time. Each time we press **enter**, the word we typed gets written to the file **list1**.
+
+You can see this by now typing
+
+```bash
+cat list1
+```
+
+#### <a name=">"></a> Appending a File
+
+We can append an already existing file by using **>>**. Lets try appending **list1**, type
+
+```bash
+cat >> list1
+```
+Then type some words. Press **enter** after each one
+
+```bash
+module
+slurm
+node
+[^d]
+```
+
+You can confirm the file has been appended by typing
+
+```bash
+cat list1
+```
+
+#### <a name="concat"></a> Concatenating Files
+
+Redirecting with **>** and **>>** is not only usefule for writing to a file from the standard input, you can also take files as an input. First lets creat a new file **list2**, follow the procedure above to create a new list.
+
+Now we can concatenate **list1** and **list2** and redirect the output to an new file called **biglist**, type
+
+```bash
+cat list1 list2 > biglist
+```
+Confirm it worked by typing 
+
+```bash
+cat biglist
+```
+***
+
+### <a name="redirecting_input"></a> 4.2 - Redirecting Input
+
+***
+
+We can redirect the input of a command using the **<** symbol. To demonstrate this lets introduce a new command called **sort**.
+
+#### <a name="sort"></a> sort
+
+The sort command takes an input and sorts it, the prints it to the screen. Try it out by typing
+
+```bash
+sort
+```
+Then type some words. Press **enter** after each one
+
+```bash
+processor
+gpu
+compute
+memory
+^d
+```
+
+The output will be the list you just gave sorted alphabeticaly.
+
+Now we can try redirecting an input into the **sort** command by using **<**, type
+
+```bash
+sort < biglist
+```
+
+The sorted content of **biglist** shoul be printed to the screen.
+
+We can do all sorts of chaning with th redirection symbols, lets create a new file **slist** that contains the sorted content of **biglist**, type
+
+```bash
+sort < biglist > slist
+```
+
+Use **cat** to confirm.
+
+***
+
+### <a name="pipes"></a> 4.3 - Pipes
+
+***
+
+As we describes earlier, one way to input a list of items a get a sorted list from them is to first redirect the output of the **cat** command to a file **list1**, the use that file as an input to the **sort** command.
+
+This is a very round about way of doing things, and you can be left with random temporary files which will need to be removed. Ideally what we would like is to route the output of one command into the input of another command. This is accomplished with a **pipe**. The symbol for a pip is a verticle bar **|**.
+
+Try typing
+
+```bash
+cat | sort
+```
+
+Now enter a list of items as you have done before
+
+```bash
+processor
+gpu
+compute
+memory
+^d
+```
+You will see that once you press **^d** the sorted list will be printed to the screen.
+
+Pipes are a very useful tool for chaining various commands.
+
+***
+
+<h2 id="processes_jobs" style="background-color:green;color:white">5 - Processes and Jobs</h2>
+
+***
+
+A process is an executing program identified by a unique PID (process identifier). 
+
+#### <a name="ps"></a> ps
+
+The **ps** command ( short for process) is used to see information about your processes, with their associated PID and status. To see the current running processes, type
+
+```bash
+ps
+```
+A process may be in the foreground, in the background, or be suspended. In general the shell does not return the UNIX prompt until the current process has finished executing.
+
+***
+
+### <a name="background_process"></a> 5.1 - Background Processes
+
+***
+
+Some processes take a long time to run and hold up the terminal. Backgrounding a long process has the effect that the UNIX prompt is returned immediately, and other tasks can be carried out while the original process continues executing.
+
+***
+
+<h2 id="other" style="background-color:green;color:white">6 - Other Helpful Commands</h2>
+
+***
+
+### <a name="alias"></a> alias
 
 ```bash
 alias name="command"
@@ -273,7 +596,7 @@ The alias command created a temporary/easier/shorter name for a command or seire
 
 
 
-## <a name="chmod"></a> 4. chmod
+## <a name="chmod"></a> chmod
 
 ```bash
 chmod file1
@@ -282,116 +605,24 @@ Changes write/read/execute permissions for a file
 
 
 
-## <a name="mv"></a> 6. mv
-
-```bash
-mv file1 file2
-```
-Move file1 to file2 (also works with directories). The ```mv``` command can also be used to rename files.
-
-## <a name="rm"></a> 7. rm
-
-```bash
-rm file1
-```
-Deletes file1.
-
-```bash
-rm -r dir1
-```
-Deletes dir1 and all of its contents. Use with caution
-
-``` bash
-rmdir dir1
-```
-Deletes the empty directory dir1
-
-## <a name="more"></a> 8. more
-
-```bash
-more file1
-```
-Display the contents of a file one page at a time.
-
-
-
-## <a name="diff"></a> 9. diff
-
-```bash
-diff file1
-```
-Compares two files and displays the differences in the window.
-
-## <a name="paste"></a> 10. paste
-
-```bash
-paste file1 file2 ...
-```
-Displays the contents of file1 and file1 next to eachother line by line. 
-you can paste more than two.
-
-
-## <a name="du"></a> 11. du
+## <a name="du"></a> du
 
 ```bash
 du
 ```
 Displays the disk usage.
 
-## <a name="echo"></a> 12. echo
+
+## <a name="echo"></a> echo
 
 ```bash
 echo string
 ```
 Displays the string in the temrinal.
 
-## <a name="grep"></a> 13. grep
 
-```bash
-grep string file1
-```
-Search for string in file1 and displays it in the terminal.
 
-### Common Flags
-| Syntax | Description |
-| ------ | ----------- |
-| -i    | ignore case |
-| -c     | displays # of times the string is found |
-| -v     | displays all lines except those containing the string |
-| -n     | include line numbers where string is found |
-
-## <a name="head"></a> 14. head
-
-```bash
-head file1
-```
-Displays the first 10 lines of file1.
-
-``` bash
-head -n file1
-```
-Displays the first n lines of file1.
-
-## <a name="tail"></a> 15. tail
-
-```bash
-tail file1
-```
-Displays the last 10 lines of file1.
-
-``` bash
-tail -n file1
-```
-Displays the last n lines of file1.
-
-## <a name="wc"></a> 16. wc
-
-```bash
-wc file1
-```
-Counts the lines, words, and characters in file1.
-
-## <a name="history"></a> 17. history
+## <a name="history"></a> history
 
 ```bash
 history
@@ -408,14 +639,14 @@ Repeats the nth command from the history list.
 ```
 Repeats the most recent command from the list.
 
-## <a name="jobs"></a> 18. jobs
+## <a name="jobs"></a> jobs
 
 ```bash
 jobs
 ```
 Displays the active jobs and their corresponding job numbers.
 
-## <a name="kill"></a> 19. kill
+## <a name="kill"></a> kill
 
 ```bash
 kill ##
@@ -424,21 +655,13 @@ Terminate a process by its process identification number ##
 
 
 
+***
 
+<h2 id="editors" style="background-color:green;color:white">7 - Editors</h2>
 
-## 22. Connectors <a name="connectors"></a>
+***
 
-| Syntax | Description |
-| ------ | ----------- |
-| `<`    | routes input to comand from file |
-| `>`    | routes output of command to file |
-| `>>`     | shows detailed information about files |
-| `|`   | Same as -l, except sorted by date/time |
-
-
-# Editors
-
-## <a name="nano"></a> 23. nano
+## <a name="nano"></a> nano
 
 ```bash
 nano
@@ -450,7 +673,7 @@ nano file1
 ```
 Opens file1 in the nano editor
 
-## <a name="emacs"></a> 24. emacs
+## <a name="emacs"></a> emacs
 
 ```bash
 emacs
@@ -462,7 +685,7 @@ emacs file1
 ```
 Opens file1 in the emacs editor
 
-## <a name="vi"></a> 25. vi
+## <a name="vi"></a> vi
 
 ```bash
 vi
