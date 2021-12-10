@@ -2,7 +2,7 @@
 title: Useful Linux Commands
 layout: default
 images: []
-tags: [Login, Setup, Configuration, new_user]
+tags: [Login, Setup, Configuration, New_User]
 description: Some useful Linux commands.
 ---
 
