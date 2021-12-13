@@ -58,6 +58,7 @@ this will give you full documentation of the **ls** command. You can leave the m
 
 
 
+***
 
 #### <a name="whatis"></a> whatis
 
@@ -70,6 +71,7 @@ whatis ls
 
 
 
+***
 
 #### <a name="apropos"></a> apropos
 
@@ -220,6 +222,7 @@ you don't move anywhere in the file system. While this might not be usefule for 
 
 
 
+***
 
 #### <a name="parent_dir"></a> The parrent directory (..)
 
@@ -256,6 +259,7 @@ The path printed by this command is your full path.
 
 
 
+***
 
 #### <a name="tilde"></a> ~ (home directory)
 
@@ -439,6 +443,7 @@ Once the window is clear, we can start viewing files.
 
 
 
+***
 
 #### <a name="cat"></a>  cat
 
@@ -454,6 +459,7 @@ If you run the cat command without specifing a file to read, it reads the standa
 
 
 
+***
 
 #### <a name="less"></a> less
 
@@ -478,6 +484,7 @@ Once the file is displayed, you can use the keyboard to navigate.
 
 
 
+***
 
 #### <a name="head"></a> head
 
@@ -491,6 +498,7 @@ By default, the fist 10 lines of **file1** are shown, but you can specify the nu
 
 
 
+***
 
 #### <a name="tail"></a> tail
 
@@ -505,6 +513,7 @@ The next two command are useful when trying to compare two files.
 
 
 
+***
 
 #### <a name="diff"></a> diff
 
@@ -518,6 +527,7 @@ In the output, lines from **file1** will be denoted by **<** and lines from **fi
 
 
 
+***
 
 #### <a name="paste"></a> paste
 
@@ -572,6 +582,7 @@ You can gain more control over the **grep** command by using flags.
 
 
 
+***
 
 #### <a name="wc"></a> wc
 
@@ -637,6 +648,7 @@ cat list1
 
 
 
+***
 
 #### <a name=">"></a> Appending a File
 
@@ -663,6 +675,7 @@ cat list1
 
 
 
+***
 
 #### <a name="concat"></a> Concatenating Files
 
@@ -816,8 +829,125 @@ A process may be in the foreground, in the background, or be suspended. In gener
 
 Some processes take a long time to run and hold up the terminal. Backgrounding a long process has the effect that the UNIX prompt is returned immediately, and other tasks can be carried out while the original process continues executing.
 
+For example, typing
+
+```bash
+sleep 10
+```
+
+will cause the terminal to wait 10 seconds before returning the prompt to the user. Nothing else can be done until the process has completed.
+
+If you want to run processes that take time but retain use of the terminal window, you can run the pricesses in the background by typing **&** after the command, try typing
+
+```bash
+sleep 10 &
+```
+After typing a command to be run in the background, the terminal will output the job number and the PID ofthe process, looking something like this
+
+```bash
+[1] 12345
+```
+
+The job number is the number enclosed in brackets, and the PID is the number tha follows. If you type **ps** while the process is still running you should now see the PID and command listed in the output.
 
 
+
+
+
+***
+
+#### <a name="backgrounding_a_process"></a> Backgrounding a Running Process
+
+
+Now what if you cant anticipate how long a process will run for, or if you decide after the fact that you need to run other processes. Fret not, because it is possible to instruct a currently running process to run in the background instead.
+
+To move a currently running process to the background, first suspend the process by typing **^z** (hold down [**Ctrl**] and type [**z**].
+
+Lets start a long process, type
+
+```bash
+sleep 1000
+```
+
+Now suspend it with **^z**. Once its suspended you can type
+
+```bash
+bg
+```
+
+to move it to the background.
+
+***
+
+#### <a name="Listing_processes"></a> Listing Suspended and Background Processes
+
+We saw one way of listing the current running processes, the **ps** command. The **ps** command can give you information about all the processes running on the system, including the PID. However what if you only want the processes you started in you current session, you can use the **jobs** command.
+
+Try running a command in the background and then type 
+
+```bash
+jobs
+```
+You will get a list of all the running job with an output that looks like
+
+```bash
+[#] [state] [job]
+```
+
+[**#**] will be the jub number, [**state**] will be the state of the job, either *"Running"* or *"Suspended"*, and [**job**] will be the job thats running, i.e. *"sleep 1000"*.
+
+***
+
+#### <a name="foregrounding_processes"></a> Move a Process to the Foreground
+
+If you would like to move a background process to the foreground, you can to do using the **fg** command along with the job number. Type
+
+```bash
+fg %jobnumber
+```
+
+For example to to move a job with job number of **1** to the foreground, type
+
+```bash
+fg %1
+```
+
+If no jobnumber is given then the last suspended process will be foregrounded.
+
+
+***
+
+### <a name="killing_process"></a> 5.2 - Killing Processes
+
+***
+
+There are many reasons why you might want to stop a process from running. To kill a job runningin the foreground you can type **^c** ([**Ctrl**] + [**c**]. 
+
+```bash
+sleep 100
+```
+then
+```bash
+^c
+```
+
+If you want to kill a background process you have to choices to do so, both involving the **kill** command. The first way is to specify the job number of the process you want to kill. 
+
+```bash
+kill %jobnumber
+```
+
+Alternatively you can kill a process by specifying it's PID.
+
+```bash
+kill PID
+```
+
+If a process is refusing to be killed, yuou canuse the **-9** option to force it
+
+```bash
+kill -9 PID
+```
 
 
 ***
