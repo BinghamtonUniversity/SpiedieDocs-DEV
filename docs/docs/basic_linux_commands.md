@@ -1094,7 +1094,7 @@ You can also use the **!** key to recall previously used command, for instance, 
 
 will repeat the most recent command typed. You can also specify a command in the list in a few ways. To repeat the 3rd command in history, you can type
 
-``bash
+```bash
 !3
 ```
 
