@@ -962,14 +962,14 @@ kill -9 PID
 
 #### <a name="alias"></a> alias
 
+The alias command created a temporary/easier/shorter name for a command or seires of commands.
+
 ```bash
 alias name="command"
 ```
-The alias command created a temporary/easier/shorter name for a command or seires of commands.
 
 
-
-
+***
 
 #### <a name="chmod"></a> chmod
 
@@ -979,69 +979,143 @@ chmod file1
 Changes write/read/execute permissions for a file
 
 
+***
 
+#### <a name="df"></a> df
 
-
-#### <a name="du"></a> du
+The **df** (stands for a disk free) command displays the space left on the file system.
 
 ```bash
-du
+df .
 ```
 Displays the disk usage.
 
 
 
+***
 
+#### <a name="du"></a> du
+
+The **du** command displays the number of kilobytes used by each subdirectory. 
+
+```bash
+du
+```
+You can specify root directory to be searched by typing it after the **du** command. For example, to find the memory used for each subdirectory of a directory **dir1**, type
+
+```bash
+du dir1
+```
+
+
+
+
+
+***
 
 #### <a name="echo"></a> echo
+
+The **echo** command prints the string following the command to the temrinal. Try typing
 
 ```bash
 echo string
 ```
-Displays the string in the temrinal.
 
 
+***
+
+#### <a name="gzip"></a>  gzip
+
+The **gzip** command is used to reduce the size of a file by compressing it. To reduce a file called **file1** type
+
+```bash
+gzip file1
+```
+
+the file is compressed and placed into a file called **file1.gz**.
+
+To expand the file you can use the **gunzip** command. To expand **file1.gz** type
+
+```bash
+gunzip file1.gz
+```
 
 
+***
+
+#### <a name="zcat"></a>  zcat
+
+Once you've compressed a file, theres not much you can with it unless you expand it again. However the **zcat** command allows you to read a compressed file. Ypu can read **file1.gz** by typing
+
+```bash
+zcat file1.gz
+```
+
+Just like the **cat** command, you can pipe the output of **zcat** into another command which makes it easier to manage. You can type
+
+```bash
+zcat file1.gz | less
+```
+
+***
+
+#### <a name="find"></a>  find
+
+The **find** command searches through your your directories for files and directories with a given name, date, soze, or any other attributes you can specify. For instance if you wanted to search for all files with the **.txt** extension starting at the current directory and print them to the screen you can type
+
+```bash
+find . -name "*.txt" -print
+```
+The wildcard symbol <strong>*</strong> is a way to disregard anything preceding **.txt**.
+
+Finding files based on their size can be done by typing
+
+```bash
+find . -size +1M -ls
+```
+
+This will display any file over 1Mb in size.
+
+
+***
 
 #### <a name="history"></a> history
+
+The commands you type into the command prompt are all stored in the shell. You can view the history of the commands you entered by using the **history** command. Type
 
 ```bash
 history
 ```
-Displays a list of the history of the commands.
-
-```bash
-!n
-```
-Repeats the nth command from the history list.
+You can also use the **!** key to recall previously used command, for instance, typing
 
 ``` bash
 !!
 ```
-Repeats the most recent command from the list.
 
+will repeat the most recent command typed. You can also specify a command in the list in a few ways. To repeat the 3rd command in history, you can type
 
+``bash
+!3
+```
 
-
-
-#### <a name="jobs"></a> jobs
+If you wanted to repeat the 5th most recent command type
 
 ```bash
-jobs
+!-5
 ```
-Displays the active jobs and their corresponding job numbers.
 
-
-
-
-
-#### <a name="kill"></a> kill
+You can even repeat the last command starting with some command name. For instance if you wanted to repeat the last command starting with **grep**, type
 
 ```bash
-kill ##
+!grep
 ```
-Terminate a process by its process identification number ##
+
+
+
+
+
+
+
 
 
 
