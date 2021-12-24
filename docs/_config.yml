@@ -5,7 +5,7 @@ kramdown:
   hard_wrap: false
 future: true
 jailed: false
-theme: jekyll-theme-primer
+theme: null
 gfm_quirks: paragraph_end
 highlighter: rouge
 plugins:

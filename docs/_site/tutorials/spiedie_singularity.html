@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singularity Containers on Spiedie (advanced) | Spiedie | Binghamton University</title>
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/pygments.css" />
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/bingfont.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/css/default.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css"> -->
+    <!--<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-11743206-2');
+    </script>-->
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a class="navbar-brand" href="http://localhost:4000"
+            ><i class="bu bu-b" style="font-size: 24px"></i>&nbsp;&nbsp; Spiedie
+            Docs</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a class="navbar-link" href="http://localhost:4000/docs">Docs</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="http://localhost:4000/singularity"
+                >Singularity</a
+              >
+            </li>
+            <li class="navbar-item dropdown">
+              <a
+                class="navbar-link dropdown-toggle"
+                href="http://localhost:4000/tutorials"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fa fa-tags"></i>&nbsp; Tutorials
+              </a>
+              <!--<div
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+              style="height: auto; max-height: 400px; overflow-x: hidden"
+            >
+                                 
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/"
+                >Tutorials</a
+              >
+                            
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/quick_start.html"
+                >Quick Start Tutorial - Python</a
+              >
+                    
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_MPI.html"
+                >MPI on Spiedie (advanced)</a
+              >
+                  
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_conda.html"
+                >Conda on Spiedie (intermediate)</a
+              >
+                
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_gpu_compute.html"
+                >GPU on Spiedie (advanced)</a
+              >
+                    
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_multiprocessing.html"
+                >Python Multi-Core Tutorial</a
+              >
+                
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_openmp_multi_core.html"
+                >OpenMP on Spiedie (advanced)</a
+              >
+                  
+              <a class="dropdown-item" href="http://localhost:4000/tutorials/spiedie_singularity.html"
+                >Singularity Containers on Spiedie (advanced)</a
+              >
+                                   
+            </div>-->
+            </li>
+            <li class="navbar-item dropdown">
+              <a
+                class="navbar-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fa fa-tags"></i>&nbsp; Tags
+              </a>
+              <!--<div
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+              style="height: auto; max-height: 400px; overflow-x: hidden"
+            >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#blas"
+                >BLAS</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#clang"
+                >CLANG</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#cmake"
+                >CMAKE</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#cublas"
+                >CUBLAS</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#cuda"
+                >CUDA</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#check-job-status"
+                >Check Job Status</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#cloud-storage"
+                >Cloud Storage</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#conda"
+                >Conda</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#configuration"
+                >Configuration</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#containers"
+                >Containers</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#create-images"
+                >Create Images</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#faq"
+                >FAQ</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#file-transfer"
+                >File Transfer</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#forwarding"
+                >Forwarding</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#gcc"
+                >GCC</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#gemm"
+                >GEMM</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#gpu"
+                >GPU</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#gpucompute"
+                >GPUCompute</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#gui"
+                >GUI</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#icc"
+                >ICC</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#intel-compilers"
+                >Intel Compilers</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#interactive-sessions"
+                >Interactive Sessions</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#job-submission"
+                >Job Submission</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#linux"
+                >Linux</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#login"
+                >Login</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#matlab"
+                >MATLAB</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#mvapich2"
+                >MVAPICH2</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#mac"
+                >Mac</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#modules"
+                >Modules</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#multiprocessing"
+                >Multiprocessing</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#new-user"
+                >New_User</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#python"
+                >Python</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#python-program"
+                >Python Program</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#remote-access"
+                >Remote Access</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#remote-build"
+                >Remote Build</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#run-program"
+                >Run Program</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#sbatch"
+                >SBATCH</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#slurm"
+                >SLURM</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#srun"
+                >SRUN</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#setup"
+                >Setup</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity"
+                >Singularity</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#submit-job"
+                >Submit Job</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#submit-job"
+                >Submit job</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#sylabs-cloud-services"
+                >Sylabs Cloud Services</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#tensorflow"
+                >Tensorflow</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#tensorflow-gpu"
+                >Tensorflow-GPU</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#tutorial"
+                >Tutorial</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#windows"
+                >Windows</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#workflow"
+                >Workflow</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#x11"
+                >X11</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#containers"
+                >containers</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#create-image"
+                >create image</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#custom-container"
+                >custom container</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#docs"
+                >docs</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#features"
+                >features</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#interactive-session"
+                >interactive session</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#memory-allocation"
+                >memory allocation</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#memory-management"
+                >memory management</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#modules"
+                >modules</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#mpi"
+                >mpi</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#multicore"
+                >multicore</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#multinode"
+                >multinode</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#partitions"
+                >partitions</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#sacct"
+                >sacct</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#sbatch"
+                >sbatch</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#sinfo"
+                >sinfo</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity"
+                >singularity</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity-definition-files"
+                >singularity definition files</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity-exec"
+                >singularity exec</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity-recipes"
+                >singularity recipes</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#singularity-run"
+                >singularity run</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#srun"
+                >srun</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#tutorial"
+                >tutorial</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#tutorials"
+                >tutorials</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#virtual-environment"
+                >virtual environment</a
+              >
+              
+              <a
+                class="dropdown-item"
+                href="http://localhost:4000/tags#x2go"
+                >x2go</a
+              >
+              
+            </div>-->
+            </li>
+          </ul>
+          <!--<form class="form-inline">
+          <input
+            class="form-control mr-sm-2 docs_search"
+            type="search"
+            placeholder="Search Docs"
+            aria-label="Search Documentation"
+          />
+        </form>-->
+        </div>
+      </nav>
+
+      <main>
+        <aside class="sidebar">
+          <div class="sidebar-container">
+            <div class="sidebar-search">
+              <form class="search-bar">
+                <input
+                  type="text"
+                  class="form-control docs_search"
+                  placeholder="Search Docs"
+                />
+              </form>
+            </div>
+            <div class="sidebar-menu no-scroll-bar">
+              
+                <ol class="toc-l1"><li class="toc-item toc-l1-item">
+                      <h3 class="toc-l1-title">Introduction to Spiedie</h3>
+                      
+                        <ol class="sub-toc toc-l2"><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/introduction.html" target=>What ia a Cluster</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" target=_blank>What is Spiedie</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" target=_blank>How do I get an account</a>
+                              
+                                
+                              
+                            </li></ol>
+                      
+                    </li><li class="toc-item toc-l1-item">
+                      <h3 class="toc-l1-title">How To Use Spiedie</h3>
+                      
+                        <ol class="sub-toc toc-l2"><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/login.html" target=>Logging In</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/data_transfer.html" target=>Transferring Data</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/basic_linux_commands.html" target=>Basic Linux Commands</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/basic_slurm_commands.html" target=>Basic SLURM Commands</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/spiedie_modules.html" target=>Spiedie Modules</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/spiedie_partitions.html" target=>Spiedie Partitions and Features</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/compilers.html" target=>Compiling Code On Spiedie</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/submitting_jobs.html" target=>Running Jobs</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/spiedie_conda.html" target=>Using Conda on Spiedie</a>
+                              
+                                
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/x_11_forwarding.html" target=>X11 Fowarding</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/spiedie_matlab.html" target=>MATLAB on Spiedie</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/docs/spiedie_ansys.html" target=>ANSYS on Spiedie</a>
+                              
+                            </li></ol>
+                      
+                    </li><li class="toc-item toc-l1-item">
+                      <h3 class="toc-l1-title">Tutorials</h3>
+                      
+                        <ol class="sub-toc toc-l2"><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/quick_start.html" target=>Quick Start (Python)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/spiedie_multiprocessing.html" target=>Multi-core Program (Python)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/spiedie_openmpi_multi_core.html" target=>Multi-core (C++/OpenMPI)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/spiedie_gpu_compute.html" target=>GPU Compute (CUDA)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/spiedie_MPI.html" target=>Multi-node Multi-core Program (MPI)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/singularity.html" target=>Using Containers (Singularity)</a>
+                              
+                            </li><li class=" toc-item toc-l2-item">
+                              <a class="toc-link toc-l2-link" href="/tutorials/conda.html" target=>Using Conda (Python)</a>
+                              
+                            </li></ol>
+                      
+                    </li></ol>
+              
+            </div>
+          </div>
+        </aside>
+        <div class="content-container">
+          <section class="main-content no-scroll-bar">
+            <h1>
+               Singularity Containers on Spiedie (advanced) 
+            </h1>
+            
+            <article >
+              <p>This guide illustrates the use of Singularity containers to run a job on the GPU compute node on Spiedie.</p>
+
+<p>If you’de like to run the same job, but using <a href="../docs/spiedie_conda.html">Conda</a> instead of Singularity, <a href="spiedie_conda.html">click here!</a></p>
+
+<p><a href="../docs/conda_singularity_modules.html">Click here for more information on when to use Conda vs. Sinularity vs. Modules</a></p>
+
+<p>Things covered in this guide:</p>
+
+<ol>
+  <li><a href="../singularity/singularity_commands.md">Creating or pulling Singularity containers</a></li>
+  <li>Binding module directories to container environment</li>
+  <li>Running a GPU-enabled workload</li>
+</ol>
+
+<p>Requirements to complete this guide:</p>
+
+<ol>
+  <li>Familiarity with Spiedie <a href="/tutorials/quick_start.html">(try the quick start if you haven’t)</a></li>
+  <li>Local installation of Singularity
+    <ul>
+      <li><a href="../singularity/syhub-create.html">Github account (to create image on syhub)</a></li>
+    </ul>
+  </li>
+  <li>Familiarity with shell commands and python</li>
+</ol>
+
+<h2 id="creating-or-pulling-singularity-containers">Creating or Pulling Singularity Containers</h2>
+
+<p>For this tutorial, we will be using a custom singularity image to run gpu-enabled Tensorflow on a GPU-compute node.</p>
+
+<p>We have a few options for creating our container image. We can either create the image on a local machine and transfer it to Spiedie or we can generate the image on the <a href="https://singularity-hub.org/" targer="_blank">singularity-hub </a> container repository.</p>
+
+<h4 id="creating-singularity-containers">Creating Singularity Containers</h4>
+
+<p>If you would like to create the image locally first, <a href="../singularity/install-singularity.html">you must install Singularity on a machine in which you have root access.</a></p>
+
+<p>We will use the verified  <a href="recipes/spiedie_tensorflow_gpu.def" download="">TensorFlow-GPU recipe</a> available on the <a href="../singularity/recipe-hub.html">Singularity Recipe Hub.</a></p>
+
+<p>Once you have downloaded the recipe, build the image by simply running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>singularity build spiedie_tf_gpu.simg spiedie_tensorflow_gpu.def 
+</code></pre></div></div>
+
+<p><em>** Note: This may take a few minutes depending on the speed of your machine. The resulting .simg file may &gt;3 GB **</em></p>
+
+<p>Once the container image is created, we will need to transfer image to Spiedie.</p>
+
+<p>Log in to Spiedie and create a new directory for our new project.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>GPU_Compute_Example
+</code></pre></div></div>
+
+<p>Transfer the image using scp from your local machine:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp spiedie_tf_gpu.simg username@spiedie.binghamton.edu:./GPU_Compute_Example/
+</code></pre></div></div>
+
+<p>For more data transer instructions, <a href="../docs/data_transfer.html">click here</a></p>
+
+<p>We will be running a simple 5000 element dot product on our P100 GPUs and logging the device placement.  <a href="code/tf_gpu.py">You can download here.</a></p>
+
+<p>Download the source code and transfer it to the project directory from your local machine with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp tf_gpu.py username@spiedie.binghamton.edu:./GPU_Compute_Example/
+</code></pre></div></div>
+
+<p>Once the source code is uploaded, we can write the batch script to submit our job request.</p>
+
+<p>Create a new file in the same directory on Spiedie called, singularity_gpu_test.sh.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>singularity_gpu_test.sh
+</code></pre></div></div>
+<p>Using your preferred editor such as nano, emacs, or vim, edit the new file directly on Spiedie.</p>
+
+<p>You can also locally write the script and transfer it once you are done.</p>
+
+<p>The first line in the batch script must be the shebang. So we must have,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin.bash</span>
+</code></pre></div></div>
+
+<p>Next, we will name our job so we are able to monitor it if we wish to on the slurm queue. To assign a job name add :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#SBATCH --job-name=SINGULARITY_GPU_TEST</span>
+</code></pre></div></div>
+
+<p>This will name the job CUBLASTEST.</p>
+
+<p>Next, we will assign output file to log all the standard output from our program.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#SBATCH --output=tf_gpu_output.log</span>
+</code></pre></div></div>
+
+<p>This will direct the output of the program to the cuda_out.log file.</p>
+
+<p>Next, we must request the correct partition for our program to properly run and have access to the P100 gpus available on Spiedie. We therefore request the gpucompute partition with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#SBATCH --partition-gpucompute</span>
+</code></pre></div></div>
+<p>We can use the default number of nodes (1) and default memory for this program.</p>
+
+<p>Finally, we should also let SLURM know how many tasks we will require for our program. Since we will not be using any parallel CPU computation, we will only request one.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#SBATCH --ntasks=1</span>
+</code></pre></div></div>
+
+<p>We’ve finished defining our resource allocation parameters for our job.</p>
+
+<h2 id="binding-module-directories">Binding Module Directories</h2>
+
+<p>We must first load the Singularity module installed on Spiedie. Append the following line to the batch scrip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load singularity/3.1.1
+</code></pre></div></div>
+
+<p>We need the CUDA drivers available on Spiedie to succesfully have access to the GPUs.</p>
+
+<p>We must load the CUDA toolkit, and associated driver with.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load cuda10.0/toolkit/10.0.130
+</code></pre></div></div>
+
+<p>The loaded library will not be available to the container automatically, so before we run the container, we must expose the module directory to the container.</p>
+
+<p>We can add additional directories to the container, by simply binding those directories. We add additional paths by updating the SINGULARITY_BINDPATH variable.</p>
+
+<p>We can also bind paths using the -B/–bind flag. <a href="https://singularity.lbl.gov/docs-mount" target="_blank">click here for more details</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">SINGULARITY_BINDPATH</span><span class="o">=</span><span class="s2">"/cm/shared/apps/cuda10.0/toolkit/current/lib64/,/cm/local/apps/cuda-driver/libs/418.40.04/lib64/"</span>
+</code></pre></div></div>
+
+<h2 id="running-a-gpu-enabled-workload">Running a GPU-enabled Workload</h2>
+
+<p>Finally our environment is set up and we can run our test file. Add the line</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>singulariy run  spiedie_tf_gpu.simg python3.6 tf_gpu.py
+</code></pre></div></div>
+
+<p>The complete singularity_gpu_test.sh file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin.bash</span>
+<span class="c">#SBATCH --job-name=SINGULARITY_GPU_TEST</span>
+<span class="c">#SBATCH --output=tf_gpu_output.log</span>
+<span class="c">#</span>
+<span class="c">#SBATCH --partition-gpucompute</span>
+<span class="c">#SBATCH --ntasks=1</span>
+
+module load singularity/3.1.1
+module load cuda10.0/toolkit/10.0.130
+<span class="nb">export </span><span class="nv">SINGULARITY_BINDPATH</span><span class="o">=</span><span class="s2">"/cm/shared/apps/cuda10.0/toolkit/current/lib64/,/cm/local/apps/cuda-driver/libs/418.40.04/lib64/"</span>
+singulariy run  spiedie_tf_gpu.simg python3.6 tf_gpu.py
+</code></pre></div></div>
+
+<p><a href="/tutorials/code/singularity_gpu.sh">Click here to download the complete batch file.</a></p>
+
+<p>We can now queue the job to SLURM with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sbatch singularity_cpu_test.sh
+</code></pre></div></div>
+
+<p>The job should be queued and the output logged in tf_gpu_output.log.</p>
+
+<p>You can run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>tf_gpu_output.log
+</code></pre></div></div>
+
+<p>You should see the following output:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Device mapping:
+/job:localhost/replica:0/task:0/device:XLA_CPU:0 -&gt; device: XLA_CPU device
+/job:localhost/replica:0/task:0/device:GPU:0 -&gt; device: 0, name: Tesla P100-PCIE-12GB, pci bus <span class="nb">id</span>: 0000:82:00.0, compute capability: 6.0
+/job:localhost/replica:0/task:0/device:GPU:1 -&gt; device: 1, name: Tesla P100-PCIE-12GB, pci bus <span class="nb">id</span>: 0000:83:00.0, compute capability: 6.0
+/job:localhost/replica:0/task:0/device:XLA_GPU:0 -&gt; device: XLA_GPU device
+/job:localhost/replica:0/task:0/device:XLA_GPU:1 -&gt; device: XLA_GPU device
+2019-07-15 13:42:49.767029: I tensorflow/core/common_runtime/direct_session.cc:317] Device mapping:
+/job:localhost/replica:0/task:0/device:XLA_CPU:0 -&gt; device: XLA_CPU device
+/job:localhost/replica:0/task:0/device:GPU:0 -&gt; device: 0, name: Tesla P100-PCIE-12GB, pci bus <span class="nb">id</span>: 0000:82:00.0, compute capability: 6.0
+/job:localhost/replica:0/task:0/device:GPU:1 -&gt; device: 1, name: Tesla P100-PCIE-12GB, pci bus <span class="nb">id</span>: 0000:83:00.0, compute capability: 6.0
+/job:localhost/replica:0/task:0/device:XLA_GPU:0 -&gt; device: XLA_GPU device
+/job:localhost/replica:0/task:0/device:XLA_GPU:1 -&gt; device: XLA_GPU device
+
+MatMul: <span class="o">(</span>MatMul<span class="o">)</span>: /job:localhost/replica:0/task:0/device:GPU:0
+2019-07-15 13:42:49.768241: I tensorflow/core/common_runtime/placer.cc:1059] MatMul: <span class="o">(</span>MatMul<span class="o">)</span>/job:localhost/replica:0/task:0/device:GPU:0
+a: <span class="o">(</span>Const<span class="o">)</span>: /job:localhost/replica:0/task:0/device:GPU:0
+2019-07-15 13:42:49.768275: I tensorflow/core/common_runtime/placer.cc:1059] a: <span class="o">(</span>Const<span class="o">)</span>/job:localhost/replica:0/task:0/device:GPU:0
+b: <span class="o">(</span>Const<span class="o">)</span>: /job:localhost/replica:0/task:0/device:GPU:0
+2019-07-15 13:42:49.768300: I tensorflow/core/common_runtime/placer.cc:1059] b: <span class="o">(</span>Const<span class="o">)</span>/job:localhost/replica:0/task:0/device:GPU:0
+</code></pre></div></div>
+
+
+              <!-- Small Screen Images -->
+              <div class="row">
+                <div class="col-sm-12 d-md-block d-lg-none">
+                  
+                </div>
+              </div>
+              <!-- End Small Screen Images -->
+
+              
+            </article>
+          </section>
+          <section class="content-detail">
+            <!-- Begin Tags -->
+            <div class="content-tags-container">
+              
+                <h3 class="content-tags-title">Tags</h3>
+                <ul class="content-tags-list">
+                  
+                    <li class="content-tag">
+                      <a class="content-tag-link" href="http://localhost:4000/tags#tutorial">
+                        tutorial
+                      </a>
+                    </li>
+                  
+                </ul>
+              
+              </div>
+            </div>
+            <!-- End Tags -->
+          </section>
+        </div>
+      </main>
+      <footer class="row">
+        <div class="col-sm-12">
+          <!-- Footer -->
+        </div>
+      </footer>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://localhost:4000/assets/js/jquery.autocomplete.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
+    <script>
+      var docs_arr = [
+      {
+        "url":`/tutorials/`,
+        "value": `Tutorials` 
+      },{
+        "url":`/tutorials/quick_start.html`,
+        "value": `Quick Start Tutorial - Python` 
+      },{
+        "url":`/tutorials/spiedie_MPI.html`,
+        "value": `MPI on Spiedie (advanced)` 
+      },{
+        "url":`/tutorials/spiedie_conda.html`,
+        "value": `Conda on Spiedie (intermediate)` 
+      },{
+        "url":`/tutorials/spiedie_gpu_compute.html`,
+        "value": `GPU on Spiedie (advanced)` 
+      },{
+        "url":`/tutorials/spiedie_multiprocessing.html`,
+        "value": `Python Multi-Core Tutorial` 
+      },{
+        "url":`/tutorials/spiedie_openmp_multi_core.html`,
+        "value": `OpenMP on Spiedie (advanced)` 
+      },{
+        "url":`/tutorials/spiedie_singularity.html`,
+        "value": `Singularity Containers on Spiedie (advanced)` 
+      },
+      {
+        "url":`/tags#blas`,
+        "value":`BLAS`
+      },{
+        "url":`/tags#clang`,
+        "value":`CLANG`
+      },{
+        "url":`/tags#cmake`,
+        "value":`CMAKE`
+      },{
+        "url":`/tags#cublas`,
+        "value":`CUBLAS`
+      },{
+        "url":`/tags#cuda`,
+        "value":`CUDA`
+      },{
+        "url":`/tags#check-job-status`,
+        "value":`Check Job Status`
+      },{
+        "url":`/tags#cloud-storage`,
+        "value":`Cloud Storage`
+      },{
+        "url":`/tags#conda`,
+        "value":`Conda`
+      },{
+        "url":`/tags#configuration`,
+        "value":`Configuration`
+      },{
+        "url":`/tags#containers`,
+        "value":`Containers`
+      },{
+        "url":`/tags#create-images`,
+        "value":`Create Images`
+      },{
+        "url":`/tags#faq`,
+        "value":`FAQ`
+      },{
+        "url":`/tags#file-transfer`,
+        "value":`File Transfer`
+      },{
+        "url":`/tags#forwarding`,
+        "value":`Forwarding`
+      },{
+        "url":`/tags#gcc`,
+        "value":`GCC`
+      },{
+        "url":`/tags#gemm`,
+        "value":`GEMM`
+      },{
+        "url":`/tags#gpu`,
+        "value":`GPU`
+      },{
+        "url":`/tags#gpucompute`,
+        "value":`GPUCompute`
+      },{
+        "url":`/tags#gui`,
+        "value":`GUI`
+      },{
+        "url":`/tags#icc`,
+        "value":`ICC`
+      },{
+        "url":`/tags#intel-compilers`,
+        "value":`Intel Compilers`
+      },{
+        "url":`/tags#interactive-sessions`,
+        "value":`Interactive Sessions`
+      },{
+        "url":`/tags#job-submission`,
+        "value":`Job Submission`
+      },{
+        "url":`/tags#linux`,
+        "value":`Linux`
+      },{
+        "url":`/tags#login`,
+        "value":`Login`
+      },{
+        "url":`/tags#matlab`,
+        "value":`MATLAB`
+      },{
+        "url":`/tags#mvapich2`,
+        "value":`MVAPICH2`
+      },{
+        "url":`/tags#mac`,
+        "value":`Mac`
+      },{
+        "url":`/tags#modules`,
+        "value":`Modules`
+      },{
+        "url":`/tags#multiprocessing`,
+        "value":`Multiprocessing`
+      },{
+        "url":`/tags#new-user`,
+        "value":`New_User`
+      },{
+        "url":`/tags#python`,
+        "value":`Python`
+      },{
+        "url":`/tags#python-program`,
+        "value":`Python Program`
+      },{
+        "url":`/tags#remote-access`,
+        "value":`Remote Access`
+      },{
+        "url":`/tags#remote-build`,
+        "value":`Remote Build`
+      },{
+        "url":`/tags#run-program`,
+        "value":`Run Program`
+      },{
+        "url":`/tags#sbatch`,
+        "value":`SBATCH`
+      },{
+        "url":`/tags#slurm`,
+        "value":`SLURM`
+      },{
+        "url":`/tags#srun`,
+        "value":`SRUN`
+      },{
+        "url":`/tags#setup`,
+        "value":`Setup`
+      },{
+        "url":`/tags#singularity`,
+        "value":`Singularity`
+      },{
+        "url":`/tags#submit-job`,
+        "value":`Submit Job`
+      },{
+        "url":`/tags#submit-job`,
+        "value":`Submit job`
+      },{
+        "url":`/tags#sylabs-cloud-services`,
+        "value":`Sylabs Cloud Services`
+      },{
+        "url":`/tags#tensorflow`,
+        "value":`Tensorflow`
+      },{
+        "url":`/tags#tensorflow-gpu`,
+        "value":`Tensorflow-GPU`
+      },{
+        "url":`/tags#tutorial`,
+        "value":`Tutorial`
+      },{
+        "url":`/tags#windows`,
+        "value":`Windows`
+      },{
+        "url":`/tags#workflow`,
+        "value":`Workflow`
+      },{
+        "url":`/tags#x11`,
+        "value":`X11`
+      },{
+        "url":`/tags#containers`,
+        "value":`containers`
+      },{
+        "url":`/tags#create-image`,
+        "value":`create image`
+      },{
+        "url":`/tags#custom-container`,
+        "value":`custom container`
+      },{
+        "url":`/tags#docs`,
+        "value":`docs`
+      },{
+        "url":`/tags#features`,
+        "value":`features`
+      },{
+        "url":`/tags#interactive-session`,
+        "value":`interactive session`
+      },{
+        "url":`/tags#memory-allocation`,
+        "value":`memory allocation`
+      },{
+        "url":`/tags#memory-management`,
+        "value":`memory management`
+      },{
+        "url":`/tags#modules`,
+        "value":`modules`
+      },{
+        "url":`/tags#mpi`,
+        "value":`mpi`
+      },{
+        "url":`/tags#multicore`,
+        "value":`multicore`
+      },{
+        "url":`/tags#multinode`,
+        "value":`multinode`
+      },{
+        "url":`/tags#partitions`,
+        "value":`partitions`
+      },{
+        "url":`/tags#sacct`,
+        "value":`sacct`
+      },{
+        "url":`/tags#sbatch`,
+        "value":`sbatch`
+      },{
+        "url":`/tags#sinfo`,
+        "value":`sinfo`
+      },{
+        "url":`/tags#singularity`,
+        "value":`singularity`
+      },{
+        "url":`/tags#singularity-definition-files`,
+        "value":`singularity definition files`
+      },{
+        "url":`/tags#singularity-exec`,
+        "value":`singularity exec`
+      },{
+        "url":`/tags#singularity-recipes`,
+        "value":`singularity recipes`
+      },{
+        "url":`/tags#singularity-run`,
+        "value":`singularity run`
+      },{
+        "url":`/tags#srun`,
+        "value":`srun`
+      },{
+        "url":`/tags#tutorial`,
+        "value":`tutorial`
+      },{
+        "url":`/tags#tutorials`,
+        "value":`tutorials`
+      },{
+        "url":`/tags#virtual-environment`,
+        "value":`virtual environment`
+      },{
+        "url":`/tags#x2go`,
+        "value":`x2go`
+      },
+      ];
+      $('.docs_search').autocomplete({
+          lookup: docs_arr,
+          onSelect: function (suggestion) {
+              window.location = "http://localhost:4000"+suggestion.url
+          }
+      });
+    </script>
+  </body>
+</html>
