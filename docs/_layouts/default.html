@@ -57,7 +57,7 @@ sort %} {% endfor %} {% endfor %}
                 >Singularity</a
               >
             </li>
-            <li class="navbar-item dropdown">
+            <!-- <li class="navbar-item dropdown">
               <a
                 class="navbar-link dropdown-toggle"
                 href="{{ site.url }}/tutorials"
@@ -68,7 +68,7 @@ sort %} {% endfor %} {% endfor %}
               >
                 <i class="fa fa-tags"></i>&nbsp; Tutorials
               </a>
-              <!--<div
+              <div
               class="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
               style="height: auto; max-height: 400px; overflow-x: hidden"
@@ -78,7 +78,7 @@ sort %} {% endfor %} {% endfor %}
                 >{{ page.title }}</a
               >
               {% endif %} {% endfor %}
-            </div>-->
+            </div>
             </li>
             <li class="navbar-item dropdown">
               <a
@@ -91,7 +91,7 @@ sort %} {% endfor %} {% endfor %}
               >
                 <i class="fa fa-tags"></i>&nbsp; Tags
               </a>
-              <!--<div
+              <div
               class="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
               style="height: auto; max-height: 400px; overflow-x: hidden"
@@ -103,8 +103,8 @@ sort %} {% endfor %} {% endfor %}
                 >{{ tag }}</a
               >
               {% endfor %}
-            </div>-->
-            </li>
+            </div>
+            </li>-->
           </ul>
           <!--<form class="form-inline">
           <input
@@ -120,6 +120,11 @@ sort %} {% endfor %} {% endfor %}
       <main>
         <aside class="sidebar">
           <div class="sidebar-container">
+            <div class="sidebar-close">
+              <button class="sidebar-close-button">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
             <div class="sidebar-search">
               <form class="search-bar">
                 <input
@@ -163,6 +168,11 @@ sort %} {% endfor %} {% endfor %}
           </div>
         </aside>
         <div class="content-container">
+          <div class="sidebar-show">
+            <button class="sidebar-show-button">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
           <section class="main-content no-scroll-bar">
             <h1>
               {% if page.title == blank %} {{ page.name }} {% else %} {{
