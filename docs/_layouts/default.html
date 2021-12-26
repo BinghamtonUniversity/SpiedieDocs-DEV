@@ -144,13 +144,13 @@ sort %} {% endfor %} {% endfor %}
                         <ol class="sub-toc toc-l2">
                           {%- for entry in item.contents -%}
                             <li class=" toc-item toc-l2-item">
-                              <a class="toc-link toc-l2-link" href="{{ entry.url }}" target={{ entry.target }}>{{ entry.title }}</a>
+                              <a class="toc-link toc-l2-link" href="{{ site.url }}{{ entry.url }}" target={{ entry.target }}>{{ entry.title }}</a>
                               {% if entry.inner_list[0] %}
                                 {% if entry.url == page.url %}
                                   <ol class="sub-toc toc-l3">
                                     {%- for subentry in entry.inner_list -%}
                                     <li class="toc-item toc-l3-item">
-                                      <a class="toc-link toc-l3-link" href="{{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
+                                      <a class="toc-link toc-l3-link" href="{{ site.url }} {{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
                                     </li>
                                     {%- endfor -%}
                                   </ol>
