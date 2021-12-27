@@ -150,7 +150,7 @@ sort %} {% endfor %} {% endfor %}
                                   <ol class="sub-toc toc-l3">
                                     {%- for subentry in entry.inner_list -%}
                                     <li class="toc-item toc-l3-item">
-                                      <a class="toc-link toc-l3-link" href="{{ site.url }} {{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
+                                      <a class="toc-link toc-l3-link" href="{{ site.url }}{{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
                                     </li>
                                     {%- endfor -%}
                                   </ol>
