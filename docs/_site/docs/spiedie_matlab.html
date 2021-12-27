@@ -28,6 +28,7 @@
     </script>-->
   </head>
   <body>
+    
     <div class="page-container">
       <nav class="navbar">
         <div class="navbar-container">
@@ -716,10 +717,12 @@
         </aside>
         <div class="content-container">
           <div class="sidebar-show">
-            <button class="sidebar-show-button">
+            <button class="sidebar-show-button" >
               <i class="fas fa-bars"></i>
             </button>
           </div>
+
+          
           <section class="main-content no-scroll-bar">
             <h1>
                How to setup MATLAB 
@@ -877,6 +880,21 @@ The following steps will NOT work through a WiFi connected device.
         </div>
       </main>
       <footer class="row">
+        <script>
+          var openSidebarButton = document.getElementsByClassName("sidebar-show-button")[0];
+          var sidebar = document.getElementsByClassName("sidebar")[0];
+          var closeSidebarButton = document.getElementsByClassName("sidebar-close-button")[0];
+          const openSidebar = () =>{
+            sidebar.style.left = "0px";
+          };
+    
+          const closeSidebar = () => {
+            sidebar.style.left = "-400px";
+          };
+    
+          openSidebarButton.onclick = openSidebar; 
+          closeSidebarButton.onclick = closeSidebar;
+        </script>
         <div class="col-sm-12">
           <!-- Footer -->
         </div>
