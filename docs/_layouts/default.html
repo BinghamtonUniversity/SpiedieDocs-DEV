@@ -38,17 +38,11 @@ sort %} {% endfor %} {% endfor %}
             ><i class="bu bu-b" style="font-size: 24px"></i>&nbsp;&nbsp; Spiedie
             Docs</a
           >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarColor01"
-            aria-controls="navbarColor01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="sidebar-show">
+            <button class="sidebar-show-button" >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
           <ul class="navbar-menu">
             <li class="navbar-item">
               <a class="navbar-link" href="{{ site.url}}/docs">Docs</a>
@@ -169,11 +163,7 @@ sort %} {% endfor %} {% endfor %}
           </div>
         </aside>
         <div class="content-container">
-          <div class="sidebar-show">
-            <button class="sidebar-show-button" >
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
+          
 
           
           <section class="main-content no-scroll-bar">
@@ -229,11 +219,11 @@ sort %} {% endfor %} {% endfor %}
           var sidebar = document.getElementsByClassName("sidebar")[0];
           var closeSidebarButton = document.getElementsByClassName("sidebar-close-button")[0];
           const openSidebar = () =>{
-            sidebar.style.left = "0px";
+            sidebar.style.top = "0px";
           };
     
           const closeSidebar = () => {
-            sidebar.style.left = "-400px";
+            sidebar.style.top = "-900px";
           };
     
           openSidebarButton.onclick = openSidebar; 
