@@ -28,6 +28,7 @@ sort %} {% endfor %} {% endfor %}
       gtag('js', new Date());
       gtag('config', 'UA-11743206-2');
     </script>-->
+
   </head>
   <body>
     
@@ -38,8 +39,8 @@ sort %} {% endfor %} {% endfor %}
             ><i class="bu bu-b" style="font-size: 24px"></i>&nbsp;&nbsp; Spiedie
             Docs</a
           >
-          <div class="sidebar-show">
-            <button class="sidebar-show-button" >
+          <div class="navbar-toc-toggle">
+            <button class="navbar-toc-toggle-button">
               <i class="fas fa-bars"></i>
             </button>
           </div>
@@ -52,55 +53,8 @@ sort %} {% endfor %} {% endfor %}
                 >Singularity</a
               >
             </li>
-            <!-- <li class="navbar-item dropdown">
-              <a
-                class="navbar-link dropdown-toggle"
-                href="{{ site.url }}/tutorials"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fa fa-tags"></i>&nbsp; Tutorials
-              </a>
-              <div
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-              style="height: auto; max-height: 400px; overflow-x: hidden"
-            >
-              {% for page in site.pages %} {% if page.dir == "/tutorials/" %}
-              <a class="dropdown-item" href="{{ site.url }}{{ page.url }}"
-                >{{ page.title }}</a
-              >
-              {% endif %} {% endfor %}
-            </div>
-            </li>
-            <li class="navbar-item dropdown">
-              <a
-                class="navbar-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fa fa-tags"></i>&nbsp; Tags
-              </a>
-              <div
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-              style="height: auto; max-height: 400px; overflow-x: hidden"
-            >
-              {% for tag in all_tags %}
-              <a
-                class="dropdown-item"
-                href="{{ site.url }}/tags#{{ tag | slugify }}"
-                >{{ tag }}</a
-              >
-              {% endfor %}
-            </div>
-            </li>-->
           </ul>
+          
           <!--<form class="form-inline">
           <input
             class="form-control mr-sm-2 docs_search"
@@ -110,16 +64,14 @@ sort %} {% endfor %} {% endfor %}
           />
         </form>-->
         </div>
+        <div class="navbar-toc no-scroll-bar hidden" onclick="openNavbarToc();">
+          {% include table_of_contents.html %}
+        </div>
       </nav>
 
       <main>
         <aside class="sidebar">
           <div class="sidebar-container">
-            <div class="sidebar-close">
-              <button class="sidebar-close-button">
-                <i class="fa fa-times"></i>
-              </button>
-            </div>
             <div class="sidebar-search">
               <form class="search-bar">
                 <input
@@ -130,35 +82,7 @@ sort %} {% endfor %} {% endfor %}
               </form>
             </div>
             <div class="sidebar-menu no-scroll-bar">
-              {% if site.data.toc.toc[0] %}
-                <ol class="toc-l1">
-                  {%- for item in site.data.toc.toc -%}
-                    <li class="toc-item toc-l1-item">
-                      <h3 class="toc-l1-title">{{ item.title }}</h3>
-                      {% if item.contents[0] %}
-                        <ol class="sub-toc toc-l2">
-                          {%- for entry in item.contents -%}
-                            <li class=" toc-item toc-l2-item">
-                              <a class="toc-link toc-l2-link" href="{{ site.url }}{{ entry.url }}" target={{ entry.target }}>{{ entry.title }}</a>
-                              {% if entry.inner_list[0] %}
-                                {% if entry.url == page.url %}
-                                  <ol class="sub-toc toc-l3">
-                                    {%- for subentry in entry.inner_list -%}
-                                    <li class="toc-item toc-l3-item">
-                                      <a class="toc-link toc-l3-link" href="{{ site.url }}{{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
-                                    </li>
-                                    {%- endfor -%}
-                                  </ol>
-                                {% endif %}
-                              {% endif %}
-                            </li>
-                          {%- endfor -%}
-                        </ol>
-                      {% endif %}
-                    </li>
-                  {%- endfor -%}
-                </ol>
-              {% endif %}
+              {% include table_of_contents.html %}
             </div>
           </div>
         </aside>
@@ -214,21 +138,7 @@ sort %} {% endfor %} {% endfor %}
         </div>
       </main>
       <footer class="row">
-        <script>
-          var openSidebarButton = document.getElementsByClassName("sidebar-show-button")[0];
-          var sidebar = document.getElementsByClassName("sidebar")[0];
-          var closeSidebarButton = document.getElementsByClassName("sidebar-close-button")[0];
-          const openSidebar = () =>{
-            sidebar.style.top = "0px";
-          };
-    
-          const closeSidebar = () => {
-            sidebar.style.top = "-900px";
-          };
-    
-          openSidebarButton.onclick = openSidebar; 
-          closeSidebarButton.onclick = closeSidebar;
-        </script>
+        <script src="{{ site.url }}/assets/js/sidebarToggle.js"></script>
         <div class="col-sm-12">
           <!-- Footer -->
         </div>
@@ -249,14 +159,20 @@ sort %} {% endfor %} {% endfor %}
     <script>hljs.initHighlightingOnLoad();</script> -->
     <script>
       var docs_arr = [
-      {% for page in site.pages %}{% if page.dir == "/tutorials/" %}{
-        "url":`{{ page.url }}`,
-        "value":{% if page.title == blank %} `{{ page.name }}` {% else %} `{{ page.title }}` {% endif %}
-      },{% endif %}{% endfor %}
-      {% for tag in all_tags %}{
-        "url":`/tags#{{ tag | slugify }}`,
-        "value":`{{ tag }}`
-      },{% endfor %}
+      {% for page in site.pages %}
+        {% if page.dir == "/tutorials/" %}
+          {
+            "url":`{{ page.url }}`,
+            "value":{% if page.title == blank %} `{{ page.name }}` {% else %} `{{ page.title }}` {% endif %}
+          },
+        {% endif %}
+      {% endfor %}
+      {% for tag in all_tags %}
+        {
+          "url":`/tags#{{ tag | slugify }}`,
+          "value":`{{ tag }}`
+        },
+      {% endfor %}
       ];
       $('.docs_search').autocomplete({
           lookup: docs_arr,

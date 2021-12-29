@@ -1,0 +1,30 @@
+
+{% if site.data.toc.toc[0] %}
+    <ol class="toc-l1">
+    {%- for item in site.data.toc.toc -%}
+        <li class="toc-item toc-l1-item">
+        <h3 class="toc-l1-title">{{ item.title }}</h3>
+        {% if item.contents[0] %}
+            <ol class="sub-toc toc-l2">
+            {%- for entry in item.contents -%}
+                <li class=" toc-item toc-l2-item">
+                <a class="toc-link toc-l2-link" href="{{ site.url }}{{ entry.url }}" target={{ entry.target }}>{{ entry.title }}</a>
+                {% if entry.inner_list[0] %}
+                    {% if entry.url == page.url %}
+                    <ol class="sub-toc toc-l3">
+                        {%- for subentry in entry.inner_list -%}
+                        <li class="toc-item toc-l3-item">
+                        <a class="toc-link toc-l3-link" href="{{ site.url }}{{ subentry.url }}" target={{ subentry.target }}>{{ subentry.title }}</a>
+                        </li>
+                        {%- endfor -%}
+                    </ol>
+                    {% endif %}
+                {% endif %}
+                </li>
+            {%- endfor -%}
+            </ol>
+        {% endif %}
+        </li>
+    {%- endfor -%}
+    </ol>
+{% endif %}
