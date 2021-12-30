@@ -45,6 +45,8 @@ main { display: flex; height: calc(100% - 80px); align-items: center; width: 100
 .sidebar .toc-l3 { font-weight: 100; }
 
 .content-container { display: flex; flex-direction: column; width: 100%; height: 100%; }
+.content-container a { color: #005a43; text-decoration: none; }
+.content-container a:hover { color: #004333; text-decoration: underline; }
 
 @media screen and (min-width: 900px) { .content-container { width: calc(100% - 300px); } }
 @media screen and (min-width: 1200px) { .content-container { flex-direction: row; } }
@@ -107,6 +109,8 @@ nav { background-color: #004333 !important; width: 100%; display: flex; flex-dir
 .navbar-toc { display: flex; flex-direction: column; color: #fff; overflow: scroll; padding-left: 1rem; }
 
 .content-container { display: flex; flex-direction: column; width: 100%; height: 100%; }
+.content-container a { color: #005a43; text-decoration: none; }
+.content-container a:hover { color: #004333; text-decoration: underline; }
 
 @media screen and (min-width: 900px) { .content-container { width: calc(100% - 300px); } }
 @media screen and (min-width: 1200px) { .content-container { flex-direction: row; } }

@@ -3,6 +3,17 @@
     flex-direction:column;
     width:100%;
     height:100%;
+
+    a {
+        color: $binghamton-light-green;
+        text-decoration: none;
+
+        &:hover{
+            color: $binghamton-dark-green;
+            text-decoration: underline;
+        }
+    }
+
     }
 
 @media screen and (min-width:900px){
@@ -16,6 +27,7 @@
         
     }
 }
+
 
 .main-content {
 display: flex;
