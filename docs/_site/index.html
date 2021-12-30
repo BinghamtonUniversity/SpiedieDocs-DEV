@@ -296,27 +296,14 @@
             </h1>
             
             <article >
-              <style>
-a.card {
-    color: #212529;
-}
-a.card:hover {
-    color: #212529;
-    text-decoration: none;
-}
-.alert-primary {
-    color: rgb(0,90,67);
-    background-color: rgba(0, 90, 67, 0.24);
-    border-color: rgba(0, 90, 67, 0.28);
-}
-</style>
-<!-- <form class="form-group">
-    <input class="form-control mr-sm-2 docs_search" type="search" placeholder="Search Docs" aria-label="Search Docs">
-</form> -->
-<a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
-<h2>About</h2>
+              <div id="about-section">
+    <h3>About</h3>
+    <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
+</div>
+
+
 <hr>
-<div class="alert alert-primary">
+<div class="greeting">
     The Binghamton University High-Performance Computing Cluster aptly name “Spiedie” is a 3688 compute core 
     & 512 Knights Landing core cluster housed in the Thomas J. Watson School of Engineering 
     and Applied Science's data center located at the Innovative Technology Complex. 
@@ -326,7 +313,7 @@ a.card:hover {
 <h2><a href="tutorials/">Guided Tutorials</a></h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     
     
     
@@ -352,10 +339,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/tutorials/" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Tutorials</h5>
+                <h3 class="card-title">Tutorials</h3>
                 <p class="card-text">A set of tutorials to get you up and running with Spiedie. ...</p>
             </div>
         </a>
@@ -379,10 +366,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/tutorials/quick_start.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Quick Start Tutorial - Python</h5>
+                <h3 class="card-title">Quick Start Tutorial - Python</h3>
                 <p class="card-text">A walkthrough on how to submit your first job on Spiedie! ...</p>
             </div>
         </a>
@@ -398,10 +385,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/tutorials/spiedie_MPI.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">MPI on Spiedie (advanced)</h5>
+                <h3 class="card-title">MPI on Spiedie (advanced)</h3>
                 <p class="card-text">How to run a multi node MPI program on Spiedie. ...</p>
             </div>
         </a>
@@ -457,20 +444,23 @@ a.card:hover {
     
     
 </div>
-<a href="http://localhost:4000/tutorials" class="badge badge-primary float-right">Click For More Tutorials</a>
+<div class="more-info">
+    <a href="http://localhost:4000/tutorials" class="badge badge-primary float-right">Click For More Tutorials</a>
+</div>
+
 <h2> <a href="docs/">Documentation</a> </h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     
     
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/basic_linux_commands.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Useful Linux Commands</h5>
+                <h3 class="card-title">Useful Linux Commands</h3>
                 <p class="card-text">Some useful Linux commands. ...</p>
             </div>
         </a>
@@ -481,10 +471,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/basic_slurm_commands.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Basic SLURM Commands</h5>
+                <h3 class="card-title">Basic SLURM Commands</h3>
                 <p class="card-text">A walk-through of the essential slurm commands to run programs, check usage and job status, and manipulate job states on Spiedie. ...</p>
             </div>
         </a>
@@ -495,10 +485,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/compilers.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Compiling Source Code on Spiedie</h5>
+                <h3 class="card-title">Compiling Source Code on Spiedie</h3>
                 <p class="card-text">Available compilers on spiedie for optimized compilations. ...</p>
             </div>
         </a>
@@ -509,10 +499,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/conda_singularity_modules.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Conda vs. Singularity vs. Modules</h5>
+                <h3 class="card-title">Conda vs. Singularity vs. Modules</h3>
                 <p class="card-text">Identifying which environment solution works best for your workload on Spiedie. ...</p>
             </div>
         </a>
@@ -525,10 +515,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/data_transfer.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Transfer File to Cluster</h5>
+                <h3 class="card-title">Transfer File to Cluster</h3>
                 <p class="card-text">A guide to transferring data to and from Spiedie and setting up network drives. ...</p>
             </div>
         </a>
@@ -541,10 +531,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/docs/faq.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">FAQs</h5>
+                <h3 class="card-title">FAQs</h3>
                 <p class="card-text">Freqeuntly Asked Questions on how to get access to and use Spiedie ...</p>
             </div>
         </a>
@@ -640,11 +630,14 @@ a.card:hover {
     
 
 </div>
-<a href="http://localhost:4000/docs" class="badge badge-primary float-right">Click For More Docs</a>
+<div class="more-info">
+    <a href="http://localhost:4000/docs" class="badge badge-primary float-right">Click For More Docs</a>
+</div>
+
 <h2> <a href="singularity/">Singularity on Spiedie</a> </h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     
 
     
@@ -659,10 +652,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/singularity/create-image.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Create Singularity Images</h5>
+                <h3 class="card-title">Create Singularity Images</h3>
                 <p class="card-text">Creating your own custom container ...</p>
             </div>
         </a>
@@ -687,10 +680,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/singularity/" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Singularity on Spiedie</h5>
+                <h3 class="card-title">Singularity on Spiedie</h3>
                 <p class="card-text">A set of tutorials to get you up and running with spiedie. ...</p>
             </div>
         </a>
@@ -701,10 +694,10 @@ a.card:hover {
     
     
     
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="http://localhost:4000/singularity/install-singularity.html" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">Installing Singularity on Local Machine</h5>
+                <h3 class="card-title">Installing Singularity on Local Machine</h3>
                 <p class="card-text">Run Singularity on your personal workstation ...</p>
             </div>
         </a>
@@ -770,7 +763,10 @@ a.card:hover {
     
 
 </div>
-<a href="http://localhost:4000/singularity" class="badge badge-primary float-right">Click For More Info</a>
+<div class="more-info">
+    <a href="http://localhost:4000/singularity" class="badge badge-primary float-right">Click For More Info</a>
+</div>
+
 
 
               <!-- Small Screen Images -->
