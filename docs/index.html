@@ -3,27 +3,14 @@ title: "Welcome to Spiedie Docs!"
 layout: default
 ---
 
-<style>
-a.card {
-    color: #212529;
-}
-a.card:hover {
-    color: #212529;
-    text-decoration: none;
-}
-.alert-primary {
-    color: rgb(0,90,67);
-    background-color: rgba(0, 90, 67, 0.24);
-    border-color: rgba(0, 90, 67, 0.28);
-}
-</style>
-<!-- <form class="form-group">
-    <input class="form-control mr-sm-2 docs_search" type="search" placeholder="Search Docs" aria-label="Search Docs">
-</form> -->
-<a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
-<h2>About</h2>
+<div id="about-section">
+    <h3>About</h3>
+    <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
+</div>
+
+
 <hr>
-<div class="alert alert-primary">
+<div class="greeting">
     The Binghamton University High-Performance Computing Cluster aptly name “Spiedie” is a 3688 compute core 
     & 512 Knights Landing core cluster housed in the Thomas J. Watson School of Engineering 
     and Applied Science's data center located at the Innovative Technology Complex. 
@@ -33,16 +20,16 @@ a.card:hover {
 <h2><a href="tutorials/">Guided Tutorials</a></h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
     {% if mypage.dir == "/tutorials/" %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">{{ mypage.title }}</h5>
+                <h3 class="card-title">{{ mypage.title }}</h3>
                 <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
             </div>
         </a>
@@ -52,20 +39,23 @@ a.card:hover {
     {% endif %}
     {% endfor %}
 </div>
-<a href="{{ site.url }}/tutorials" class="badge badge-primary float-right">Click For More Tutorials</a>
+<div class="more-info">
+    <a href="{{ site.url }}/tutorials" class="badge badge-primary float-right">Click For More Tutorials</a>
+</div>
+
 <h2> <a href="docs/">Documentation</a> </h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
     {% if mypage.dir == "/docs/" %}
     {% if  i < 6 %}
     {% assign i = i | plus:1 %}
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">{{ mypage.title }}</h5>
+                <h3 class="card-title">{{ mypage.title }}</h3>
                 <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
             </div>
         </a>
@@ -75,21 +65,24 @@ a.card:hover {
     {% endfor %}
 
 </div>
-<a href="{{ site.url }}/docs" class="badge badge-primary float-right">Click For More Docs</a>
+<div class="more-info">
+    <a href="{{ site.url }}/docs" class="badge badge-primary float-right">Click For More Docs</a>
+</div>
+
 <h2> <a href="singularity/">Singularity on Spiedie</a> </h2>
 
 <hr>
-<div class="row">
+<div class="card-container">
     {% assign i = 0 %}
 
     {% for mypage in site.pages %}
     {% if mypage.dir == "/singularity/"  %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
-    <div class="col-lg-4 col-sm-6">
+    <div class="card-info">
         <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
-                <h5 class="card-title">{{ mypage.title }}</h5>
+                <h3 class="card-title">{{ mypage.title }}</h3>
                 <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
             </div>
         </a>
@@ -99,4 +92,7 @@ a.card:hover {
     {% endfor %}
 
 </div>
-<a href="{{ site.url }}/singularity" class="badge badge-primary float-right">Click For More Info</a>
+<div class="more-info">
+    <a href="{{ site.url }}/singularity" class="badge badge-primary float-right">Click For More Info</a>
+</div>
+
