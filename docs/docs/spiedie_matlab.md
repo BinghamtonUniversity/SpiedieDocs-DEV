@@ -20,11 +20,12 @@ The following steps will NOT work through a WiFi connected device.
 
 ## <a name="remote_server_login"></a> Log in to MATLAB cluster Remote Server
 
-***Note: You must have access to the MATLAB Cluster Remote Desktop Server in order to do these steps***
+***Note: You must have access to the Spiedie-Access Server in order to do these steps***
 
-1. Open "Remote Desktop Connection"
-2. In the "Computer" field type: spiedie-access.pods.bu.int
-3. Log in using your PODS ID
+1. Open the VMware Horizon Client
+2. Connect to Watson View Environment, if you are on campus access wsview.binghamton.edu . If you are off campus use watsonview.binghamton.edu
+3. Once logged in you will see the "Spiedie Access"
+4. Connect to the Spiedie Access Pool, there you will be able to follow the next steps below.
 
 ***Once Logged in, the subsequent directions are performed in the remote server***
 
