@@ -23,7 +23,7 @@ The following steps will NOT work through a WiFi connected device.
 ***Note: You must have access to the Spiedie-Access Server in order to do these steps***
 
 1. Open the VMware Horizon Client
-2. Connect to Watson View Environment, if you are on campus access wsview.binghamton.edu . If you are off campus use watsonview.binghamton.edu
+2. Connect to Watson View Environment, use watsonview.binghamton.edu
 3. Once logged in you will see the "Spiedie Access"
 4. Connect to the Spiedie Access Pool, there you will be able to follow the next steps below.
 
@@ -38,7 +38,7 @@ We must map the Spiedie Home directory to the "Y" drive.
 1. Open "Computer"
 2. Click "Map network drive"
 3. Select the drive letter you prefer (Y is recommended)
-4. In the folder box type \\\\spiediefiles.binghamton.edu\username (replace username with your user name)
+4. In the folder box type \\\\spiediefiles.binghamton.edu\\<username> (replace username with your user name)
 	- Select "Connect using different credentials"
 	- To automatically connect every tiem you log on, check the box "Reconnect at log on"
 5. Click "Finish"
@@ -69,6 +69,6 @@ Once you have your home directory mapped, you can open up MATBAL to configure it
 	- Everything should validate with a green check mark under "status"
 12. Now you may run a MATLAB project as normal, and it will be completed on the HPC cluster. When submitting jobs be sure to specify the number of cores you wish to use.
 	- The properties tab in the cluster profile manager near the bottom you can easily change the submission arguments including what partition to use as well as if you're requesting GPUs or not.
-13. To view the progress of your jobs and to view your available directories, you may visit the Bright Computing Webpage and login with your PODS username and your cluster password.
+13. To view the progress of your jobs and to view your available directories, you may visit the Bright Computing Webpage and login with your BU username and your cluster password.
 14. This is a informative webinar provided by Mathworks on parallel computing
 <a href="https://www.mathworks.com/videos/parallel-computing-with-matlab-81694.html?form_seq=conf1176&confirmation_page=&wfsid=5761638" target="_blank">Mathworks Parallel Computing Webinar</a>
