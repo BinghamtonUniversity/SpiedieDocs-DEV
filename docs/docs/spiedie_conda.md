@@ -30,7 +30,7 @@ Conda is an open-source package management and environment system. It allows you
 In order to activate Conda at log in on Spiedie, log in and run the following command: 
 
 ``` bash
-/cm/shared/apps/miniconda/bin/conda init
+/opt/ohpc/pub/apps/miniforge3/bin/conda init
 ```
 
 Then, close the window and log back in. 
