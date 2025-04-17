@@ -1,2 +1,2 @@
 # Spiedie Docs
-[Documentation for using the Spiedie Cluster](https://binghamtonuniversity.github.io/SpiedieDocs/)
+[Master Documentation for using the Spiedie Cluster](https://binghamtonuniversity.github.io/SpiedieDocs/)
