@@ -17,7 +17,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-avatar
   - jekyll-include-cache
-url: https://spiediedocs.binghamton.edu
+url: https://spiediedocs-dev.binghamton.edu
 edit_on_github: true
 github_docs_folder: true
 sticky_navigation: true
