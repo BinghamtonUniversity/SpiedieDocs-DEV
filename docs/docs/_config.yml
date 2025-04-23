@@ -1,5 +1,7 @@
 github: [metadata]
 encoding: UTF-8
+exclude:
+  - assets
 kramdown:
   input: GFM
   hard_wrap: false
