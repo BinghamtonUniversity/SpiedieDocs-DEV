@@ -14,66 +14,61 @@
     to implement this, but the Liquid template language is very limited.
 {%- endcomment -%}
 
-{%- assign sections = "" %}
-{%- assign last_loop_page = false %}
-{%- assign set_next_page = false %}
-{%- assign nav = site.pages | sort:"nav_order" %}
+{%- assign nav_pages = site.pages | where_exp: "p", "p.extname == '.md' and p.hide != true and p.nav_exclude != true" | sort: "nav_order" -%}
 
-{%- comment %} First loop to print pages without categories and collect an array of categories {%- endcomment %}
-{%- for nav_item in nav %}
-    {%- if nav_item.hide != true and nav_item.nav_exclude != true %}
-        {%- assign path_array = nav_item.dir | split: "/" %}
-        {%- assign array_size = path_array | size %}
-        {%- if array_size == 0 %}
-            {%- if nav_item.url == page.url %}
-                {%- include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %}
-                {%- if nav_item.url == page.url %}
-                    {%- assign previous_page = last_loop_page %}
-                    {%- assign set_next_page = true %}
-                {%- endif %}
-            {%- else %}
-                <ul>
-                    <li class="toctree-l1">
-                        <a class="reference internal" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
-                    </li>
-                </ul>
-                {%- assign last_loop_page = nav_item %}
-                {%- if set_next_page %}
-                    {%- assign next_page = nav_item %}
-                    {%- assign set_next_page = false %}
-                {% endif %}
-            {%- endif %}
-        {%- else %}
-            {%- assign sections = sections | append: path_array[1] | append: "|" %}
-        {%- endif %}
-    {%- endif %}
+{%- assign root_pages = nav_pages | where_exp: "p", "p.dir == ''" -%}
+<ul class="nav-root">
+  {%- for page in root_pages %}
+    <li>
+      <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+    </li>
+  {%- endfor %}
+</ul>
+
+{%- assign grouped = {} -%}
+{%- for page in nav_pages %}
+  {%- assign dir_parts = page.dir | split: "/" -%}
+  {%- assign section = dir_parts[0] | default: "" -%}
+  {%- assign subsection = dir_parts[1] | default: "" -%}
+  {%- assign key = section | append: "/" | append: subsection -%}
+
+  {%- if grouped[key] == nil -%}
+    {%- assign grouped = grouped | merge: { (key): [page] } -%}
+  {%- else -%}
+    {%- assign grouped[key] = grouped[key] | push: page -%}
+  {%- endif -%}
 {%- endfor %}
 
-{%- assign sections = sections | split: "|" | uniq | sort %}
-{%- for section in sections %}
-    <p class="caption"><span class="caption-text">{{ section }}</span></p>
-    {%- for nav_item in nav %}
-        {%- assign path_array = nav_item.dir | split: "/" %}
-        {%- assign page_section = path_array[1] %}
-        {%- if page_section == section and nav_item.hide != true and nav_item.nav_exclude != true %}
-            {%- if nav_item.url == page.url %}
-                {%- include toc.html html=content sanitize=true h_max=4 item_class="toctree-l%level%" %} 
-                {%- if nav_item.url == page.url %}
-                    {%- assign previous_page = last_loop_page %}
-                    {%- assign set_next_page = true %}
-                {%- endif %}
-            {%- else %}
-                <ul>
-                    <li class="toctree-l1">
-                        <a class="reference internal" href="{{ nav_item.url | absolute_url}}">{{ nav_item.title }}</a>
-                    </li>
-                </ul>
-                {%- assign last_loop_page = nav_item %}
-                {%- if set_next_page %}
-                    {%- assign next_page = nav_item %}
-                    {%- assign set_next_page = false %}
-                {% endif %}
-            {%- endif %}
-        {%- endif %}
+{%- assign keys = grouped | keys | sort -%}
+{%- assign last_section = "" -%}
+
+{%- for key in keys %}
+  {%- assign section = key | split: "/" | first -%}
+  {%- assign subsection = key | split: "/" | last -%}
+  {%- assign pages = grouped[key] -%}
+
+  {%- if section != last_section %}
+    {%- if last_section != "" %}</ul></div>{% endif %}
+    <div class="collapsible-container" id="section-{{ section | slugify }}">
+      <button class="collapsible">{{ section }}</button>
+      <ul class="collapsible-content">
+  {%- endif %}
+
+  {%- if subsection != section %}
+    <li>
+      <strong>{{ subsection }}</strong>
+      <ul>
+        {%- for page in pages %}
+          <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </li>
+  {%- else %}
+    {%- for page in pages %}
+      <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
     {%- endfor %}
+  {%- endif %}
+
+  {%- assign last_section = section -%}
 {%- endfor %}
+</ul></div>

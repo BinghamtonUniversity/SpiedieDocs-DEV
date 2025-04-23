@@ -25,3 +25,4 @@ handleViewPortWidthChange(mediaQueryList);
 mediaQueryList.addEventListener("change", handleViewPortWidthChange);
 
 toggleNavTocButton.onclick = openNavbarToc; 
+
