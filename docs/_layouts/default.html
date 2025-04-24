@@ -39,65 +39,159 @@
   
     {%- if site.google_analytics %}{% include ganalytics.html %}{% endif %}
   </head>
-  <body class="wy-body-for-nav" role="document">
+  <body>
+    
+    <div class="page-container">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a class="navbar-brand" href="{{ site.url }}"
+            ><i class="bu bu-b" style="font-size: 24px"></i>&nbsp;&nbsp; Spiedie
+            Docs</a
+          >
+          <div class="navbar-toc-toggle">
+            <button class="navbar-toc-toggle-button">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a class="navbar-link" href="{{ site.url}}/docs">Docs</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="{{ site.url}}/docs/singularity"
+                >Singularity</a
+              >
+            </li>
+          </ul>
+          
+          <!--<form class="form-inline">
+          <input
+            class="form-control mr-sm-2 docs_search"
+            type="search"
+            placeholder="Search Docs"
+            aria-label="Search Documentation"
+          />
+        </form>-->
+        </div>
+        <div class="navbar-toc no-scroll-bar hidden" onclick="openNavbarToc();">
+          {% include toc.html %}
+        </div>
+      </nav>
 
-      <div class="wy-grid-for-nav">
-    
-        {%- comment %} SIDE NAV, TOGGLES ON MOBILE {% endcomment %}
-        <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-          <div class="wy-side-scroll">
-            <div class="wy-side-nav-search">
-                <a href="{{ site.url | absolute_url }}{{ site.baseurl }}">
-                  <i class="bu bu-b" style="font-size: 24px"></i>&nbsp;&nbsp; Spiedie Docs</a
-                  >
-              {% unless site.search_enabled == false %}{% include searchbox.html %}{% endunless %}
+      <main>
+        <aside class="sidebar">
+          <div class="sidebar-container">
+            <div class="sidebar-search">
+              <form class="search-bar">
+                <input
+                  type="text"
+                  class="form-control docs_search"
+                  placeholder="Search Docs"
+                />
+              </form>
             </div>
-    
-            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-              {% include nav.html %}
+            <div class="sidebar-menu no-scroll-bar">
+              {% include toc.html %}
             </div>
           </div>
-        </nav>
-    
-        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-    
-          {%- comment %} MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE {% endcomment %}
-          <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-            <a href="{{ site.url | absolute_url }}{{ site.baseurl }}">{{ site.title }}</a>
-          </nav>
-    
-          {%- comment %} PAGE CONTENT {% endcomment %}
-          <div class="wy-nav-content">
-            <div class="rst-content">
-              {% include breadcrumbs.html %}
-              <div role="main">
-                <div class="section">
-                  {{ content }}
+        </aside>
+        <div class="content-container">
+          
+
+          
+          <section class="main-content no-scroll-bar">
+            <h1>
+              {% if page.title == blank %} {{ page.name }} {% else %} {{
+              page.title }} {% endif %}
+            </h1>
+            
+            <article >
+              {{ content }}
+
+              <!-- Small Screen Images -->
+              <div class="row">
+                {% include breadcrumbs.html %}
+                <div class="col-sm-12 d-md-block d-lg-none">
+                  {% for image in page.images %}
+                  <img
+                    style="width: 160px"
+                    style="padding: 10px"
+                    src="{{ site.url }}/images/{{ image }}"
+                  />
+                  {% endfor %}
                 </div>
+                {% include footer.html %}
               </div>
-              {% include footer.html %}
+              <!-- End Small Screen Images -->
+
+              
+            </article>
+          </section>
+          <section class="content-detail">
+            <!-- Begin Tags -->
+            <div class="content-tags-container">
+              {% if page.tags[0] %}
+                <h3 class="content-tags-title">Tags</h3>
+                <ul class="content-tags-list">
+                  {% for tag in page.tags %}
+                    <li class="content-tag">
+                      <a class="content-tag-link" href="{{ site.url }}/tags#{{ tag | slugify }}">
+                        {{ tag }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              </div>
             </div>
-          </div>
-    
-        </section>
-    
-      </div>
-    
-      {% include versions.html %}
-    
-      <script>var base_url = '{{ baseurl }}';</script>
-      <script src="{{ 'assets/js/jquery-2.1.1.min.js' | absolute_url }}" defer></script>
-      <script src="{{ 'assets/js/modernizr-2.8.3.min.js' | absolute_url }}" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-      <script src="{{ 'assets/js/theme.js' | absolute_url }}" defer></script>
-      <script type="text/javascript" defer>
-        hljs.initHighlightingOnLoad();
-        window.addEventListener('load', function() {
-          SphinxRtdTheme.Navigation.enable({{ site.sticky_navigation | default: 'false' }});
-        });
-      </script>
-      <!-- Build Date: {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
-    </body>
+            <!-- End Tags -->
+          </section>
+        </div>
+      </main>
+      <footer class="row">
+        <script src="{{ site.url }}/assets/js/sidebarToggle.js"></script>
+        <div class="col-sm-12">
+          <!-- Footer -->
+        </div>
+      </footer>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ site.url }}/assets/js/jquery.autocomplete.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
+    <script>
+      var docs_arr = [
+      {% for page in site.pages %}
+        {% if page.dir == "/tutorials/" %}
+          {
+            "url":`{{ page.url }}`,
+            "value":{% if page.title == blank %} `{{ page.name }}` {% else %} `{{ page.title }}` {% endif %}
+          },
+        {% endif %}
+      {% endfor %}
+      {% for tag in all_tags %}
+        {
+          "url":`/tags#{{ tag | slugify }}`,
+          "value":`{{ tag }}`
+        },
+      {% endfor %}
+      ];
+      $('.docs_search').autocomplete({
+          lookup: docs_arr,
+          onSelect: function (suggestion) {
+              window.location = "{{ site.url }}"+suggestion.url
+          }
+      });
+    </script>
+  </body>
 <script src="{{ '/docs/assets/js/navigation.js' | relative_url }}" defer></script>
 </html>

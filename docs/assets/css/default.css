@@ -424,3 +424,30 @@ pre.highlight {
   padding: 8px;
   margin-top: 4px;
 }
+
+.collapsible {
+  background-color: #f4f4f4;
+  color: #333;
+  cursor: pointer;
+  padding: 8px 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-weight: bold;
+}
+
+.collapsible:hover {
+  background-color: #ddd;
+}
+
+.collapsible-content {
+  display: none;
+  padding-left: 1rem;
+}
+
+.collapsible-container.active .collapsible-content {
+  display: block;
+}
+
+
