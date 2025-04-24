@@ -1,12 +1,11 @@
-{%- assign sorted_pages = site.pages 
-    | where_exp: "p", "p.extname == '.md' and p.path contains '/docs/docs/' and p.nav_exclude != true"
-    | sort: "nav_order"
--%}
+{%- assign sorted_pages = site.pages | sort: "nav_order" -%}
 
 {%- assign folder_groups = "" -%}
 {%- for page in sorted_pages %}
-  {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " | capitalize -%}
-  {%- assign folder_groups = folder_groups | append: parent_title | append: "|" -%}
+  {%- if page.nav_exclude != true -%}
+    {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " | capitalize -%}
+    {%- assign folder_groups = folder_groups | append: parent_title | append: "|" -%}
+  {%- endif %}
 {%- endfor -%}
 
 {%- assign section_names = folder_groups | split: "|" | uniq | sort -%}
@@ -18,7 +17,7 @@
       <ol class="sub-toc toc-l2">
         {%- for page in sorted_pages %}
           {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " | capitalize -%}
-          {%- if parent_title == section -%}
+          {%- if parent_title == section and page.nav_exclude != true -%}
             <li class="toc-item toc-l2-item">
               <a class="toc-link toc-l2-link {% if page.url == page.url %}active{% endif %}" href="{{ page.url | relative_url }}">
                 {{ page.title }}
