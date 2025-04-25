@@ -37,7 +37,6 @@
             <article>
               {{ content }}
               <div class="row">
-                {% include breadcrumbs.html %}
                 <div class="col-sm-12 d-md-block d-lg-none">
                   {% for image in page.images %}
                     <img style="width: 160px; padding: 10px;" src="{{ site.url }}/images/{{ image }}" />
@@ -65,8 +64,6 @@
           </section>
         </div>
       </main>
-
-      {% include footer.html %}
     </div>
   </body>
 </html>
