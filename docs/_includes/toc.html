@@ -13,7 +13,7 @@
 <ol class="toc-l1">
   {%- for section in section_names %}
     <li class="toc-item toc-l1-item">
-      <h3 class="toc-l1-title">{{ section }}</h3>
+      <h3 class="toc-l1-title">{{ section | replace: "%20", " " }}</h3>
       <ol class="sub-toc toc-l2">
         {%- for page in sorted_pages %}
           {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " | capitalize -%}

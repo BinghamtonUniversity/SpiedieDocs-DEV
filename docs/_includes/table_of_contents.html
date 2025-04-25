@@ -3,7 +3,7 @@
 <ol class="toc-l1">
 {%- for item in site.data.toc.toc -%}
     <li class="toc-item toc-l1-item">
-    <h3 class="toc-l1-title">{{ item.title }}</h3>
+    <h3 class="toc-l1-title">{{ item.title | replace: "%20", " " }}</h3>
     {% if item.contents[0] %}
         <ol class="sub-toc toc-l2">
         {%- for entry in item.contents -%}
