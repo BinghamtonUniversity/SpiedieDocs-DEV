@@ -1,37 +1,36 @@
-<footer>
-    {%- if (site.prev_next_buttons_location == 'bottom' or  site.prev_next_buttons_location =='both') and (previous_page or next_page) %}
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {%- if next_page %}
-        <a href="{{ next_page.url | absolute_url }}" class="btn btn-neutral float-right" title="{{ next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
-      {%- endif %}
-      {%- if previous_page %}
-        <a href="{{ previous_page.url | absolute_url }}" class="btn btn-neutral" title="{{ previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      {%- endif %}
-    </div>
-    {%- endif %}
-
-    <hr/>
-
-    <div role="contentinfo">
-      <p>
-        {%- if site.site_author %}
-          © Copyright {{ site.time | date: "%Y" }} {{ site.site_author }}.
-        {%- endif %}
-        {%- if site.github.build_revision %}
-          {%- if site.repo_url %}
-            <span class="commit">Revision <a href="{{ site.repo_url | url }}/commit/{{ site.github.build_revision }}" target="_blank"><code>{{ site.github.build_revision | truncate: 8, "" }}</code></a>.
-          {%- else %}
-            <span class="commit">Revision <code>{{ site.github.build_revision | truncate: 8, "" }}</code>.</span>
-          {%- endif %}
-        {%- endif %}
-      </p>
-    </div>
-    Built with
-    {%- if site.github %}
-    <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
-    {%- else %}
-    <a href="https://jekyllrb.com" target="_blank">Jekyll</a>
-    {%- endif %}
-    using a <a href="https://github.com/carlosperate/jekyll-theme-rtd" target="_blank">theme</a>
-    based on <a href="https://sphinx-rtd-theme.readthedocs.io" target="_blank">Read the Docs</a>.
+<footer class="row">
+  <div class="col-sm-12">
+    <!-- Footer content, copyright -->
+  </div>
 </footer>
+
+<script src="{{ '/assets/js/sidebarToggle.js' | relative_url }}" defer></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" defer></script>
+<script src="{{ '/assets/js/jquery.autocomplete.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
+
+<script>
+  var docs_arr = [
+    {% for page in site.pages %}
+      {% if page.dir == "/tutorials/" %}
+        {
+          "url": "{{ page.url }}",
+          "value": {% if page.title %} "{{ page.title }}" {% else %} "{{ page.name }}" {% endif %}
+        },
+      {% endif %}
+    {% endfor %}
+    {% for tag in all_tags %}
+      {
+        "url": "/tags#{{ tag | slugify }}",
+        "value": "{{ tag }}"
+      },
+    {% endfor %}
+  ];
+  $('.docs_search').autocomplete({
+    lookup: docs_arr,
+    onSelect: function (suggestion) {
+      window.location = "{{ site.url }}" + suggestion.url;
+    }
+  });
+</script>
