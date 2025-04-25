@@ -1,5 +1,5 @@
 {%- assign sorted_pages = site.pages 
-  | where_exp: "p", "p.extname == '.md' and p.dir startswith 'docs/docs/' and p.nav_exclude != true"
+  | where_exp: "p", "p.extname == '.md' and p.dir contains '/docs/docs/' and p.nav_exclude != true"
   | sort: "nav_order" -%}
 
 {%- assign folder_groups = "" -%}
