@@ -98,8 +98,8 @@
           
           <section class="main-content no-scroll-bar">
             <h1>
-              {% if page.title == blank %} {{ page.name }} {% else %} {{
-              page.title }} {% endif %}
+              {% if page.title %} {{ page.title }} {% else %} {{
+              page.name }} {% endif %}
             </h1>
             
             <article >
@@ -139,14 +139,13 @@
                   {% endfor %}
                 </ul>
               {% endif %}
-              </div>
             </div>
             <!-- End Tags -->
           </section>
         </div>
       </main>
       <footer class="row">
-        <script src="{{ site.url }}/assets/js/sidebarToggle.js"></script>
+        <script src="{{ '/assets/js/sidebarToggle.js' | relative_url }}" defer></script>
         <div class="col-sm-12">
           <!-- Footer -->
         </div>
@@ -162,7 +161,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="{{ site.url }}/assets/js/jquery.autocomplete.js"></script>
+    <script src="{{ site.url }}/assets/js/jquery.autocomplete.js" defer></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script> -->
     <script>
@@ -190,5 +189,5 @@
       });
     </script>
   </body>
-<script src="{{ '/docs/assets/js/navigation.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
 </html>
