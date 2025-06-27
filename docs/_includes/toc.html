@@ -1,4 +1,4 @@
-{%- assign sorted_pages = site.pages | sort: "nav_order" | reject: "path", "contains:assets" -%}
+{%- assign sorted_pages = site.pages | sort: "nav_order" | reject: "path", "contains:assets" | reject: "path", "contains:css" -%}
 
 {%- assign folder_groups = "" -%}
 {%- for page in sorted_pages %}
@@ -19,7 +19,7 @@
           {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " | capitalize -%}
           {%- if parent_title == section and page.nav_exclude != true -%}
             <li class="toc-item toc-l2-item">
-              <a class="toc-link toc-l2-link {% if page.url == page.url %}active{% endif %}" href="{{ page.url | relative_url }}">
+              <a class="toc-link toc-l2-link {% if page.url == site.page.url %}active{% endif %}" href="{{ page.url | relative_url }}">
                 {{ page.title }}
               </a>
             </li>
