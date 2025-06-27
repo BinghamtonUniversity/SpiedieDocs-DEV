@@ -21,13 +21,13 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     This research facility offers computer capabilities for researchers across 
     Binghamton University.
 </div>
-<h2><a href="docs/Tutorials/">Guided Tutorials</a></h2>
+<h2><a href="{{ '/docs/Tutorials' | relative_url }}">Guided Tutorials</a></h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/tutorials/" %}
+    {% if mypage.dir == "{{ '/docs/Tutorials' | relative_url }}" %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -44,7 +44,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     {% endfor %}
 </div>
 <div class="more-info">
-    <a href="{{ site.url }}/docs/Tutorials/" class="badge badge-primary float-right">Click For More Tutorials</a>
+    <a href="{{ '/docs/Tutorials' | relative_url }}" class="badge badge-primary float-right">Click For More Tutorials</a>
 </div>
 
 <h2> <a href="docs/">Documentation</a> </h2>
