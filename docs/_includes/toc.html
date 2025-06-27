@@ -1,7 +1,8 @@
 {%- assign sorted_pages = site.pages
   | where_exp: "p", "p.extname == '.md'"
-  | where_exp: "p", "p.path contains '/docs/docs'"
   | where_exp: "p", "p.nav_exclude != true"
+  | where_exp: "p", "p.path contains 'assets'" == false
+  | where_exp: "p", "p.path contains 'css'" == false
   | sort: "nav_order"
 -%}
 
