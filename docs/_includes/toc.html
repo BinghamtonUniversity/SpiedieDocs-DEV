@@ -1,8 +1,4 @@
-{%- assign sorted_pages = site.pages
-  | where_exp: "p", "p.path contains 'docs'"
-  | where_exp: "p", "p.path contains 'assets'" == false
-  | sort: "nav_order"
--%}
+{%- assign sorted_pages = site.pages | sort: "nav_order" | where_exp: "p", "p.path contains 'docs'" where_exp: "p", "p.path contains 'assets'" == false -%}
 
 {%- assign folder_groups = "" -%}
 {%- for page in sorted_pages %}
