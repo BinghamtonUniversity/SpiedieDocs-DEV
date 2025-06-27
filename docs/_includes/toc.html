@@ -1,4 +1,10 @@
-{%- assign sorted_pages = site.pages | sort: "nav_order" -%}
+{%- assign sorted_pages = site.pages
+  | where_exp: "p", "p.extname == '.md'"
+  | where_exp: "p", "p.path contains '/docs/docs'"
+  | where_exp: "p", "p.path contains '/assets/'" == false
+  | where_exp: "p", "p.nav_exclude != true or p.nav_exclude == nil"
+  | sort: "nav_order"
+-%}
 
 {%- assign folder_groups = "" -%}
 {%- for page in sorted_pages %}
