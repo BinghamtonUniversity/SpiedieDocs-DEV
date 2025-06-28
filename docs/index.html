@@ -31,7 +31,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
-        <a class="card" href="{{ site.url }}{{ mypage.url }}" style="margin-bottom:20px;">
+        <a class="card" href="{{ relative_url }}{{ mypage.url }}" style="margin-bottom:20px;">
             <div class="card-body">
                 <h3 class="card-title">{{ mypage.title }}</h3>
                 <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
