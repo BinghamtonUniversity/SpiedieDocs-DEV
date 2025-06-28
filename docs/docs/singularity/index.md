@@ -3,10 +3,11 @@ title: Singularity on Spiedie
 layout: default
 images: []
 description: A set of tutorials to get you up and running with spiedie.
-tags: [singularity, containers, docs] 
+tags: [singularity, containers, docs]
+nav_exclude: true
 ---
 
-## <a name="">What is Singulairity?</a>
+## <a name="">What is Singularity?</a>
 
 Singularity is a containerization solution developed by Lawrence Berkley National Laboratory and Sylabs. It is speciafically designed for scientific and high-performance computing environments that allows users to run their own unique environments in different resources (such as Spiedie). 
 
