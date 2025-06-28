@@ -27,7 +27,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/Tutorials/" %}
+    {% if mypage.dir == "/docs/Tutorials/" and mypage.nav_exclude != true %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -53,7 +53,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/" %}
+    {% if mypage.dir == "/docs/" and mypage.nav_exclude != true %}
     {% if  i < 6 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -80,7 +80,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     {% assign i = 0 %}
 
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/singularity/"  %}
+    {% if mypage.dir == "/docs/singularity/" and mypage.nav_exclude != true %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
