@@ -21,6 +21,29 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     This research facility offers computer capabilities for researchers across 
     Binghamton University.
 </div>
+<h2><a href="{{ '/docs/HPC Operations' | relative_url }}">HPC Details and Operations</a></h2>
+
+<hr>
+<div class="card-container">
+    {% assign i = 0 %}
+    {% for mypage in site.pages %}
+    {% if mypage.dir == "/docs/HPC Operations/" and mypage.nav_exclude != true %}
+    {% if  i < 3 %}
+    {% assign i = i | plus:1 %}
+    <div class="card-info">
+        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
+            <div class="card-body">
+                <h3 class="card-title">{{ mypage.title }}</h3>
+                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
+            </div>
+        </a>
+    </div>
+
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</div>
+
 <h2><a href="{{ '/docs/Tutorials' | relative_url }}">Guided Tutorials</a></h2>
 
 <hr>
