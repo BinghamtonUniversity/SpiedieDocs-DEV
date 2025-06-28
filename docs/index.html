@@ -76,7 +76,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/How-to-Use-Spiedie" and mypage.nav_exclude != true %}
+    {% if mypage.dir == "/docs/How-to-Use-Spiedie/" and mypage.nav_exclude != true %}
     {% if  i < 6 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
