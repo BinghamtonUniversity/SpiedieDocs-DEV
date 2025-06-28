@@ -21,13 +21,13 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     This research facility offers computer capabilities for researchers across 
     Binghamton University.
 </div>
-<h2><a href="{{ '/docs/HPC Operations' | relative_url }}">HPC Details and Operations</a></h2>
+<h2><a href="{{ '/docs/HPC-Operations' | relative_url }}">HPC Details and Operations</a></h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/HPC Operations/" and mypage.nav_exclude != true %}
+    {% if mypage.dir == "/docs/HPC-Operations/" and mypage.nav_exclude != true %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -70,13 +70,13 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     <a href="{{ '/docs/Tutorials' | relative_url }}" class="badge badge-primary float-right">Click For More Tutorials</a>
 </div>
 
-<h2> <a href="{{ '/docs/How to Use Spiedie' | relative_url }}">Documentation</a> </h2>
+<h2> <a href="{{ '/docs/How-to-Use-Spiedie' | relative_url }}">Documentation</a> </h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/How to Use Spiedie" and mypage.nav_exclude != true %}
+    {% if mypage.dir == "/docs/How-to-Use-Spiedie" and mypage.nav_exclude != true %}
     {% if  i < 6 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -96,14 +96,14 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     <a href="{{ '/docs/' | relative_url }}" class="badge badge-primary float-right">Click For More Docs</a>
 </div>
 
-<h2> <a href="{{ '/docs/singularity' | relative_url }}">Singularity on Spiedie</a> </h2>
+<h2> <a href="{{ '/docs/Singularity' | relative_url }}">Singularity on Spiedie</a> </h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
 
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/singularity/" and mypage.nav_exclude != true %}
+    {% if mypage.dir == "/docs/Singularity/" and mypage.nav_exclude != true %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -120,6 +120,6 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 </div>
 <div class="more-info">
-    <a href="{{ site.url }}/docs/singularity" class="badge badge-primary float-right">Click For More Info</a>
+    <a href="{{ site.url }}/docs/Singularity" class="badge badge-primary float-right">Click For More Info</a>
 </div>
 
