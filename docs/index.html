@@ -27,7 +27,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "{{ '/docs/Tutorials/' | relative_url }}" %}
+    {% if mypage.dir == "/docs/tutorials/" %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -47,7 +47,7 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     <a href="{{ '/docs/Tutorials' | relative_url }}" class="badge badge-primary float-right">Click For More Tutorials</a>
 </div>
 
-<h2> <a href="docs/">Documentation</a> </h2>
+<h2> <a href="{{ '/docs' | relative_url }}">Documentation</a> </h2>
 
 <hr>
 <div class="card-container">
@@ -70,17 +70,17 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 </div>
 <div class="more-info">
-    <a href="{{ site.url }}/docs" class="badge badge-primary float-right">Click For More Docs</a>
+    <a href="{{ '/docs/' | relative_url }}" class="badge badge-primary float-right">Click For More Docs</a>
 </div>
 
-<h2> <a href="docs/singularity/">Singularity on Spiedie</a> </h2>
+<h2> <a href="{{ '/docs/singularity' | relative_url }}">Singularity on Spiedie</a> </h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
 
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/singularity/"  %}
+    {% if mypage.dir == "/docs/singularity/"  %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
