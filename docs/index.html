@@ -27,11 +27,11 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 <div class="card-container">
     {% assign i = 0 %}
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/tutorials/" %}
+    {% if mypage.dir == "/docs/Tutorials/" %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
-        <a class="card" href="{{ relative_url }}{{ mypage.url }}" style="margin-bottom:20px;">
+        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
             <div class="card-body">
                 <h3 class="card-title">{{ mypage.title }}</h3>
                 <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
