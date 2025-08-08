@@ -14,7 +14,7 @@ description: Basic how-to guide on modules as they function on Spiedie.
  2. [Loading Modules](#how_to_load)
  3. [Using Modules to Compile](#compile_with_modules)
  4. [Viewing Available Modules](#module_list)
-***
+
 
 ## What Are Modules? <a name="what_are_modules"></a>
 ***
@@ -78,6 +78,7 @@ A few examples for useful but more hands-on possibilities for modules: you can e
 ***
 #### Important Note
 It is important to note that scripts and batched slurm jobs **do not** draw from modules in your current session. So any scripts or runscripts will have to load any needed modules within them, while command-line scripts and command-line slurm jobs (run using the `srun` command) will not require separate loading instances.
+###
 ***
 
 ## Using Modules to Compile <a name="how_to_load"></a>
