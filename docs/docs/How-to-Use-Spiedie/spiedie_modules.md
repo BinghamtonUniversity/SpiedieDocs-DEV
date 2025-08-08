@@ -1,124 +1,86 @@
 ---
-title: Spiedie Modules
+title: Modules on Spiedie
 layout: default 
 images: [] 
 nav_order: 7
-tags : [partitions, features, memory management, modules]
-description: Learn about the different specialized partitions set up on Spiedie and best practices to improve Spiedie usage.  
---- 
+nav_exclude: false
+tags: [Operations, Modules, Advanced]
+description: Basic how-to guide on modules as they function on Spiedie.
+---
 
 ***
-
 ### Table of Contents
+ 1. [What are Modules](#what_are_modules)
+ 2. [Loading Modules](#how_to_load)
+ 3. [Using Modules to Compile](#compile_with_modules)
+ 4. [Viewing Available Modules](#module_list)
+***
 
-1. [Available Modules](#avail)
-2. [Loading a Module](#load)
-3. [Unloading a Module](#unload)
-4. [Switch Module Files](#switch)
-5. [View loaded Modules](#view)
-6. [Reload all Modules](#reload)
-7. [Module Collections](#collections)
-8. [Load Module at log in](#login)
-9. [Further uses](#help)
+## What Are Modules? <a name="what_are_modules"></a>
+***
+Spiedie manages most of its software, packages, and programs through the use of what are known as "modules." Modules can be loaded into your terminal session to add paths and enable software in your current session, and modules may automatically load other modules necessary to run the piece of software in the module. When you log onto Spiedie, a few default modules are loaded automatically. At any time, you may view the modules active in your session by running the following command:
 
-#### <a name="avail"></a> Available Modules 
-To view all available modules run: 
+```bash
+module list
+```
+
+## Viewing and Loading Modules <a name="how_to_load"></a>
+***
+
+To view a compact list of the most commonly-invoked modules available on Spiedie, run
 
 ``` bash 
 module avail 
 ```
 
-#### <a name="load"></a> Loading a Module
+A complete list of all available modules on Spiedie can be viewed by running
 
-To load a module to your current environment run: 
+``` bash 
+module spider 
+```
+
+and can also be seen in the ["Module List" Doc](../Spiedie-Info/modulelist.md) Simple modules listed by the `module avail` command can simply be loaded or unloaded by running
 
 ``` bash 
 module load module_name
 ```
 
-or 
-
-``` bash 
-module add module_name
-```
-
-***Note: Loaded modules are available on your path for your current session. So jobs queued with srun will have access to them. Jobs queued with sbatch will need to load the modules again in order to have access to them***
-
-#### <a name="unload"></a> Unloading a Module 
-
-To unload a module from your environment runL 
+and
 
 ``` bash 
 module unload module_name
 ```
 
-or 
+where `module_name` should be replaced with your chosen module. However, many modules you can find listed by the `module spider` command may require other modules to be loaded before the chosen module can be loaded. To see the requisite modules, you can run
 
 ``` bash 
-module rm module_name
+module spider module_name
 ```
 
-#### <a name="switch"></a> Switch Module files
+and then load those modules before ultimately loading the original module. 
 
-To switch module_file1 with module_file2, run: 
 
-``` bash 
-module switch  module_file1 module_file2
-```
-
-#### <a name="view"></a> View Loaded Modules
-
-To view the modules currently loaded, run:
-
-```bash 
-module list 
-```
-
-#### <a name="reload"></a> Reload all Modules
-To reload the loaded files and reset the PATH run: 
-
-``` bash 
-module reload 
-```
- or 
-
+When necessary, all modules in your session (including those loaded by default) can be removed by running
 
 ```bash
-module refresh 
+module purge
 ```
-#### <a name="collections"></a> Module Collections
 
-To save the current set of loaded modules to a collection to be used later, run: 
+Many other advanced options of loading, initializing, and creating module profiles and checking methods are possible! You can view these options by running the 
 
 ```bash
-module save filename
-```
-
-To restore modules from the saved collection, run: 
-
-```bash
-module restore collection_name
-```
-
-To see all available collections, run: 
-
-```bash
-module saveshow
-```
-
-
-#### <a name="login"></a> Load Modules at Log in 
-
-You can set up your environment such that modules are automatically loaded when you log in everytime. To add module to the initial list of loaded modules, run: 
-
-```bash
-module initadd module_name 
-```
-
-#### <a name="help">Further Uses</a>
-
-For further options for the module command, run:
-
-``` bash
 module help
 ```
+command. 
+
+A few examples for useful but more hands-on possibilities for modules: you can easily create module bundles that can be loaded via the `module save` and `module restore` commands, or add to the modules loaded upon login by adding a few lines to your [.bashrc profile](../How-to-Use-Spiedie/aliases.md)
+
+***
+#### Important Note
+It is important to note that scripts and batched slurm jobs **do not** draw from modules in your current session. So any scripts or runscripts will have to load any needed modules within them, while command-line scripts and command-line slurm jobs (run using the `srun` command) will not require separate loading instances.
+***
+
+## Using Modules to Compile <a name="how_to_load"></a>
+***
+
+Many of the modules [available on Spiedie](../Spiedie-Info/modulelist.md) are compilers and commonly-used libraries, since many programs and packages users may need could be absent on Spiedie. Best practices and a guide to compiling on Spiedie can be read in the ["Compiling Source Code on Spiedie" Doc](../How-to-Use-Spiedie/compilers.md).
