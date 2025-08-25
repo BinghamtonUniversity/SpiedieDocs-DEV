@@ -15,7 +15,7 @@ The Binghamton University High-Performance Computing Cluster, aptly name “Spie
 
 ## Complete List
 
-|**Node Name**       |**Partitions**      | **Processor Type** |**Threads per Core**|**Cores per Socket**|**Sockets**         |**Available Memory**|
+|**Node Name**       |**Partitions**      | **Processor Type** |**Threads per Core**|**Cores per Node**  |**Available Memory**|**Attributes**      |
 |--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-|chpc011-017         |Standard, normal    |CPU                 |1                   |8                   |4                   |256 GB              |
+|chpc011-017         |Standard, normal    |CPU                 |1                   |32                  |256 GB              |etc.                |
 |etc.                |etc.                |etc.                |etc.                |etc.                |etc.                |etc.                |

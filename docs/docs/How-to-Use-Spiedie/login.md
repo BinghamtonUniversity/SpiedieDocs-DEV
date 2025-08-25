@@ -2,7 +2,8 @@
 title: Connecting to the Cluster
 layout: default
 images: []
-nav_order: 3
+nav_order: 1
+nav_exclude: false
 tags: [Login, Setup, Configuration, Windows, Mac, Linux, New_User]
 description: How to log on to Spiedie from your personal computer using various operating systems.
 ---
