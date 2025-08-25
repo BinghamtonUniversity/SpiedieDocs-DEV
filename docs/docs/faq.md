@@ -3,6 +3,7 @@ title: FAQs
 layout: default
 images: [] 
 tags: [New_User, FAQ]
+nav_exclude: true
 description: Freqeuntly Asked Questions on how to get access to and use Spiedie
 ---
 
