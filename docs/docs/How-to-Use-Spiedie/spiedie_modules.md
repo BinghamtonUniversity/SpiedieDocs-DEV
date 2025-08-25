@@ -2,7 +2,7 @@
 title: Modules on Spiedie
 layout: default 
 images: [] 
-nav_order: 7
+nav_order: 6
 nav_exclude: false
 tags: [Operations, Modules, Advanced]
 description: Basic how-to guide on modules as they function on Spiedie.

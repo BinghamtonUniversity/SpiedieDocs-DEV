@@ -1,8 +1,9 @@
 ---
-title: Transfer File to Cluster
+title: Transferring Data
 layout: default
 images: []
-nav_order: 5
+nav_order: 2
+nav_exclude: false
 tags: [Login, Setup, File Transfer, Windows, Mac, Linux, New_User]
 description: A guide to transferring data to and from Spiedie and setting up network drives. 
 ---

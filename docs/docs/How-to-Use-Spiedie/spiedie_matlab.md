@@ -1,8 +1,9 @@
 ---
-title: How to setup MATLAB
+title: MATLAB on Spiedie
 layout: default
 images: []
-nav_order: 13
+nav_order: 11
+nav_exclude: false
 tags: [Login, Setup, Configuration, Remote Access, MATLAB, tutorials]
 description: How to set up MATLAB remote desktop server on Spiedie
 ---

@@ -1,8 +1,8 @@
 --- 
-title: Submitting Jobs on Spiedie
+title: Submitting Jobs
 layout: default 
 images: []
-nav_order: 10 
+nav_order: 8
 tags: [SRUN, SBATCH, Job Submission, interactive session, memory allocation, partitions]
 description: Documentation for srun and sbatch commands 
 ---

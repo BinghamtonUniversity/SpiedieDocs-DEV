@@ -1,5 +1,5 @@
 ---
-title: Connecting to the Cluster
+title: Logging In
 layout: default
 images: []
 nav_order: 1

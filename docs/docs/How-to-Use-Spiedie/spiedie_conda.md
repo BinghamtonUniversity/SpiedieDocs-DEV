@@ -2,7 +2,8 @@
 title: Conda on Spiedie
 layout: default
 images: []
-nav_order: 11
+nav_order: 9
+nav_exclude: false
 tags: [Conda, virtual environment]
 description: A quick guide on enabling and using the Conda environment manager on Spiedie. 
 ---

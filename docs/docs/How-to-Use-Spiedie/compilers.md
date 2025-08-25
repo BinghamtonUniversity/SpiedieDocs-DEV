@@ -1,8 +1,9 @@
 ---
-title: Compiling Source Code on Spiedie
+title: Compiling Code
 layout: default
 images: []
-nav_order: 9
+nav_order: 7
+nav_exclude: false
 tags: [GCC, CLANG, CMAKE, ICC, Intel Compilers]
 description: Available compilers on spiedie for optimized compilations.
 ---

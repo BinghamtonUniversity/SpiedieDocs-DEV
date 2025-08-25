@@ -1,8 +1,8 @@
 ---
-title: Useful Linux Commands
+title: Basic Linux Commands
 layout: default
 images: []
-nav_order: 1
+nav_order: 3
 nav_exclude: false
 tags: [Login, Setup, Configuration, New_User]
 description: Some useful Linux commands.
