@@ -27,7 +27,7 @@ description: How to obtain an account on the Spiedie Cluster.
 * Higher priority queues have precedence
 * 122 hr wall time
 
-**Application miust be filled out by supporting faculty**
+**Application must be filled out by supporting faculty**
 
 <a href="https://docs.google.com/a/binghamton.edu/forms/d/e/1FAIpQLSe3VQGT37cE1wC1IHz9sQDasEgna2JYqpjLTCFUSOAu5SlCUQ/viewform?usp=sf_link" target="_blank">Access application</a>
 
@@ -42,7 +42,7 @@ description: How to obtain an account on the Spiedie Cluster.
 * 122 hr wall time
 * Per research group access
 
-**Application miust be filled out by supporting faculty**
+**Application must be filled out by supporting faculty**
 
 <a href="https://goo.gl/forms/EKbW3DUSoasTuphu1" target="_blank" >Subscription application</a>
 
