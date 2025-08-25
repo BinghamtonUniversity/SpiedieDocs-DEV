@@ -10,7 +10,7 @@ In its current form, the Spiediedocs is set up to allow for easy addition and ed
 
 ## To Add Content
 
-To add a new page to the SpiedieDocs, it's as easy as placing the new .md file into the "/docs/docs/" directory inside the sub-directory that is labelled under the sub-directory you want the new SpiedieDoc to appear under in the sidebar. Some differences exist now, which must be mentioned here:
+To add a new page to the SpiedieDocs, it's as easy as placing the new .md file into the "/docs/docs/" directory inside the sub-directory that is labelled under the table-of-contents header you want the new SpiedieDoc to appear under in the sidebar. Some differences exist now, which must be mentioned here:
 
 1. It is now required (or suggested at the very least) to list the "nav_order" and "nav_exclude" tags in the file frontmatter. Here is an example of a new header:
 
