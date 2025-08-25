@@ -1,125 +1,74 @@
----
-title: "Welcome to Spiedie Docs!"
-layout: default
+--- 
+title: Spiedie Documentation Index
+layout: default 
 images: []
 tags: []
 nav_exclude: true
 description: Welcome to Spiedie and Binghamton University. Glance through here to learn about computer clusters and Spiedie's computing capabilities. 
 ---
 
-<div id="about-section">
-    <h3>About</h3>
-    <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html" class="badge badge-primary float-right">Click For More Info</a>
-</div>
+### Documentation Index 
 
+1. <h4> Introduction: Spiedie </h4>
+    1. <a href="introduction.html">What is a cluster?</a>
+    2. <a href="https://www.binghamton.edu/watson/facilities/computing/high-performance.html">What is Spiedie?</a>
+    3. <a href="gain_access.html">How do I get an account?</a> 
+        * [Subsidized access (No cost)](gain_access.html#subsidized))
+        * [Yearly subscription access](gain_access.html#yearly)
+        * [Condo Access](gain_access.html#condo)
+		
+2. <h4> How to use Spiedie? </h4>
+	1. [Logging in](login.html)
+	    * [Using Windows](login.html#using_windows)
+	    * [Using Mac](login.html#using_mac)
+	    * [Using Linux](login.html#using_linux)
+	    * [Accessing Bright Web Portal](login.html#bright_web)
+	    * [X2Go on Spiedie](x2go_spiedie.html)
+	
+	2. [Transferring Data](data_transfer.html)
+	    * [Using SCP](data_transfer.html#SCP)
+	    * [using RSYNC](data_transfer.html#rsync)
+	    * [Map Home Directory](data_transfer.html#Home_dir)
 
-<hr>
-<div class="greeting">
-    The Binghamton University High-Performance Computing Cluster aptly name “Spiedie” is a 3688 compute core 
-    & 512 Knights Landing core cluster housed in the Thomas J. Watson School of Engineering 
-    and Applied Science's data center located at the Innovative Technology Complex. 
-    This research facility offers computer capabilities for researchers across 
-    Binghamton University.
-</div>
-<h2><a href="{{ '/docs/HPC-Operations' | relative_url }}">HPC Details and Operations</a></h2>
+	3. [Basic SLURM commands](basic_slurm_commands.html)
+	    * [Checking cluster info](basic_slurm_commands.html#info)
+	    * [Running a program](basic_slurm_commands.html#run)
+	    * [Checking the Queue](basic_slurm_commands.html#queue)
+	    * [Kill, stop or restart](basic_slurm_commands.html#ksr)
+	    * [Check account utilization](basic_slurm_commands.html#util)
 
-<hr>
-<div class="card-container">
-    {% assign i = 0 %}
-    {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/HPC-Operations/" and mypage.nav_exclude != true %}
-    {% if  i < 3 %}
-    {% assign i = i | plus:1 %}
-    <div class="card-info">
-        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
-            <div class="card-body">
-                <h3 class="card-title">{{ mypage.title }}</h3>
-                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
-            </div>
-        </a>
-    </div>
+	4. [Spiedie Modules](spiedie_modules.html)
+	    * [Available Modules](spiedie_modules.html#avail)
+	    * [Loading a Module](spiedie_modules.html#load)
+	    * [Unloading a Module](spiedie_modules.html#unload)
+	    * [Switch Modules](spiedie_modules.html#switch)
+	    * [View loaded Modules](spiedie_modules.html#view)
+	    * [Reload all Modules](spiedie_modules.html#reload)
+	    * [Module Collections](spiedie_modules.html#collections)
+	    * [Modules at Log in](spiedie_modules.html#login)
+	    * [Further uses and help](spiedie_modules.html#help)
 
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</div>
+	5. [Spiedie Partitions and Features](spiedie_partitions.html)
+	    * [Partitions](spiedie_partitions.html#partitions)
+	    * [Features](spiedie_partitions.html#features)
 
-<h2><a href="{{ '/docs/Tutorials' | relative_url }}">Guided Tutorials</a></h2>
+	6. [Compiling Code on Spieide](compilers.html)
 
-<hr>
-<div class="card-container">
-    {% assign i = 0 %}
-    {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/Tutorials/" and mypage.nav_exclude != true %}
-    {% if  i < 3 %}
-    {% assign i = i | plus:1 %}
-    <div class="card-info">
-        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
-            <div class="card-body">
-                <h3 class="card-title">{{ mypage.title }}</h3>
-                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
-            </div>
-        </a>
-    </div>
-
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</div>
-<div class="more-info">
-    <a href="{{ '/docs/Tutorials' | relative_url }}" class="badge badge-primary float-right">Click For More Tutorials</a>
-</div>
-
-<h2> <a href="{{ '/docs/How-to-Use-Spiedie' | relative_url }}">Documentation</a> </h2>
-
-<hr>
-<div class="card-container">
-    {% assign i = 0 %}
-    {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/How-to-Use-Spiedie/" and mypage.nav_exclude != true %}
-    {% if  i < 6 %}
-    {% assign i = i | plus:1 %}
-    <div class="card-info">
-        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
-            <div class="card-body">
-                <h3 class="card-title">{{ mypage.title }}</h3>
-                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
-            </div>
-        </a>
-    </div>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-
-</div>
-<div class="more-info">
-    <a href="{{ '/docs/' | relative_url }}" class="badge badge-primary float-right">Click For More Docs</a>
-</div>
-
-<h2> <a href="{{ '/docs/Singularity' | relative_url }}">Singularity on Spiedie</a> </h2>
-
-<hr>
-<div class="card-container">
-    {% assign i = 0 %}
-
-    {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/Singularity/" and mypage.nav_exclude != true %}
-    {% if  i < 3 %}
-    {% assign i = i | plus:1 %}
-    <div class="card-info">
-        <a class="card" href="{{ mypage.url | relative_url }}" style="margin-bottom:20px;">
-            <div class="card-body">
-                <h3 class="card-title">{{ mypage.title }}</h3>
-                <p class="card-text">{{ mypage.description | mypage.content | strip_html   }} ...</p>
-            </div>
-        </a>
-    </div>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-
-</div>
-<div class="more-info">
-    <a href="{{ site.url }}/docs/Singularity" class="badge badge-primary float-right">Click For More Info</a>
-</div>
-
+	7. [Running Jobs](submitting_jobs.html)
+	    * [Using srun](submitting_jobs.html#srun)
+	    * [Using sbatch](submitting_jobs.html#sbatch)
+	    * [Customizing resource allocation](submitting_jobs.html#resource-alloc)
+	
+	8. [Using Conda on Spiedie](spiedie_conda.html)
+		* [What is Conda](spiedie_conda.html#conda_intro)
+		* [Activating Conda on Spiedie](spiedie_conda.html#conda_activate)
+		* [Deactivating Conda](spiedie_conda.html#conda_deactivate)
+		* [Using Conda](spiedie_conda.html#conda_use)
+		* <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/overview.html" target="_blank">Conda Documentation</a>
+	9. [X11 Forwarding](x_11_forwarding.html)
+	10. [MATLAB on Spiedie](spiedie_matlab.html)
+	11. [ANSYS on Spiedie](spiedie_ansys.html)
+3. <h4> Best Practices </h4>
+	1. [Conda vs. Singularity vs. Modules](conda_singularity_modules.html) 
+4. <h4>External links </h4>
+	1. <a href="https://slurm.schedmd.com/documentation.html" target="_blank">SLURM Documentation</a>
