@@ -1,7 +1,7 @@
 ---
 title: Modules List
 layout: default
-nav_order: 1
+nav_order: 3
 nav_exclude: false
 tags: [Operations, Modules, Advanced]
 description: Basic how-to guide on modules and list of modules on Spiedie.
