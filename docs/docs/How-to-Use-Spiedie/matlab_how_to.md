@@ -113,7 +113,7 @@ to view all information for *cluster_profile*, which should be replaced with you
 
 Each user will by default have the "Processes" cluster profile available; this corresponds to jobs running on the headnode. __Note that parallelization is difficult, problematic, and extremely cumbersome to other users for even mid-sized calculations__. For this reason, *please* avoid running large or massively-parallel calculations with the "Processes" cluster profile. 
 
-###Connecting to Spiedie Cluster Compute Nodes through GUI
+### Connecting to Spiedie Cluster Compute Nodes through GUI
 
 To access the compute nodes of Spiedie for parallel computing, you must import or discover Spiedie's cluster profile. The best way to access this cluster profile is to select "Import" from Matlab's previously-described "Create and Manange Profiles" window. Upon selecting "import", a file selector will appear. Navigate to */opt/ohpc/pub/apps/MATLAB/matlab-parallel-slurm-plugin/discover/* and select the *spiedie.conf* file, then press "open".
 
