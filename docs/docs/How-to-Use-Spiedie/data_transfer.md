@@ -11,7 +11,7 @@ description: A guide to transferring data to and from Spiedie and setting up net
 
 ***
 
-***Note: The following steps are only applicable while connected to the university network. If working off-campus, you must connect first to a SSL VPN. [Click here for more details](ssl_vpn.html)*** 
+***Note: The following steps are only applicable while connected to the university network. If working off-campus, you must connect first to a SSL VPN. [Click here for more details](login.md#vpn)*** 
 
 ### Table of Contents 
 
