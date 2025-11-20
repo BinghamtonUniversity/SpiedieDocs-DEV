@@ -13,11 +13,14 @@ description: A walk-through of the essential slurm commands to run programs, che
 
 1. [Checking cluster info](#info)
 2. [Running a program](#run)
+    * Using srun (command line)
+    * Using sbatch (executing scripts)
 3. [Checking the Queue](#queue)
 4. [Kill, stop or restart](#ksr)
 5. [Check account utilization](#util)
-***
 
+
+***
 ## <a name="info"></a> Checking Cluster Info
 
 #### <a name="info"></a>sinfo
