@@ -1,5 +1,5 @@
 --- 
-title: A Quick Introduction to Spiedie
+title: A Quick Introduction
 layout: default 
 images: []
 tags: [New_User]

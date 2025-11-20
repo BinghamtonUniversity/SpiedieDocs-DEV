@@ -1,8 +1,8 @@
 --- 
-title: X2Go on Spiedie (intermediate)
+title: X2Go on Spiedie
 layout: default 
 images: []
-tags: [GUI, x2go]
+tags: [GUI, x2go, Intermediate]
 nav_order: 4
 description: How to connect to Spiedie via X2Go to utilize an interactive desktop.
 ---

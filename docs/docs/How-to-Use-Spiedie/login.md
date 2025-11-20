@@ -14,7 +14,7 @@ description: How to log on to Spiedie from your personal computer using various 
 ### Table of Contents  
 
  1. [Connected to off-campus Network](#off_campus)
-     * [Installing Pulse Client](#vpn)
+     * [Installing Cisco Secure Client](#vpn)
  3. [Using Windows](#using_windows)  
      * [Install SSH Client \(PuTTY\)](#windows_ssh) 
      * [Connected to University Network](#using_windows)  
@@ -22,8 +22,9 @@ description: How to log on to Spiedie from your personal computer using various 
      * [Connected to University Network](#using_mac) 
  5. [Using Linux](#using_linux)  
      * [Connected to University Network](#using_linux)  
- 6. [Accessing Bright Web Portal](#bright_web)
- 7. [X2Go on Spiedie](#x2go)
+ 6. [GUI Sessions](#GUI)
+     * [GUI using VMWare Horizon Client](#VMWare)
+     * [GUI using X2Go](#x2go)
 
 
 
@@ -31,16 +32,14 @@ description: How to log on to Spiedie from your personal computer using various 
 
 ***Note: Take the following steps if logging in from an off-campus network***
 
-#### <a name="vpn"></a> Install Pulse Secure VPN
+### <a name="vpn"></a> Install Cisco Secure Client VPN
 
-1. Go to [ssl.binghamton.edu](https://ssl.binghamton.edu) and log in using your PODS DOMAIN ID and follow the steps to install Pulse Secure for Windows 
-
-	<!-- (Add image of ssl landing page and circle pulse secure for windows link	) -->
+1. Follow instructions on [this Binghamton University webpage](https://www.binghamton.edu/its/about/teams/operations-infrastructure/network_administration/connecting_from_off_campus-ssl-vpn/) and log in using your university login. Follow the steps to install Cisco Secure Client and connect to Binghamton's VPN remotely
 
 ***
 
 
-***Note: The following instructions are for when you are on campus. If you are off campus you must be connected through Pulse Secure.***
+***Note: The following instructions are for when you are on campus. If you are off campus you must be connected through Cisco Secure Client.***
 
 
 
@@ -48,7 +47,7 @@ description: How to log on to Spiedie from your personal computer using various 
 ## <a name="using_windows"></a> Using Windows
 ***
 
-#### <a name="windows_ssh"> </a>Install a SSH client
+### <a name="windows_ssh"> </a>Install a SSH client
 
 First we need to install an ssh client. We will be using <a href="https://www.putty.org" target="_blank">PuTTY</a> for this tutorial. 
 
@@ -61,8 +60,8 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 	(image#1)
 	Caption: putty log in --->
 3. Click Open or press enter
-4. Type in password (your typed characters will remain hidden on the screen)
-5. ***Note: Use the password that has been provided to you. Once you have logged in, you can then change your password by using the `passwd` command***
+4. Type in the password associated with your Binghamton University accounts (your typed characters will remain hidden on the screen and the cursor will not move)
+5. ***Note: Once you have logged in, you can then change your password by using the `passwd` command to change to another <u>secure</u> password***
 
  
 
@@ -77,19 +76,24 @@ First we need to install an ssh client. We will be using <a href="https://www.pu
 	ssh username@spiedie.binghamton.edu
 	```
 	replace `username` with your Spiedie username
-3. If this is your frist time connecting, type yes and press enter to recognize the ssh fingerprint.
+3. If this is your first time connecting, type yes and press enter to recognize the ssh fingerprint.
 4. Enter password when prompted.
-5. ***Note: Use the password that has been provided to you. Once you have logged in, you can then change your password by using the `passwd` command***
+5. ***Note: Once you have logged in, you can then change your password by using the `passwd` command to change to another <u>secure</u> password***
 
 
 ***
+## <a name="GUI"></a> GUI Sessions
+***
+Spiedie offers two options for working through a GUI session: VMWare Horizon Client, which can be accessed via application or a web session; and X2Go, which requires an application to be installed
 
+### <a name="VMWare"></a> Accessing via VMWare
+Spiedie uses the VMWare Horizon Client cluster. You can connect to VMWare Horizon Client through the following steps:
+0. If the VMWare Horizon Client application is not installed, visit [watsonview.binghamton.edu](https://watsonview.binghamton.edu) and select the left-most option to install the application. You can continue through HTML access, but this will likely be cumbersome and slow.
+1. Open the VMWare Horizon Client application. If this is your first time accessing Spiedie through the Horizon Client, please continue to execute steps 2. and 3. If this is not your first time accessing spiedie through VMWare, please select the "watsonview.binghamton.edu" icon and proceed to step 4.
+2. Select the "Add a Server" icon in the horizon client, and enter the server address as "[watsonview.binghamton.edu](https://watsonview.binghamton.edu)".
+3. Enter you credentials and one-time password as prompted to access the server. If you are accessing Spiedie via a non-hardline connection to eduroam or off-campus, you may need to be logged into the university's VPN to properly connect.
+4. Select "Spiedie" to connect to spiedie virtually. After a brief delay, you should see a Rocky workspace appear. You are now connected to Spiedie.
 
-## <a name="bright_web"></a> Accessing Bright Web Portal
-Spiedie uses the Bright Computing cluster manager. You can also check the status of clusters on a web portal by login in with Spiedie username and password. (Note: This is not the same as your PODS account)
-
-*** [Click here to log into the web portal](https://spiedie.binghamton.edu/userportal/) ***
-
-## <a name="x2go"></a> Accessing Spiedie via X2Go
+### <a name="x2go"></a> Accessing Spiedie via X2Go
 
 *** [Click here for a tutorial on how to connect to Spiedie via X2Go](x2go_spiedie.html)***
