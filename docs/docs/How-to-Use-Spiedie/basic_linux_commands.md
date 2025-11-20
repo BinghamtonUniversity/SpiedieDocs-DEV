@@ -964,12 +964,12 @@ kill -9 PID
 
 #### <a name="alias"></a> alias
 
-The alias command created a temporary/easier/shorter name for a command or seires of commands.
+The alias command created a temporary/easier/shorter name for a command or series of commands.
 
 ```bash
 alias name="command"
 ```
-
+These only last as long as the session is open, but permanent aliases can be added in your home directory's [.bashrc file](bashrc.md)
 
 ***
 
@@ -1145,7 +1145,7 @@ nano file1
 ```
 Opens file1 in the nano editor
 
-
+Guidance on how to work inside nano can be found [here](https://www.redhat.com/en/blog/getting-started-nano)
 
 
 
@@ -1161,11 +1161,11 @@ emacs file1
 ```
 Opens file1 in the emacs editor
 
+Guidance on how to work inside emacs can be found [here](https://opensource.com/article/20/3/getting-started-emacs)
 
 
 
-
-#### <a name="vi"></a> vi
+#### <a name="vi"></a> vim
 
 ```bash
 vi
@@ -1175,7 +1175,9 @@ Opens a new vi editor, will save a new file.
 ```bash
 vi file1
 ```
-Opens file1 in the vi editor
+Opens file1 in the vim editor
+
+Guidance on how to work inside emacs can be found [here](https://opensource.com/article/19/3/getting-started-vim)
 
 
 
