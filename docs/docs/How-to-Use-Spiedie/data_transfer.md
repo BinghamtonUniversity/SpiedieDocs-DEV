@@ -11,7 +11,7 @@ description: A guide to transferring data to and from Spiedie and setting up net
 
 ***
 
-***Note: The following steps are only applicable while connected to the university network. If working off-campus, you must connect first to a SSL VPN. [Click here for more details](login.md#vpn)*** 
+***Note: The following steps are only applicable while connected to the university network. If working off-campus, you must connect first to the university's VPN. [Click here for more details](login.md#vpn)*** 
 
 ### Table of Contents 
 
@@ -21,10 +21,12 @@ description: A guide to transferring data to and from Spiedie and setting up net
     * [Windows](#windows_map_home)
     * [Mac](#mac_map_home)
     * [Linux](#linux_map_home)
+4. [Useful File Transfer Programs](#ftppack)
+    * [Windows](#windowsftp)
+    * [Mac](#macftp)
+    * [Linux](#linuxftp)
 
 ***
-
-
 
 ## <a name="SCP"></a> SCP
 ***
@@ -99,3 +101,24 @@ You can map your Spiedie home directory to your file explorer if you wish to use
 1. From the Mac OS X Finder, press Comand+K to bring up the 'Connect to Server' window.
 2. Follow the instructions for Linux starting at item 3.
 
+## <a name="ftppack"></a> SFTP programs
+
+Some applications can facilitate and assist greatly in file transfer: below are some popular options which can be easily found.
+
+#### <a name="windowsftp"> </a> Windows FTP programs
+- WinSCP
+- FileZilla
+- Transmit
+- CloudMounter
+
+#### <a name="macftp"> </a> Mac FTP programs
+- Cyberduck
+- Transmit
+- FileZilla
+- Forklift
+- CloudMounter
+
+#### <a name="linuxftp"> </a> Linux FTP programs
+- Dolphin
+- Filezilla
+- Nautilus
