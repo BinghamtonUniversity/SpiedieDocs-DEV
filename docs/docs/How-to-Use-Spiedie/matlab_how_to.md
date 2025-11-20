@@ -119,15 +119,22 @@ To access the compute nodes of Spiedie for parallel computing, you must import o
 
 With this cluster profile now imported, you can move to the "validate" tab and click the "Validate" button at the very bottom. If all tests pass, then you are all set up to write and submit parallel matlab scripts using the Spiedie cluster profile!
 
-### troubleshooting cluster profile connection
+### Connecting to Spiedie Cluster Compute Nodes through CLI
 
-In is current form, difficulties may arrive in validating the Spiedie HPC cluster profile.
+From the CLI session of Matlab, you can run the following to connect to and validate access to compute nodes:
+
+```plaintext
+SpiedieProfile = parallel.importProfile('/opt/ohpc/pub/apps/MATLAB/matlab-parallel-slurm-plugin/discover/spiedie.conf')
+c = parcluster(SpiedieProfile)
+parallel.validateProfile(SpiedieProfile)
+```
+
+You can then continue to use this cluster for creating jobs or running parallel scripts and code.
 
 #### Cluster connection fails
 
-Check connection to the internet. If issues persist, edit the Spiedie Cluster properties (lower button on the "Properties" tab) and change the JobStorageLocation to the subdirectory in your home directory that you wish to house MATLAB job files. 
+Check connection to the internet. If issues persist, edit the Spiedie Cluster properties (lower button on the "Properties" tab) and change the JobStorageLocation to the subdirectory in your home directory that you wish to house MATLAB job files. If issues persist, please contact the cluster administrator.
 
 #### Job Test Fails
 
-This is currently due to an unsolvable license referencing problem Spiedie administrators are trying to solve. This error impacts all attempts to validate and submit jobs to Spiedie through this cluster profile, so if you are able to validate and submit parallel jobs successfully, please reach out to Phil Valenta at pvalenta@binghamton.edu
-
+Please preserve errors, logs, and other materials that will help diagnose the problem and contact the cluster administrator, Phil Valenta.
