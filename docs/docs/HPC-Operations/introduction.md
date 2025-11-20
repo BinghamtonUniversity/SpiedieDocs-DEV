@@ -39,3 +39,7 @@ Slurm has three key functions. First, it allocates exclusive and/or non-exclusiv
 
 1. Don't run programs on the head node
 2. Request appropriate resources for your job 
+
+
+
+

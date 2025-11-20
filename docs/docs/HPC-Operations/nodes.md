@@ -50,3 +50,7 @@ The Binghamton University High-Performance Computing Cluster, aptly name “Spie
 |chpc[135-136]                |Standard.2.0                 |64                       |512 GB                       |Scalable                     |
 |chpc[137-138]                |Standard.2.0                 |64                       |256 GB                       |Scalable                     |
 |chpc139                      |Standard,highmem32           |28                       |512 GB                       |E5v4                         |
+
+
+
+
