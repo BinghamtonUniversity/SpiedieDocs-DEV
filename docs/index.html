@@ -96,14 +96,14 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
     <a href="{{ '/docs/' | relative_url }}" class="badge badge-primary float-right">Click For More Docs</a>
 </div>
 
-<h2> <a href="{{ '/docs/Singularity' | relative_url }}">Singularity on Spiedie</a> </h2>
+<h2> <a href="{{ '/docs/Apptainer' | relative_url }}">Apptainer on Spiedie</a> </h2>
 
 <hr>
 <div class="card-container">
     {% assign i = 0 %}
 
     {% for mypage in site.pages %}
-    {% if mypage.dir == "/docs/Singularity/" and mypage.nav_exclude != true %}
+    {% if mypage.dir == "/docs/Apptainer/" and mypage.nav_exclude != true %}
     {% if  i < 3 %}
     {% assign i = i | plus:1 %}
     <div class="card-info">
@@ -120,6 +120,6 @@ description: Welcome to Spiedie and Binghamton University. Glance through here t
 
 </div>
 <div class="more-info">
-    <a href="{{ site.url }}/docs/Singularity" class="badge badge-primary float-right">Click For More Info</a>
+    <a href="{{ site.url }}/docs/Apptainer" class="badge badge-primary float-right">Click For More Info</a>
 </div>
 
