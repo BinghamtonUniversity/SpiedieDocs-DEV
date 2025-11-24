@@ -109,12 +109,10 @@ export OMP_NUM_THREADS=$omp_threads
 
 Depending on the number of cores being used, it is a good idea to consider with partition would be the suitable for our program. [The details for the partitions and the number of cores available per compute node can be found here](../docs/spiedie_partitions.html)
 
-If you are using more thant 20 cores, it is recommended to assign the partition to KNL nodes. 
-
-In our test, we will use the standard partition due to our relatively small number of cores. 
+In our test, we will use the Standard partition due to our relatively small number of cores. 
 
 ```bash
-#SBATCH --partition-standard
+#SBATCH --partition=Standard
 ```
 
 ## Compiling and linking on the fly
@@ -123,7 +121,7 @@ It is good practice to compile and link custom code during your run, in order to
 
 So we can load the gcc module with:
 ```bash
-module load gcc
+module load gnu13
 ``` 
 
 We can call the compiler as usual:

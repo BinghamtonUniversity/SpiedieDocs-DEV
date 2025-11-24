@@ -1,14 +1,16 @@
 ---
-title: Singularity Recipe Hub
+title: Apptainer Recipe Hub
 layout: default
 images: []
-tags: [singularity, containers, docs, singularity definition files, singularity recipes] 
-description: Spiedie-Tested Singularity recipes
+tags: [Singularity, Apptainer, containers, docs, singularity definition files, recipes] 
+description: Spiedie-Tested Apptainer recipes
 ---
 
 *** 
 
-The following are some singularity recipes that have been tested to work on Spiedie. 
+The following are some Apptainer recipes that have been tested to work on Spiedie. 
+
+***Note: These recipes were tested on an older version of Spiedie, and under Singularity 3.0. Testing of these recipes for newer Apptainer versions and Spiedie architecture are underway.***
 
 |    Image Name    	|                          Software(s)                          	| Verified 	| Download 	|
 |:----------------:	|:-------------------------------------------------------------:	|:--------:	|:--------:	|

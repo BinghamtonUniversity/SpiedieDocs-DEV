@@ -83,7 +83,7 @@ You can get a quick overview of the cluster by running
 ``` bash
 sinfo
 ```
-We'll be using the quick partition as it is used mostly for rapid prototyping. You'll notice quick has a time cutoff of 10 minutes, so jobs are atuomatically cleared after 10 minutes. This makes sure we don't have to wait too long for allocation. 
+We'll be using the Standard partition as it is used mostly for rapid prototyping. You'll notice Standard has a time cutoff of 2 days, with an hour guaranteed before preemption, so jobs are at risk of preemption and re-entry into queue after 1 hour. This makes sure we don't have to wait too long for allocation. 
 
 Before we ask for allocation on the cluster, we can check how busy the system is by running 
 
@@ -98,10 +98,10 @@ This will list all jobs currently running and waiting to be allocated.
 Let's run the quick_start.py program. Run 
 
 ``` bash 
-srun --partition=quick python3 quick_start.py 1>quick_start.log 2>quick_start_error.log &
+srun --partition=Standard python3 quick_start.py 1>quick_start.log 2>quick_start_error.log &
 ```
 
-This will send your job to the SLURM daemon to be allocated and then run on a quick partition node. We have chosen to use default parameters for srun such number of nodes (1) and number of tasks (1) and number of CPU's (1). 
+This will send your job to the SLURM daemon to be allocated and then run on a Standard partition node. We have chosen to use default parameters for srun such number of nodes (1) and number of tasks (1) and number of CPU's (1). 
 
 We have directed the outputs of the program to the quick_start.log and quick_start_error.log and retained the control of the terminal. 
 

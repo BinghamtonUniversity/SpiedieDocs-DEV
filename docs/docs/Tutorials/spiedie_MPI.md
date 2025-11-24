@@ -97,10 +97,10 @@ We will be asking for multiple nodes in our test program with:
 
 This asks for 2 compute nodes which will allow us to fully take advantage of the multiple node infrastructure. 
 
-We will also run the program on the quick partition with; 
+We will also run the program on the Standard partition with; 
 
 ```bash
-#SBATCH --partition=quick
+#SBATCH --partition=Standard
 ```
 
 #### Running the Program 
@@ -108,7 +108,8 @@ We will also run the program on the quick partition with;
 We must add the MPI library with:
 
 ```bash
-module load mvapich2/gcc/64/2.3b
+module load gnu13/13.2.0 
+module load mvapich2/2.3.7
 ```
 
 To then compile the program: 
@@ -132,10 +133,11 @@ The final run script can be downloaded <a href="code/mpi_run.sh" download=> here
 #SBATCH --output=mpi_out.log
 #
 #SBATCH -N 2
-#SBATCH --partition=quick
+#SBATCH --partition=Standard
 #
 
-module load mvapich2/gcc/64/2.3b
+module load gnu13/13.2.0
+module load mvapich2/2.3.7
 
 mpicc -o mpi_test mpi.c
 

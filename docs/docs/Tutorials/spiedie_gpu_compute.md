@@ -11,6 +11,8 @@ description: How to run specialzied GPU-accelerated on the GPU partition on Spie
 
 In this tutorial, we will be running the BLAS sample test on a GPU compute node on Spiedie. 
 
+***Be Aware: as of 2025, access to GPU nodes is managed carefully to prevent misuse. Please contact Spiedie's administrator, Phil Valenta, for access to GPU nodes.***
+
 Covered in this guide: 
 
 1. [Writing batch script and using sbatch](../docs/submitting_jobs.html)

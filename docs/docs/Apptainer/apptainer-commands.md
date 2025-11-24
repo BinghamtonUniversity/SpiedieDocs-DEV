@@ -3,7 +3,7 @@ title: Singularity Commands
 layout: default
 images: []
 description: Run Singularity on Spiedie
-tags: [singularity, containers, docs, singularity run, singularity exec] 
+tags: [Singularity, Apptainer, containers, docs] 
 ---
 
 ***
@@ -16,10 +16,10 @@ tags: [singularity, containers, docs, singularity run, singularity exec]
 
 #### <a name="shell"></a> Acessing container shell 
 
-To access the shell environment on your Singularity Image run the command: 
+To access the shell environment on your Apptainer image run the command: 
 
 ```bash 
-singularity shell image_name.simg
+apptainer shell image_name.simg
 ```
 
 This will start an interactive session with the container environment. You can run scripts while in the session as the same user. 
@@ -28,24 +28,24 @@ You can make use of the interactive session capabilities of Spiedie to run your 
 
 #### <a name="exec"></a> Running shell a command with Container image
 
-You can execute commands as you would on a shell script using Singularity. 
+You can execute commands as you would on a shell script using Apptainer. 
 
 ```bash
-singularity exec image_name.simg shell_command
+apptainer exec image_name.simg shell_command
 ```
 
-Singularity can be combined with SLURM seamlessly by issuing singularity commands with srun and sbatch. [Click here for more information on running jobs. ](../docs/submitting_jobs.html)  
+Apptainer can be combined with SLURM seamlessly by issuing Apptainer commands with srun and sbatch. [Click here for more information on running jobs. ](../docs/submitting_jobs.html)  
 
 #### <a name="run"></a> Running batch script with Container image
 
-You can also run scripts using the Singularity image, by running: 
+You can also run scripts using the Apptainer image, by running: 
 
 ```bash
-singularity run image_name.simg run_script.sh
+apptainer run image_name.simg run_script.sh
 ```
 
 #### <a name="extern"></a> External resources
 
-<a href="https://singularity.lbl.gov/docs-usage" target="_blank">
-For more advanced features of Singularity framework, consult the Singularity reference guide	
+<a href="https://apptainer.org/docs/user/latest/" target="_blank">
+For more advanced features of Apptainer framework, consult the Apptainer reference guide	
 </a>

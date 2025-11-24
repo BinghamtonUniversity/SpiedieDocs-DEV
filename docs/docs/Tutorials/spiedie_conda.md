@@ -1,19 +1,19 @@
 --- 
-title: Conda on Spiedie (intermediate)
+title: Conda on Spiedie
 layout: default 
 images: []
 nav_order: 21
-tags: [Conda, GPUCompute, Tensorflow, Tensorflow-GPU]
-description: How to activate Conda on Spiedi and install new packages
+tags: [Conda, GPUCompute, Tensorflow, Tensorflow-GPU, Intermediate]
+description: How to activate Conda on Spiedie and install new packages
 ---
 
 ***   
 
 This tutorial illustrates the use of the Conda environment manager along with the GPU compute node on Spiedie. 
 
-If you'de like to run the same job, but using [Singularity](../singularity/) instead of Conda, [click here!](spiedie_singularity.html)
+If you'de like to run the same job, but using [Singularity](../Apptainer/) instead of Conda, [click here!](spiedie_apptainer.html)
 
-[Click here for more information on when to use Conda vs. Sinularity vs. Modules](../docs/conda_singularity_modules.html)
+[Click here for more information on when to use Conda vs. Sinularity vs. Modules](../docs/conda_apptainer_modules.html)
 
 Things covered in this guide: 
 

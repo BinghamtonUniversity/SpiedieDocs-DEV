@@ -1,48 +1,51 @@
 ---
-title: Singularity Containers on Spiedie (advanced)
+title: Apptainer Containers on Spiedie (advanced)
 layout: default 
 images: [] 
 nav_order: 20
 tags : [tutorial]
-description: How to use Singularity containers to run jobs on spiedie.
+description: How to use Apptainer containers to run jobs on spiedie.
 --- 
 
 This guide illustrates the use of Singularity containers to run a job on the GPU compute node on Spiedie. 
 
-If you'de like to run the same job, but using [Conda](../docs/spiedie_conda.html) instead of Singularity, [click here!](spiedie_conda.html)
+***Be Aware: as of 2025, access to GPU nodes is managed carefully to prevent misuse. Please contact Spiedie's administrator, Phil Valenta, for access to GPU nodes.***
 
-[Click here for more information on when to use Conda vs. Sinularity vs. Modules](../docs/conda_singularity_modules.html)
+If you'de like to run the same job, but using [Conda](../docs/spiedie_conda.html) instead of Apptainer, [click here!](spiedie_conda.html)
+
+[Click here for more information on when to use Conda vs. Apptainer vs. Modules](../docs/conda_apptainer_modules.html)
 
 Things covered in this guide: 
 
-1. [Creating or pulling Singularity containers](../singularity/singularity_commands.md)
+1. [Creating or pulling Apptainer containers](../Apptainer/singularity_commands.md)
 2. Binding module directories to container environment 
 3. Running a GPU-enabled workload
 
 Requirements to complete this guide: 
 
 1. Familiarity with Spiedie [(try the quick start if you haven't)](quick_start.md)
-2. Local installation of Singularity 
-	- [Github account (to create image on syhub)](../singularity/syhub-create.html)
+2. Local installation of Apptainer
+	- [Github account (to create image on syhub)](../Apptainer/syhub-create.html)
 3. Familiarity with shell commands and python 
 
-## Creating or Pulling Singularity Containers
+## Creating or Pulling Apptainer Containers
 
-For this tutorial, we will be using a custom singularity image to run gpu-enabled Tensorflow on a GPU-compute node.
+For this tutorial, we will be using a custom singularity image file (SIF) to run gpu-enabled Tensorflow on a GPU-compute node.
 
  We have a few options for creating our container image. We can either create the image on a local machine and transfer it to Spiedie or we can generate the image on the <a href="https://singularity-hub.org/" targer="_blank">singularity-hub </a> container repository.  
 
-#### Creating Singularity Containers 
+#### Creating Apptainer Containers 
 
-If you would like to create the image locally first, [you must install Singularity on a machine in which you have root access.](../singularity/install-singularity.html)
+If you would like to create the image locally first, [you must install Apptainer on a machine in which you have root access.](../Apptainer/install-apptainer.html)
 
-We will use the verified  <a href="recipes/spiedie_tensorflow_gpu.def" download>TensorFlow-GPU recipe</a> available on the [Singularity Recipe Hub.](../singularity/recipe-hub.html)
+We will use the verified  <a href="recipes/spiedie_tensorflow_gpu.def" download>TensorFlow-GPU recipe</a> available on the [Apptainer Recipe Hub.](../Apptainer/recipe-hub.html)
 
 Once you have downloaded the recipe, build the image by simply running: 
 
 ```bash
-sudo singularity build spiedie_tf_gpu.simg spiedie_tensorflow_gpu.def 
+sudo apptainer build spiedie_tf_gpu.simg spiedie_tensorflow_gpu.def 
 ```
+<u>on your local machine.</u>
 
 *** Note: This may take a few minutes depending on the speed of your machine. The resulting .simg file may >3 GB ***
 
@@ -73,9 +76,9 @@ scp tf_gpu.py username@spiedie.binghamton.edu:./GPU_Compute_Example/
 
 Once the source code is uploaded, we can write the batch script to submit our job request. 
 
-Create a new file in the same directory on Spiedie called, singularity_gpu_test.sh.
+Create a new file in the same directory on Spiedie called, apptainer_gpu_test.sh.
 ``` bash 
-touch singularity_gpu_test.sh
+touch apptainer_gpu_test.sh
 ```
 Using your preferred editor such as nano, emacs, or vim, edit the new file directly on Spiedie. 
 
@@ -89,7 +92,7 @@ The first line in the batch script must be the shebang. So we must have,
 Next, we will name our job so we are able to monitor it if we wish to on the slurm queue. To assign a job name add : 
 
 ```bash
-#SBATCH --job-name=SINGULARITY_GPU_TEST
+#SBATCH --job-name=APPTAINER_GPU_TEST
 ```
 
 This will name the job CUBLASTEST.
@@ -105,7 +108,7 @@ This will direct the output of the program to the cuda_out.log file.
 Next, we must request the correct partition for our program to properly run and have access to the P100 gpus available on Spiedie. We therefore request the gpucompute partition with:
 
 ```bash
-#SBATCH --partition-gpucompute
+#SBATCH --partition=HarpurGPU
 ```
 We can use the default number of nodes (1) and default memory for this program.
 
@@ -119,28 +122,22 @@ We've finished defining our resource allocation parameters for our job.
 
 ## Binding Module Directories
 
-We must first load the Singularity module installed on Spiedie. Append the following line to the batch scrip: 
+Apptainer is already available in Spiedie's default configuration, so no additional module needs to be loaded. 
 
-```bash
-module load singularity/3.1.1
-```
-
-We need the CUDA drivers available on Spiedie to succesfully have access to the GPUs. 
-
-We must load the CUDA toolkit, and associated driver with. 
+We do need the CUDA drivers available on Spiedie to succesfully have access to the GPUs, so we must load the CUDA toolkit, and associated driver with. 
 
 ```bash 
-module load cuda10.0/toolkit/10.0.130
+module load cuda/11.8
 ```
 
 The loaded library will not be available to the container automatically, so before we run the container, we must expose the module directory to the container. 
 
-We can add additional directories to the container, by simply binding those directories. We add additional paths by updating the SINGULARITY_BINDPATH variable. 
+We can add additional directories to the container, by simply binding those directories. We add additional paths by updating the APPTAINER_BINDPATH variable. 
 
-We can also bind paths using the -B/--bind flag. <a href="https://singularity.lbl.gov/docs-mount" target="_blank">click here for more details</a>
+We can also bind paths using the -B/--bind flag. <a href="https://apptainer.org/docs/user/latest/bind_paths_and_mounts.html" target="_blank">click here for more details</a>
 
 ```bash 
-export SINGULARITY_BINDPATH="/cm/shared/apps/cuda10.0/toolkit/current/lib64/,/cm/local/apps/cuda-driver/libs/418.40.04/lib64/"
+export APPTAINER_BINDPATH="/opt/ohpc/pub/apps/cuda/11.8/lib64/"
 ```
 
 ## Running a GPU-enabled Workload
@@ -148,31 +145,29 @@ export SINGULARITY_BINDPATH="/cm/shared/apps/cuda10.0/toolkit/current/lib64/,/cm
 Finally our environment is set up and we can run our test file. Add the line 
 
 ```bash 
-singulariy run  spiedie_tf_gpu.simg python3.6 tf_gpu.py
+apptainer run spiedie_tf_gpu.simg python3.6 tf_gpu.py
 ```
 
-The complete singularity_gpu_test.sh file: 
+The complete apptainer_gpu_test.sh file: 
 
 ```bash 
 #!/bin.bash
-#SBATCH --job-name=SINGULARITY_GPU_TEST
+#SBATCH --job-name=APPTAINER_GPU_TEST
 #SBATCH --output=tf_gpu_output.log
 #
 #SBATCH --partition-gpucompute
 #SBATCH --ntasks=1
 
-module load singularity/3.1.1
-module load cuda10.0/toolkit/10.0.130
-export SINGULARITY_BINDPATH="/cm/shared/apps/cuda10.0/toolkit/current/lib64/,/cm/local/apps/cuda-driver/libs/418.40.04/lib64/"
-singulariy run  spiedie_tf_gpu.simg python3.6 tf_gpu.py
+export APPTAINER_BINDPATH="/opt/ohpc/pub/apps/cuda/11.8/lib64/"
+apptainer run  spiedie_tf_gpu.simg python3.6 tf_gpu.py
 ```
 
-[Click here to download the complete batch file.](code/singularity_gpu.sh)
+[Click here to download the complete batch file.](code/apptainer_gpu.sh)
 
 We can now queue the job to SLURM with: 
 
 ```bash
-sbatch singularity_cpu_test.sh
+sbatch apptainer_cpu_test.sh
 ```
 
 The job should be queued and the output logged in tf_gpu_output.log. 
