@@ -12,8 +12,8 @@ description: How to obtain an account on the Spiedie Cluster.
 
 ### Table of Contents  
 
- 1. [Subsidized Access (No Cost)](#subsidized)
- 2. [Yearly subscription access](#yearly)  
+ 1. [Subsidized Cluster Access](#subsidized)
+ 2. [Yearly Subscription Access](#yearly)  
  3. [Condo Access](#condo)
 
 ***
@@ -35,7 +35,7 @@ description: How to obtain an account on the Spiedie Cluster.
 
 ## <a name="yearly"></a> Yearly Subscription Access
 
-* $1,675/year, faculty research group
+* $1,536.51/year, faculty research group
 * Queued ahaed of lower priority jobs
 * Fair-shair queue enabled
 * Storage is monitored
