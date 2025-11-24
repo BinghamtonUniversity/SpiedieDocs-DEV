@@ -1,5 +1,5 @@
 ---
-title: Singularity on Spiedie
+title: Apptainer on Spiedie
 layout: default
 images: []
 description: A set of tutorials to get you up and running with spiedie.
@@ -30,7 +30,7 @@ Users can generate their own container images, use a docker image, or download a
 
 ## Guided Tutorials
 
-1. <a href="../tutorials/spiedie_apptainer.html">Running a sample program on Spieide with Singlarity </a> 
+1. <a href="../tutorials/spiedie_apptainer.html">Running a sample program on Spieide with Apptainer </a> 
 
 ## Apptainer Recipe Hub
 
