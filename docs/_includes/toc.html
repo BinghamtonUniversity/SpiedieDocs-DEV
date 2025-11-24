@@ -8,7 +8,7 @@
   {%- endif %}
 {%- endfor -%}
 
-{%- assign section_names = folder_groups | split: "|" | uniq | sort -%}
+{%- assign section_names = folder_groups | split: "|" | uniq -%}
 
 <ol class="toc-l1">
   {%- for section in section_names %}
