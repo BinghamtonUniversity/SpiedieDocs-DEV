@@ -2,6 +2,7 @@
 title: Singularity Commands
 layout: default
 images: []
+nav_order: 21
 description: Run Singularity on Spiedie
 tags: [Singularity, Apptainer, containers, docs] 
 ---

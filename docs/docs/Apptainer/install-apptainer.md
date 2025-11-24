@@ -2,6 +2,7 @@
 title: Installing Apptainer on Local Machine
 layout: default
 images: []
+nav_order: 23
 description: Run Apptainer on your personal workstation
 tags: [Singularity, Apptainer, containers, docs] 
 ---

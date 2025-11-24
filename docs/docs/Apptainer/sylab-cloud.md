@@ -2,6 +2,7 @@
 title: Generating and storing images on Sylabs Cloud
 layout: default 
 images: []
+nav_order: 21
 tags: [Singularity, Apptainer, Containers, Create Images, Sylabs Cloud Services, Cloud Storage, Remote Build]
 description: Using remote builder on Sylabs cloud to generate images
 ---

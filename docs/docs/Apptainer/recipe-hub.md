@@ -2,6 +2,7 @@
 title: Apptainer Recipe Hub
 layout: default
 images: []
+nav_order: 24
 tags: [Singularity, Apptainer, containers, docs, singularity definition files, recipes] 
 description: Spiedie-Tested Apptainer recipes
 ---

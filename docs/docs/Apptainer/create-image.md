@@ -2,6 +2,7 @@
 title: Create Apptainer Images
 layout: default
 images: []
+nav_order: 22
 description: Creating your own custom container
 tags: [Singularity, Apptainer, containers, docs, custom container, create image] 
 ---
