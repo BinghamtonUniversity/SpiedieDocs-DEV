@@ -1,12 +1,19 @@
 <aside class="sidebar">
-    <div class="sidebar-container">
-      <div class="sidebar-search">
-        <form class="search-bar">
-          <input type="text" class="form-control docs_search" placeholder="Search Docs" />
-        </form>
-      </div>
-      <div class="sidebar-menu no-scroll-bar">
-        {% include toc.html %}
-      </div>
+  <div class="sidebar-container">
+    <div class="sidebar-search">
+      <form class="search-bar" action="/search.html" method="GET">
+        <input 
+          type="text"
+          class="form-control docs_search"
+          id="search-query"
+          name="q"
+          placeholder="Search Docs"
+          onkeydown="if (event.key === 'Enter') this.form.submit();"
+        />
+      </form>
     </div>
-  </aside>
+    <div class="sidebar-menu no-scroll-bar">
+      {% include toc.html %}
+    </div>
+  </div>
+</aside>
