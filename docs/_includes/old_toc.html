@@ -1,0 +1,31 @@
+{%- assign sorted_pages = site.pages | sort: "nav_order" | where_exp: "p", "p.path contains 'docs/'" | reject: "path", "contains:assets" -%}
+
+{%- assign folder_groups = "" -%}
+{%- for page in sorted_pages %}
+  {%- if page.nav_exclude != true -%}
+    {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " -%}
+    {%- assign folder_groups = folder_groups | append: parent_title | append: "|" -%}
+  {%- endif %}
+{%- endfor -%}
+
+{%- assign section_names = folder_groups | split: "|" | uniq | sort -%}
+
+<ol class="toc-l1">
+  {%- for section in section_names %}
+    <li class="toc-item toc-l1-item">
+      <h3 class="toc-l1-title">{{ section | replace: "%20", " " }}</h3>
+      <ol class="sub-toc toc-l2">
+        {%- for page in sorted_pages %}
+          {%- assign parent_title = page.parent | default: page.dir | split: "/" | last | replace: "-", " " -%}
+          {%- if parent_title == section and page.nav_exclude != true -%}
+            <li class="toc-item toc-l2-item">
+              <a class="toc-link toc-l2-link {% if page.url == site.page.url %}active{% endif %}" href="{{ page.url | relative_url }}">
+                {{ page.title }}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor %}
+      </ol>
+    </li>
+  {%- endfor %}
+</ol>
