@@ -1,9 +1,9 @@
 ---
-title: Conda vs. Singularity vs. Modules
+title: Loading and Managing Environments
 layout: default 
 images: []
-nav_order: 14
-tags: [Conda, Singularity, Modules, Workflow]
+nav_order: 13
+tags: [Conda, Singularity, Apptainer, Modules, Workflow]
 description: Identifying which environment solution works best for your workload on Spiedie. 
 ---
 
@@ -13,7 +13,7 @@ description: Identifying which environment solution works best for your workload
 
 1. [Solutions available on Spiedie](#avail_app_solutions)
 2. [When to use Modules](#module_uses)
-3. [When to use Singularity](#singularity_uses)
+3. [When to use Singularity](#apptainer_uses)
 4. [When to use Conda](#conda_uses)
 
 
@@ -25,10 +25,10 @@ Spiedie provides different approaches to load third pirty programs and libraries
 
 We have a choice between using 
 - [Modules](spiedie_modules.html)
-- [Singularity containers](../singularity/)
+- [Singularity/Apptainer containers](../singularity/)
 - [Conda](spiedie_conda.html)
 
-Depending on your workload dependencies, one of the above solutions should get you up and running on Spiedie. 
+Depending on your workload dependencies, one of the above solutions should allow you to run effective programs on Spiedie.
 
 Here are a few suggestions to help you choose the best solutions. 
 
@@ -43,28 +43,30 @@ Here are a few suggestions to help you choose the best solutions.
 
 - For third-party scientific software which require little to no modification, if it is available as a module, use it. 
 - The system admin has already properly installed and configured the software to run on Spiedie. Simply loading the module 
-is the quickest and most efficient solution. 
+is the quickest and most efficient solution. More on loading modules can be read the [ Modules on Spiedie](spiedie_modules.md) SpiedieDoc.
 
 ***
 
 
-### <a name="singularity_uses"></a> When to Use Singularity
+### <a name="apptainer_uses"></a> When to Apptainer
 
 ***
 
-##### Need reproducibility? Multiple users working on same project? Use Singularity. 
+##### Need reproducibility? Multiple users working on same project? Use Apptainer. 
 
-- Singularity is a container framework that is specifically created for HPC workloads and natively supports GPUs, Infiniband, and MPI etc. 
+- Apptainer, formerly known as Singularity, is a container framework that is specifically created for HPC workloads and natively supports GPUs, Infiniband, and MPI etc. 
 
 - The Singularity Image Format (SIF) is a single executable file that can be cryptographically verified, giving you  100% reproducibility for your projects 
-and experiments, Since Singularity has drop-in compatibility with nearly environment, the SIF can be shared freely across users and platforms for ease 
+and experiments, Since Apptainer has drop-in compatibility with nearly environment, the SIF can be shared freely across users and platforms for ease 
 of use and collaboration. 
 
 ***
 
-##### Need exact versions and every specific environment? Use Singularity.
+##### Need exact versions and every specific environment? Use Apptainer.
 
-- The Singularity base image is also immutable. So the version of each package and library get 'locked in' once you have generated your image. 
+- The Apptainer base image is also immutable. So the version of each package and library get 'locked in' once you have generated your image. This is very useful if your packages and/or libraries require older or deprecated versioning when compiled.
+
+More information on how and when to use Apptainer can be found in the [Apptainer set of SpiedieDocs](../Apptainer)
 
 ***
 
@@ -91,6 +93,8 @@ desired packages versus building from source or building a new container is much
 ***
 
 
-##### Wnat to use Intel Math Kernel Library (MKL) accelerated Python and packages? Use Conda
+##### Want to use Intel Math Kernel Library (MKL) accelerated Python and packages? Use Conda
 
 - If you would like to use the MKL accelerated version of Python, Numpy, Scipy and other available packages, it is recommended to use Conda, rather than building each package and python from source. 
+
+More information on Conda use on spiedie, refer to the [Conda on Spiedie](spiedie_conda.md) SpiedieDoc.

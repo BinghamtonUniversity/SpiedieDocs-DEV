@@ -94,6 +94,15 @@ Spiedie uses the VMWare Horizon Client cluster. You can connect to VMWare Horizo
 3. Enter you credentials and one-time password as prompted to access the server. If you are accessing Spiedie via a non-hardline connection to eduroam or off-campus, you may need to be logged into the university's VPN to properly connect.
 4. Select "Spiedie" to connect to spiedie virtually. After a brief delay, you should see a Rocky workspace appear. You are now connected to Spiedie.
 
-### <a name="x2go"></a> Accessing Spiedie via X2Go
+### <a name="x2go"></a> Accessing Spiedie via X2Go GUI
 
-*** [Click here for a tutorial on how to connect to Spiedie via X2Go](x2go_spiedie.html)***
+1. Install the x2go client from [here](https://wiki.x2go.org/doku.php/download:start)
+2. Open the client and create a new session
+3. Enter a Session Name that makes sense, "Spiedie HPC"
+4. Under "Server" for "Host" enter: spiedie.binghamton.edu
+5. For Login you can enter your UserName
+6. Near the bottom the "Session Type" drop down select "XFCE"
+7. Click on the "Media" tab
+8. Uncheck "Enable Sound Support"
+9. Click "OK"
+10. You then can click on the saved session in the right hand pane, enter your password and you'll be connected to a GUI session on Spiedie.

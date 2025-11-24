@@ -35,7 +35,7 @@ In order to activate Conda at log in on Spiedie, log in and run the following co
 /opt/ohpc/pub/apps/miniforge3/bin/conda init
 ```
 
-Then, close the window and log back in. 
+Then, close the session and log back in.
 
 You should see the terminal include the base environment tag like: 
 
@@ -109,3 +109,6 @@ conda list
 For more information on using Conda and documentation, <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/overview.html" target="_blank"> click here </a>.
 
 To download a quick cheat for Conda, <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html" target="_blank">click here</a>.
+
+
+***While Miniconda is available on Spiedie, due upcoming changes to licensing costs, it is not certain that Miniconda will remain on Spiedie. For this reason, to avoid having to remake conda environments in the future.*** 

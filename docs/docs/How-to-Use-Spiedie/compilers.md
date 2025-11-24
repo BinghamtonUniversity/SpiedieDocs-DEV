@@ -10,35 +10,31 @@ description: Available compilers on spiedie for optimized compilations.
 
 ***
 
+**As a preamble: Some very good tips and tricks for compiling can be found [here](https://hpc.ncsu.edu/Documents/Compilers.php#tips), courtesy of North Carolina State University**
+
 ### Table of Contents 
 
-1. [GCC](#gcc)
+1. [GNU](#gcc)
 2. [ICC](#intel)
 	- [Runtime Libraries](#intel_libs)
 3. [NVCC](#nvidia)
 	- [Runtime Libraries](#nvidia_libs)
 
 ##### <a name="gcc"></a>
-The open source gcc and g++ compiler is available as a module and can be loaded with: 
+The open source gnu compilers are available as a module and can be loaded with: 
 
 ```bash
-module load gcc
+module load gnu14
 ```
 
-##### <a name="Intel"></a> ICC
+##### <a name="intel"></a> ICC
 
 Spiedie also provides users with the Intel Parallel Studio Compilers suite to take advantage of the improved performance on the Xeon-Phi architecture available. 
 
 You can load the Intel compiler from the modules using: 
 
 ```bash
-module load intel-compiler/
-```
-
-Additionally, you can include the cluster runtime library with:
-
-```bash
-module load intel-cluster-runtime/intel64/3.8 
+module load intel
 ```
 
 This loads the following libraries:
@@ -50,13 +46,15 @@ This loads the following libraries:
 
 <a href="https://software.intel.com/en-us/node/685016" target="_blank">Click here for the summary of the toolset</a>
 
+The world of intel compilers is expansive, so if you wish to compile with Intel, time examining module versions on Spiedie is time well spent.
+
 ##### <a name="nvidia"></a> NVCC
 
 The GPU compute nodes fully support CUDA accelerated applications and libraries. 
 
 The CUDA toolkit and runtime libraries are also available as modules on spiedie. 
 
-***Note: Multiple version of the CUDA toolkit is available from CUDA7 to CUDA10.1***
+***Note: Multiple version of the CUDA toolkit is available, namely CUDA 11.8 and CUDA 12.4***
 
 
 You can find all the available CUDA versions by running:
@@ -67,32 +65,7 @@ module avail | grep cuda
 
 You can load the nvcc compiler using:
 ```bash
-module load CUDA(version)/toolkit
-```
-
-Addtionally you can load the various runtime libraries such as: 
-
-- CuBLAS:
-```bash
-module load CUDA(version)/blas 
-```
-
-- FFT:
-
-```bash
-module load CUDA(version)/fft 
-```
-
-- Nsight:
-
-```bash
-module load CUDA(version)/nsight 
-```
-
-- Profiler;
-
-```bash
-module load CUDA(version)/profiler 
+module load cuda/(version)
 ```
 
 <a href="https://developer.nvidia.com/gpu-accelerated-libraries" target="_blank"> Click here to learn more about NVidia's GPU accelerated libraries</a>

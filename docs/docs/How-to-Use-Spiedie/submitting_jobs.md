@@ -132,13 +132,6 @@ One way to make sure your programs run properly is to run it on the correct part
 
 You can also use the feature flag to help properly allocate resources. [For more information on partitions, click here.](spiedie_partitions.html#features)
 
-To make use of a feature, such as the KNL nodes use:
-
-``` bash
-srun -N1 -n40 -C="knl" ./program_to_run
-```
-
-The above command requests 40 cores for the program to run, which is only available on the Knights Landing Nodes. The -C (constraint) flag ensures that the program is only run on KNL nodes. 
 
 ### <a name="memory_alloc"></a> Increase memory allocation
 

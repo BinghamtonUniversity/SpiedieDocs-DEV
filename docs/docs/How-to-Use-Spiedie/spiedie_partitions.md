@@ -1,5 +1,5 @@
 ---
-title: Spiedie Partitions and Features
+title: Spiedie Partitions
 layout: default 
 images: []
 nav_order: 8

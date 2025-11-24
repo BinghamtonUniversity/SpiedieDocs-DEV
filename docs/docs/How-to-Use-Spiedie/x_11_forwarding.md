@@ -11,6 +11,10 @@ description: Enable X11 forwarding to forward X windows from Spiedie to your loc
 
 ***
 
+## What is X11 Forwarding used for?
+
+X11 forwarding allows you to open and utilize GUIs from commands entered into a terminal session. This is useful for using visualization softwares, examining workspace variables through code editors, and many more applications.
+
 ## X11 Client
 
 In order to be able to forward X11 windows from Spiedie on your MacOS and Windows machines, you must have an X11 client such as [XQuartz (MacOS)](https://www.xquartz.org/) or [XMing (Windows)](https://sourceforge.net/projects/xming/) installed running. 
